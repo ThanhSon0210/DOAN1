@@ -1,10 +1,18 @@
 <style>
-    .baobu{
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    body{
+        width: 100%;
+        height: 400px;
+        background-image: url("../images/login.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
     }
+    .baobu{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  
     #tieude{
         max-width: 400px;
         background: rgba(44, 5, 66, 0.8);
@@ -53,6 +61,7 @@
         font-size: 15px;
     }
 </style>
+<body>
 <div class="baobu">
             <form method="post" action="index.php?page=login" id="tieude" name="" >
                 <div id="error-message"></div>
@@ -80,3 +89,4 @@
                <input type="submit" name="dangnhap" value="ĐĂNG NHẬP" class="add">
             </form>
         </div>
+</body>

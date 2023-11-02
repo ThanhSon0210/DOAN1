@@ -1,9 +1,16 @@
 <style>
     .baobu{
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    body{
+        width: 100%;
+        height: 400px;
+        background-image: url('../images/login.jpg'); 
+        background-size: cover;
+        background-repeat: no-repeat;
     }
     #tieude{
         max-width: 400px;
