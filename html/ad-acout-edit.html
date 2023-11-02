@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sửa tài khoản</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 p-0 bg-dark collapse collapse-horizontal show" data-bs-theme="dark" style="min-height: 100vh;" id="openMenu">
+                <strong style="display: flex; justify-content: center;align-items: center;"><img src="images/sonnu logo.png" alt="" style="width: 60px;"></strong>
+                <div class="list-group m-3">
+                    <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                      Tổng Quan
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action active">Quản Lý Tài Khoản</a>
+                    <a href="#" class="list-group-item list-group-item-action">Quản Lý Sản Phẩm</a>
+                    <a href="#" class="list-group-item list-group-item-action">Thống Kê Bình Luận</a>
+                  </div>
+            </div>
+            <div class="col-md p-0">
+                <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+                    <div class="container-fluid">
+                        <button class="btn btn-outline-light me-3" type="button" data-bs-toggle="collapse" data-bs-target="#openMenu" aria-expanded="false" aria-controls="openMenu">
+                            <i class="fa fa-bars"></i>
+                          </button>
+                      <a class="navbar-brand" href="#">sonnu <i class="fa fa-keyboard custom-cursor-on-hover"></i></a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Xin chào, sonnu
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">Xem trang chủ</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Đăng Xuất</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+                  <div class="container">
+                    <h2 class="my-3">Sửa Tài Khoản <i class="fa fa-user-edit"></i></h2>
+                    <form>
+                        <div class="mb-3">
+                          <label for="sdt" class="form-label">Số Điện Thoại</label>
+                          <input type="text" class="form-control" id="sdt">
+                        </div>
+                        <div class="mb-3">
+                            <label for="hoten" class="form-label">Họ Tên</label>
+                            <input type="text" class="form-control" id="sdt">
+                          </div>
+                          <div class="mb-3">
+                            <label for="quyen" class="form-label">Quyền</label>
+                            <select class="form-select">
+                                <option value="0">User</option>
+                                <option value="1">Admin</option>
+                              </select>
+                          </div>
+                        <button type="submit" class="btn btn-primary">Xác Nhận</button>
+                      </form>
+                </div>
+            </div>
+           </div>
+    </div>
+   
+    <footer class="mb-9 my-3">
+        <div class="gach-hr"></div>
+        <div class="foter">
+            <div class="foter1">
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-discord"></i>
+            </div>
+            <div class="foter2">
+                <h4>K E Y C H R O N </h4>
+                <ul>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">Gift Cards</a></li>
+                    <li><a href="">Get 10% Off</a></li>
+                    <li><a href="">Where to Buy</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">ConTact Us</a></li>
+                    <li><a href="">Influencer Recruit</a></li>
+                    <li><a href="">Customize with Your Branding</a></li>
+                </ul>
+            </div>
+            <div class="foter3">
+                <h4>HELP  &  SUPPORT</h4>
+                <ul>
+                    <li><a href="">User Manual</a></li>
+                    <li><a href="">Firmwares</a></li>
+                    <li><a href="">Help Center</a></li>
+                    <li><a href="">Order Tracking</a></li>
+                    <li><a href="">Shopping Policy</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Terms of Service</a></li>
+                    <li><a href="">Refund policy</a></li>
+                    <li><a href="">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="foter4">
+                <h4>BE  THE  FIRST  TO  KNOW</h4><br>
+                <p>Get the latest product news,
+                     special offers and interesting behind-the-scenes stories from us
+                </p><br>
+                <input placeholder="✉️ Enter your email"  type="email">
+            </div>
+        </div>
+    </footer>
+    <script src="../bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
