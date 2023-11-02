@@ -62,7 +62,7 @@
                     <input type="text" class="hienthi" name="username" placeholder="Nhập tên">
                 </div>
                 <div class="nhaplieu">
-                    <i class="fa fa-user"></i>
+                    <i class="fa fa-envelope"></i>
                     <input type="text" class="hienthi" name="email" placeholder="Nhập email">
                 </div>
                 <div class="nhaplieu">

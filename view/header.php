@@ -1,10 +1,10 @@
 <?php 
   if(isset($_SESSION['s_user']) && (count($_SESSION['s_user'])>0)){
     extract($_SESSION['s_user']);
-    $html_account ='<a class="nav-link dropdown-toggle active" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                      Xin Chào, 
+    $html_account ='<a href="index.php?page=myaccount" class="nav-link dropdown-toggle active" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                      Xin Chào, '.$username.'
                     </a>
-                    <a href="index.php?page=myaccount">'.$username.'</a>
+                      
                     <ul class="dropdown-menu end-0" style="left:auto">
                       <li><a class="dropdown-item" href="index.php?page=myaccount">CẬP NHẬT THÔNG TIN </a></li>
                       <li><a class="dropdown-item" href="index.php?page=logout">THOÁT</a></li>
@@ -59,15 +59,15 @@
                   <li><a class="dropdown-item" href="#">Phụ Kiện Bàn Phím</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <form action="index.php?page=sanpham" method="post" class="d-flex" role="search">
-                    <input class="form-control me-2"  type="text" name="key"  placeholder="Tìm kiếm ...">
-                    <input class="btn btn-outline-success" type="submit"  name="timkiem"  value="Tìm" >
-                  </form>
-              </li>
             </ul>
             
             <ul class="navbar-nav  mb-2 mb-lg-0">
+            <li class="nav-item">
+                <form action="index.php?page=sanpham" method="post" class="d-flex" role="search">
+                    <input class="form-control me-2"  type="text" name="key"  placeholder="Tìm kiếm ...">
+                    <input class="btn btn-outline-success" type="submit"  name="timkiem"  value="Tìm" >
+                </form>
+              </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="index.php?page=viewcart"><i class="fa fa-shopping-cart"></i></a>
                 </li>
