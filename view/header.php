@@ -65,9 +65,8 @@
                 <!-- logo -->
                 <div class="col-1">
 
-                    <a class="logo" href="index.php?page=home"><img src="../images/logo-htps-komau.png" class="img-fluid" width="250px" alt=""></a>
-                    <a class="logo" href="index.php?page=home"><img src="images/logo-htps-komau.png" class="img-fluid" width="250px" alt=""></a>
-
+                    <a class="logo" href="index.php?page=home"><img src="images/logo-htps-komau.png" class="img-fluid" width="150px" alt=""></a>
+                
                 </div>
                 <!-- end logo -->
 

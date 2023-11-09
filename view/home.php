@@ -5,17 +5,17 @@
 <div class="container">
       <div class="row">
         <ul class="list-group col-md-2 my-2 ">
-          <li class="list-group-item shadow-inset text-center"><i class="fa-regular fa-keyboard"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">BÀN PHÍM KHÔNG DÂY</a></li>
-          <li class="list-group-item shadow-inset text-center"><i class="fa-regular fa-keyboard"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none">BÀN PHÍM CÓ DÂY</a></li>
-          <li class="list-group-item shadow-inset text-center"><i class="fa-sharp fa-solid fa-microchip"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none">PHỤ KIỆN</a></li>
-          <li class="list-group-item shadow-inset text-center"><i class="fa-solid fa-computer-mouse"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none">CHUỘT</a></li>
-          <li class="list-group-item shadow-inset text-center"><i class="fa-solid fa-money-bill-transfer"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">HÀNG CŨ</a></li>
-          <li class="list-group-item shadow-inset text-center"><i class="fa-solid fa-headphones"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">TAI NGHE - LOA</a></li>
-          <li class="list-group-item shadow-inset text-center"><i class="fa fa-hdd"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">BỘ NHỚ LƯU TRỮ</a></li>
-          <li class="list-group-item shadow-inset text-center"><i class="fa-solid fa-desktop"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">MÀNG HÌNH</a></li>
-          <li class="list-group-item shadow-inset text-center"><i class="fa-solid fa-rug"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">LÓT CHUỘT</a></li>
-          <li class="list-group-item shadow-inset text-center"><i class="fa-brands fa-windows"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">PC GAMING</a></li>
-          <li class="list-group-item shadow-inset text-center"><i class="fa-solid fa-laptop"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">LAPTOP</a></li>
+          <li class="list-group-item shadow-inset"><i class="fa-regular fa-keyboard"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">BÀN PHÍM KHÔNG DÂY</a></li>
+          <li class="list-group-item shadow-inset"><i class="fa-regular fa-keyboard"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none">BÀN PHÍM CÓ DÂY</a></li>
+          <li class="list-group-item shadow-inset"><i class="fa-sharp fa-solid fa-microchip"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none">PHỤ KIỆN</a></li>
+          <li class="list-group-item shadow-inset"><i class="fa-solid fa-computer-mouse"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none">CHUỘT</a></li>
+          <li class="list-group-item shadow-inset"><i class="fa-solid fa-money-bill-transfer"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">HÀNG CŨ</a></li>
+          <li class="list-group-item shadow-inset"><i class="fa-solid fa-headphones"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">TAI NGHE - LOA</a></li>
+          <li class="list-group-item shadow-inset"><i class="fa fa-hdd"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">BỘ NHỚ LƯU TRỮ</a></li>
+          <li class="list-group-item shadow-inset"><i class="fa-solid fa-desktop"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">MÀNG HÌNH</a></li>
+          <li class="list-group-item shadow-inset"><i class="fa-solid fa-rug"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">LÓT CHUỘT</a></li>
+          <li class="list-group-item shadow-inset"><i class="fa-brands fa-windows"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">PC GAMING</a></li>
+          <li class="list-group-item shadow-inset"><i class="fa-solid fa-laptop"></i> <a href="" style="font-size: 12px; color: black;" class="text-decoration-none ">LAPTOP</a></li>
         </ul>
         <div id="carouselExampleCaptions" class="carousel slide col-md-8 my-2">
           <div class="carousel-indicators">
