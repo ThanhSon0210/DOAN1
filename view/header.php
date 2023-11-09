@@ -64,7 +64,11 @@
 
                 <!-- logo -->
                 <div class="col-1">
+<<<<<<< HEAD
                     <a class="logo" href="index.php?page=home"><img src="../images/logo-htps-komau.png" class="img-fluid" width="250px" alt=""></a>
+=======
+                    <a class="logo" href="index.php?page=home"><img src="images/logo-htps-komau.png" class="img-fluid" width="250px" alt=""></a>
+>>>>>>> 85eac5bc5f31f534d7da1d835bcb6afad0ae2e44
                 </div>
                 <!-- end logo -->
 
