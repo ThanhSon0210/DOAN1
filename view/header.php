@@ -9,7 +9,6 @@
                             <div class="col-9 fw-bold py-2">
                               <a style="text-decoration: none; color: white;" href="index.php?page=myaccount">'.$username.'</a>
                             </div>
-                            
                           </div>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -37,7 +36,7 @@
                     </div>';
   }
 ?>
-
+oke lụm
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,8 +79,14 @@
             <div class="col-1"></div>
                 <!-- logo -->
                 <div class="col-1">
+<<<<<<< HEAD
                     <a class="logo" href="index.php?page=home"><img src="images/logo-htps-komau.png" class="img-fluid" width="250px" alt=""></a>
 
+=======
+
+                    <a class="logo" href="index.php?page=home"><img src="images/logo-htps-komau.png" class="img-fluid" width="150px" alt=""></a>
+                
+>>>>>>> 7741c52bc263536b4d5cfcdaf2f5f3f8215d3bb6
                 </div>
                 <!-- end logo -->
 
@@ -127,7 +132,7 @@
                         <div class="col-2">
                             <div class="row">
                                 <div class="col-3 fs-2 text-light"><i class="fa fa-shopping-cart"></i></div>
-                                <div class="col-9 text-light fw-bold"><a class="nav-link" href="index.php?page=viewcart">Giỏ hàng </a></div>
+                                <div class="col-9 text-light fw-bold"><a class="nav-link" href="index.php?page=viewcart">Giỏ hàng <br> của bạn </a></div>
                             </div>
                         </div>
                         <!-- show lien he -->
