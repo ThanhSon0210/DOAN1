@@ -36,7 +36,7 @@
                     </div>';
   }
 ?>
-oke lụm
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,14 +79,12 @@ oke lụm
             <div class="col-1"></div>
                 <!-- logo -->
                 <div class="col-1">
-<<<<<<< HEAD
                     <a class="logo" href="index.php?page=home"><img src="images/logo-htps-komau.png" class="img-fluid" width="250px" alt=""></a>
 
-=======
 
                     <a class="logo" href="index.php?page=home"><img src="images/logo-htps-komau.png" class="img-fluid" width="150px" alt=""></a>
                 
->>>>>>> 7741c52bc263536b4d5cfcdaf2f5f3f8215d3bb6
+
                 </div>
                 <!-- end logo -->
 
