@@ -113,7 +113,7 @@
                         <div class="col-2">
                             <div class="row">
                                 <div class="col-3 fs-2 text-light"><i class="fa fa-shopping-cart"></i></div>
-                                <div class="col-9 text-light fw-bold"><a class="nav-link" href="#"> Giỏ hàng <br> của bạn </a></div>
+                                <div class="col-9 text-light fw-bold"><a class="nav-link" href="index.php?page=viewcart">Giỏ hàng </a></div>
                             </div>
                         </div>
                         <div  class="col-2">
