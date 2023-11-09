@@ -1,22 +1,32 @@
 <?php 
   if(isset($_SESSION['s_user']) && (count($_SESSION['s_user'])>0)){
     extract($_SESSION['s_user']);
-    $html_account ='<a href="index.php?page=myaccount" class="nav-link dropdown-toggle active" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                      Xin Chào, '.$username.'
-                    </a>
-                      
-                    <ul class="dropdown-menu end-0" style="left:auto">
-                      <li><a class="dropdown-item" href="index.php?page=myaccount">CẬP NHẬT THÔNG TIN </a></li>
-                      <li><a class="dropdown-item" href="index.php?page=logout">THOÁT</a></li>
-                    </ul>';
+    $html_account ='<div  class="col-3">
+                        <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
+                          <div class="row text-light">
+                              <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
+                              <div class="col-9 fw-bold py-2"><a style="text-decoration: none; color:white;" href="index.php?page=myaccount">'.$username.'</a></div>
+                          </div>
+                        </button>
+                        <a class="dropdown-item" href="index.php?page=logout">THOÁT</a>
+                    </div>';
   }else{
-    $html_account ='<a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                      Xin Chào, ?
-                    </a>
-                    <ul class="dropdown-menu end-0" style="left:auto">
-                      <li><a class="dropdown-item" href="index.php?page=dangky">ĐĂNG KÝ </a></li>
-                      <li><a class="dropdown-item" href="index.php?page=dangnhap">ĐĂNG NHẬP</a></li>
-                    </ul>';
+    $html_account ='<div  class="col-2">
+                        <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
+                        <div class="row text-light">
+                            <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
+                            <div class="col-9 fw-bold py-2"><a style="text-decoration: none; color:white;" href="index.php?page=dangky">Đăng Kí</a></div>
+                        </div>
+                        </button>
+                    </div>
+                    <div  class="col-3">
+                        <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
+                        <div class="row text-light">
+                            <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
+                            <div class="col-9 fw-bold py-2"><a style="text-decoration: none; color:white;" href="index.php?page=dangnhap">Đăng Nhập</a></div>
+                        </div>
+                        </button>
+                    </div>';
   }
 ?>
 
@@ -112,22 +122,8 @@
                                 <div class="col-9 text-light fw-bold"><a class="nav-link" href="index.php?page=viewcart">Giỏ hàng </a></div>
                             </div>
                         </div>
-                        <div  class="col-2">
-                            <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
-                             <div class="row text-light">
-                                 <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
-                                 <div class="col-9 fw-bold py-2"><a style="text-decoration: none; color:white;" href="index.php?page=dangky">Đăng Kí</a></div>
-                             </div>
-                            </button>
-                         </div>
-                         <div  class="col-3">
-                            <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
-                             <div class="row text-light">
-                                 <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
-                                 <div class="col-9 fw-bold py-2"><a style="text-decoration: none; color:white;" href="index.php?page=dangnhap">Đăng Nhập</a></div>
-                             </div>
-                            </button>
-                         </div>
+                        <!-- show lien he -->
+                        <?=$html_account?>
                     </div>
                 </div>
                 <!--end nav header text -->
