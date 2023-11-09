@@ -1,6 +1,6 @@
 
 <style>
-        .text-my-cart{
+    .text-my-cart{
         text-align: center;
     }
 
@@ -96,8 +96,9 @@
         
     }
 </style>
-
-    <h1 class="text-my-cart">MY CART</h1><hr><br><br>
+<div class="container">
+    <div class="row">
+<hr><br>
     <table id="my-cart">
         <thead>
             <tr>
@@ -156,9 +157,8 @@
             </tr>
         </tfoot>
     </table>
-    <br>
     <a href="index.php" style="text-decoration:  none; cursor: pointer; " >
-        <h2 style="padding: 5px; border: 1px solid rgb(0, 0, 0); width: 250px; color: black;">TIẾP TỤC MUA!</h2>
+        <h4 style="padding: 5px; border: 1px solid rgb(0, 0, 0); width: 190px; color: black;">TIẾP TỤC MUA!</h4>
     </a>
 
         <div class="my-cart">
@@ -182,5 +182,6 @@
                 </div>
             </div>
         </div><br>
-
+        </div>
+</div>
  

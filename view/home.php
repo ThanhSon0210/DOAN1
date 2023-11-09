@@ -27,7 +27,7 @@
             <div class="carousel-item active">
               <img src="images/b1.jpg" class="d-block w-100" alt="..." >
               <div class="carousel-caption d-none d-md-block">
-                <h2>sonnu keyboard</h2>
+                <h2>HTPS Shop</h2>
                 <h4>Tất cả sản phẩm sẽ được làm mới trong ngày!</h4>
               </div>
             </div>

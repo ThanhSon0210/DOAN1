@@ -12,7 +12,7 @@
                           </div>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a href="index.php?page=myaccount">Cập nhật tài khoản</a>
+                            <a href="index.php?page=myaccount">Cập nhật tài khoản</a><br>
                             <a href="index.php?page=logout">Thoát</a>
                         </ul>
                       </div>
@@ -79,12 +79,7 @@
             <div class="col-1"></div>
                 <!-- logo -->
                 <div class="col-1">
-                    <a class="logo" href="index.php?page=home"><img src="images/logo-htps-komau.png" class="img-fluid" width="250px" alt=""></a>
-
-
                     <a class="logo" href="index.php?page=home"><img src="images/logo-htps-komau.png" class="img-fluid" width="150px" alt=""></a>
-                
-
                 </div>
                 <!-- end logo -->
 
@@ -93,7 +88,7 @@
                    <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
                     <div class="row text-light">
                         <div class="col-md-1 fs-3"><i class="fa-solid fa-bars"></i></div>
-                        <div class="col-md-9 fw-bold">Danh mục</div>
+                        <div class="col-md-9 fw-bold"><a href="index.php?page=sanpham">Danh mục</a></div>
                     </div>
                    </button>
                 </div>
@@ -124,13 +119,13 @@
                         <div class="col-2">
                             <div class="row">
                                 <div class="col-3 fs-2 text-light"><i class="fa-solid fa-bell"></i></div>
-                                <div class="col-9 text-light fw-bold"><a class="nav-link" href="#">Hệ thống <br> thông báo</a></div>
+                                <div class="col-9 text-light fw-bold"><a class="nav-link" href="index.php?page=viewcart">Thông báo</a></div>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="row">
                                 <div class="col-3 fs-2 text-light"><i class="fa fa-shopping-cart"></i></div>
-                                <div class="col-9 text-light fw-bold"><a class="nav-link" href="index.php?page=viewcart">Giỏ hàng <br> của bạn </a></div>
+                                <div class="col-9 text-light fw-bold"><a class="nav-link" href="index.php?page=viewcart">Giỏ hàng</a></div>
                             </div>
                         </div>
                         <!-- show lien he -->

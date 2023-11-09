@@ -78,8 +78,8 @@ function showsp($dssp){
                                     <input type="hidden" name="price" value="'.$price.'">
                                     <input type="hidden" name="soluong" value="1"> 
                                     <button class="btn btn-primary custom-buy-button" type="submit" name="addcart" 
-                                            style="display: flex; align-items: center; justify-content: center;">
-                                        MUA <i class="fa fa-plus-circle"></i>
+                                            style="display: flex; width: 100%; align-items: center; justify-content: center;">
+                                        Thêm Vào Giỏ Hàng 
                                     </button>
                                  </form>
                              </div>
