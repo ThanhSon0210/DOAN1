@@ -5,13 +5,6 @@
         justify-content: center;
         align-items: center;
     }
-    body{
-        width: 100%;
-        height: 400px;
-        background-image: url('../images/login.jpg'); 
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
     #tieude{
         max-width: 400px;
         background: rgba(44, 5, 66, 0.8);

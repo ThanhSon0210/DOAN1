@@ -1,11 +1,5 @@
 <style>
-    body{
-        width: 100%;
-        height: 400px;
-        background-image: url("../images/login.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
+
     .baobu{
         min-height: 100vh;
         display: flex;

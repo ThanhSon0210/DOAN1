@@ -31,20 +31,20 @@
 </head>
 <style>
   .top-header
-{
-    width: 100%;
-    height: 100%;
-    background-color: #ECE2E1;
-}
-.form-control
-{
-    height: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.col-8
-{
-    font-size: 18.5px;
-}
+  {
+      width: 100%;
+      height: 100%;
+      background-color: #ECE2E1;
+  }
+  .form-control
+  {
+      height: 50px;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  .col-8
+  {
+      font-size: 18.5px;
+  }
 </style>
 <body>
     <!-- top1 baner header -->
@@ -59,13 +59,9 @@
     <nav class="navbar-expand-sm" style="background-color: #E30019;">
         <div class="container-fluid">
             <div class="row py-3">
-
             <div class="col-1"></div>
-
                 <!-- logo -->
                 <div class="col-1">
-
-                    <a class="logo" href="index.php?page=home"><img src="../images/logo-htps-komau.png" class="img-fluid" width="250px" alt=""></a>
                     <a class="logo" href="index.php?page=home"><img src="images/logo-htps-komau.png" class="img-fluid" width="250px" alt=""></a>
 
                 </div>
@@ -120,7 +116,7 @@
                             <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
                              <div class="row text-light">
                                  <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
-                                 <div class="col-9 fw-bold py-2">Đăng Kí</div>
+                                 <div class="col-9 fw-bold py-2"><a style="text-decoration: none; color:white;" href="index.php?page=dangky">Đăng Kí</a></div>
                              </div>
                             </button>
                          </div>
@@ -128,7 +124,7 @@
                             <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
                              <div class="row text-light">
                                  <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
-                                 <div class="col-9 fw-bold py-2">Đăng Nhập</div>
+                                 <div class="col-9 fw-bold py-2"><a style="text-decoration: none; color:white;" href="index.php?page=dangnhap">Đăng Nhập</a></div>
                              </div>
                             </button>
                          </div>
