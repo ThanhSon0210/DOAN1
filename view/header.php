@@ -1,14 +1,22 @@
 <?php 
   if(isset($_SESSION['s_user']) && (count($_SESSION['s_user'])>0)){
     extract($_SESSION['s_user']);
-    $html_account ='<div  class="col-3">
-                        <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
+    $html_account ='<div class="col-3">
+                      <div class="dropdown">
+                        <button class="btn btn-danger danhmuc" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 5px;">
                           <div class="row text-light">
-                              <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
-                              <div class="col-9 fw-bold py-2"><a style="text-decoration: none; color:white;" href="index.php?page=myaccount">'.$username.'</a></div>
+                            <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
+                            <div class="col-9 fw-bold py-2">
+                              <a style="text-decoration: none; color: white;" href="index.php?page=myaccount">'.$username.'</a>
+                            </div>
+                            
                           </div>
                         </button>
-                        <a class="dropdown-item" href="index.php?page=logout">THOÁT</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a href="index.php?page=myaccount">Cập nhật tài khoản</a>
+                            <a href="index.php?page=logout">Thoát</a>
+                        </ul>
+                      </div>
                     </div>';
   }else{
     $html_account ='<div  class="col-2">
