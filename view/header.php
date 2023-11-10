@@ -62,8 +62,9 @@
   {
       font-size: 18.5px;
   }
+
 </style>
-<body>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
     <!-- top1 baner header -->
     <nav class="top-header">
         <div class="container">
@@ -72,19 +73,17 @@
     </nav>
     <!-- end top1 baner header -->
 
-    <!-- top2 baner header -->
-    <nav class="navbar-expand-sm" style="background-color: #E30019;">
-        <div class="container-fluid">
+
+    <!-- kết nối header top 2 và top 3 lại tạo thành fixed -->
+    <nav class="header23">
+          <!-- top2 baner header -->
+            <nav class="navbar-expand-sm" style="background-color: #E30019;">
+              <div class="container-fluid">
             <div class="row py-3">
             <div class="col-1"></div>
                 <!-- logo -->
                 <div class="col-1">
-                    <a class="logo" href="index.php?page=home"><img src="images/logo-htps-komau.png" class="img-fluid" width="250px" alt=""></a>
-
-
-                    <a class="logo" href="index.php?page=home"><img src="images/logo-htps-komau.png" class="img-fluid" width="150px" alt=""></a>
-                
-
+                    <a class="logo" href="index.php?page=home"><img src="images/logo-htps-komau.png" class="img-fluid" width="250px" alt=""></a>                
                 </div>
                 <!-- end logo -->
 
@@ -152,21 +151,21 @@
 
             <div class="row">
                     <div class="col-md-1"><i class="fa-solid fa-fire"></i></div>
-                    <div class="col-md-9">Xu Hướng</div>
+                    <div class="col-md-9"><a href="#section1" class="text-decoration-none" style="color: black;">Xu Hướng</a></div>
                     <div class="col-md-1">|</div>
                 </div>
             </div>
             <div class="col-md-2">
                 <div class="row">
                     <div class="col-1"><i class="fa-solid fa-tag"></i></div>
-                    <div class="col-9">Khuyến mãi</div>
+                    <div class="col-9"> <a href="#section2" class="text-decoration-none" style="color: black;">Nổi Bật</a></div>
                     <div class="col-1">|</div>
                 </div>
             </div>
             <div class="col-2">
                 <div class="row">
                     <div class="col-2"><i class="fa-solid fa-book"></i></div>
-                    <div class="col-8">Tin Tức</div>
+                    <div class="col-8"> <a href="#section2" class="text-decoration-none" style="color: black;">Tin Tức</a></div>
                     <div class="col-1">|</div>
                 </div>
             </div>
@@ -194,4 +193,9 @@
        </div>
     </nav>
      <!-- end top 3 banner header -->
+    </nav>
+    <!-- end kết nối header top 2 và top 3 lại tạo thành fixed -->
+
+
+ 
 </body>
