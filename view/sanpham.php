@@ -11,30 +11,30 @@
 
 
     if($titlepage !="") $title = $titlepage;
-    else $title = "Sản Phẩm";
+    else $title = "Tất cả sản phẩm";
 ?>
-
-<div class="row">
-    <div class="col-md-12 my-3 shadow">
-        <div style="border-radius: 25px; padding: 5px; color: white; background-color: rgba(253, 46, 0, 0.909);">
-            <h1 style="text-align: center;"><?=$title?></h1>
-        </div>
-        <div class="row my-3">
-            <div class="col-md-3">
-                <ul class="list-group">
-                    <?=$html_dm?>
-                </ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 my-3 shadow">
+            <div style="border-radius: 25px; padding: 5px; color: white; background-color: rgba(253, 46, 0, 0.909);">
+                <h1 style="text-align: center;"><?=$title?></h1>
             </div>
-            <div class="col-sm-9">
-                <div class="row">
-                    <!-- Đây là cột chứa 4 sản phẩm -->
-                    <?=$html_dssp?>
+            <div class="row my-2">
+                <div class="col-2">
+                    <ul class="list-group">
+                        <?=$html_dm?>
+                    </ul>
+                </div>
+                <div class="col-10">
+                    <div class="row">
+                        <!-- Đây là cột chứa 4 sản phẩm -->
+                        <?=$html_dssp?>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 <!-- <div class="row">
     <div class="col-md-12 my-3 shadow">
