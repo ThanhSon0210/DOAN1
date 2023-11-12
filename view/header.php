@@ -42,9 +42,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chỉnh sửa header</title>
+    <title>Lập Trình Cùng HTPS - Chuyên Đồ Công Nghệ</title>
     <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="icon" href="logo-shortcut.png" type="image/x-icon">
 </head>
 <style>
   .top-header
