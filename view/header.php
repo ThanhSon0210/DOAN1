@@ -45,6 +45,8 @@
     <title>Lập Trình Cùng HTPS - Chuyên Đồ Công Nghệ</title>
     <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" href="logo-shortcut.png" type="image/x-icon">
 </head>
 <style>
@@ -166,21 +168,21 @@
             <div class="col-2">
                 <div class="row">
                     <div class="col-2"><i class="fa-solid fa-book"></i></div>
-                    <div class="col-8"> <a href="#section2" class="text-decoration-none" style="color: black;">Tin Tức</a></div>
+                    <div class="col-8"> <a href="#section3" class="text-decoration-none" style="color: black;">Tin Tức</a></div>
                     <div class="col-1">|</div>
                 </div>
             </div>
             <div class="col-2">
                 <div class="row">
                     <div class="col-1"><i class="fa-solid fa-barcode"></i></div>
-                    <div class="col-9">Thanh toán</div>
+                    <div class="col-9"><a href="#section4" class="text-decoration-none" style="color: black;">Thành Viên</a></div>
                     <div class="col-1">|</div>
                 </div>
             </div>
             <div class="col-2">
                 <div class="row">
                     <div class="col-2"><i class="fa-solid fa-circle-exclamation"></i></div>
-                    <div class="col-8"> Trả góp</div>
+                    <div class="col-8"><a href="#section5" class="text-decoration-none" style="color: black;">Hàng Mục</a></div>
                     <div class="col-1">|</div>
                 </div>
             </div>
