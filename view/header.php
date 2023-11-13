@@ -12,8 +12,8 @@
                           </div>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a href="index.php?page=myaccount">Cập nhật tài khoản</a>
-                            <a href="index.php?page=logout">Thoát</a>
+                            <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
+                            <li> <a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
                         </ul>
                       </div>
                     </div>';
@@ -105,7 +105,7 @@
                 <div class="col-md-3 py-2">
                     <form class="d-flex">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Tìm sản phẩm yêu thích ?" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="text" name="timkiem" class="form-control" placeholder="Tìm sản phẩm yêu thích ?" aria-label="Recipient's username" aria-describedby="basic-addon2">
                             <span class="input-group-text" id="basic-addon2"><a href=""><i class="fa-solid fa-magnifying-glass text-dark fw-bold"></i></a></span>
                           </div>                      
                     </form>

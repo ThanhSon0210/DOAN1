@@ -97,7 +97,7 @@
     }
 </style>
 
-    <h1 class="text-my-cart">MY CART</h1><hr><br><br>
+    <h1 class="text-my-cart">Giỏ Hàng Của Tôi</h1><hr><br><br>
     <table id="my-cart">
         <thead>
             <tr>
