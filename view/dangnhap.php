@@ -128,16 +128,26 @@
         background-color: #DF4A32;
         padding: 5px 15px;
         color: white;
+        cursor: pointer;
     }
     .text-col-fb
     {
         background-color: #3B5998;
         padding: 5px 15px;
         color: white;
+        cursor: pointer;
     }
 
 </style>
 
+<html>
+    <head>
+        <!-- thư viện hiển thị thông báo đẹp sweetalert2 -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.all.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.min.css" rel="stylesheet">
+        <!-- end thư viện hiển thị thông báo đẹp sweetalert2 -->
+    </head>
+</html>
 <body>
     <div class="baobu">
         <form method="post" action="index.php?page=login" id="tieude" name="">
@@ -165,7 +175,7 @@
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1" style="color: #black;">Ghi nhớ tài khoản</label>
             </div>
-            <input type="submit" name="dangnhap" value="ĐĂNG NHẬP" class="add">
+            <input type="submit" name="dangnhap" value="ĐĂNG NHẬP" class="add" onclick="thongbaodangnhap()">
             <p class="signin">Bạn chưa có tài khoản ? <a href="index.php?page=dangky"> Đăng Kí </a>
             <div class="gg-fb">
                 <div class="row">
@@ -182,4 +192,13 @@
         </form>
 
     </div>
+    <script>
+        function thongbaodangnhap(){
+            Swal.fire({
+                    title: "Đăng Nhập Thành Công!",
+                    text: "Chào mừng bạn đã trở lại!",
+                    icon: "success"
+                 });
+        }
+    </script>
 </body>

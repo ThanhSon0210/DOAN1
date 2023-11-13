@@ -137,7 +137,14 @@
     }
 
 </style>
-
+<html>
+    <head>
+        <!-- thư viện hiển thị thông báo đẹp sweetalert2 -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.all.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.min.css" rel="stylesheet">
+        <!-- end thư viện hiển thị thông báo đẹp sweetalert2 -->
+    </head>
+</html>
 <body>
     <div class="baobu">
         <form method="post" action="index.php?page=login" id="tieude" name="">
@@ -161,7 +168,7 @@
                     <input type="password" class="hienthi" name="repassword" placeholder="Nhập lại mật khẩu">
                 </div>  
 
-            <input type="submit" name="dangnhap" value="ĐĂNG KÍ" class="add">
+            <input type="submit" name="dangnhap" value="ĐĂNG KÍ" class="add" onclick="thongbaodangki()">
             <p class="signin">Bạn đã có tài khoản ? <a href="index.php?page=dangnhap"> Đăng Nhập </a>
             <div class="gg-fb">
                 <div class="row">
@@ -178,4 +185,13 @@
         </form>
 
     </div>
+    <script>
+        function thongbaodangki(){
+            Swal.fire({
+                    title: "Đăng Kí Thành Công!",
+                    text: "Vui lòng đăng nhập để sử dụng dịch vụ!",
+                    icon: "success"
+                 });
+        }
+    </script>
 </body>

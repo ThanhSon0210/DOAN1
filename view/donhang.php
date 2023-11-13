@@ -139,223 +139,12 @@
 </body>
 </html> -->
 <style>
-    .header__nav-top{
-    width: 100%;
-    height: 35px;
-    background-color: #86c900;
-}
+   
 
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
-.topbar_content--right{
-    display: flex;
-}
 
-.topbar_content--left{
-    font-size: 1.6rem;
-    padding: 11px 14px;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
 
-.topbar_content{
-    font-size: 1.6rem;
-    padding: 12px 15px;
-    color: rgb(231, 231, 231);
-    text-decoration: none;
-    position: relative;
-}
 
-.topbar_content:hover{
-    color: white;
-}
-
-.header__navbar-item--separate::after{
-    content: "";
-    display: block;
-    position: absolute;
-    border-left: 1px solid rgb(231, 231, 231);
-    height: 16px;
-    right: 0px;
-    top: 20px;
-    transform: translateY(-50%);
-}
-
-.header__inner{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1250px;
-    margin: 0 auto;
-}
-
-.header__logo{
-    width: 300px;
-}
-
-.header__logo-img{
-    width: 270px;
-    padding: 10px;
-}
-
-.header__search{
-    display: flex;
-    align-items: center;
-    border-radius: 2px;
-    height: 40px;
-    margin-top: 30px;
-    background-color: white;
-}
-
-.header__search-input{
-    width: 355px;
-    height: 45px;
-    font-size: 16px;
-    padding: 15px;
-    outline: none;
-    border: 1px solid rgb(221, 221, 221);
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-}
-
-.header__search-btn{
-    width: 45px;
-    height: 45px;
-    background-color: orange;
-    outline: none;
-    border: none;
-    color: white;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    cursor: pointer;
-}
-
-.header__search-btn-icon{
-    font-size: 2rem;
-}
-
-.contact{
-    padding-top: 10px;
-    font-size: 16px;
-}
-
-.contact_icon{
-    width: 30px;
-    height: 30px;
-    border: 1px solid orange;
-    border-radius: 100px;
-    background-color: orange;
-    color: white;
-    padding: 6px;
-}
-
-.cart_button{
-    width: 120px;
-    height: 40px;
-    margin-top: 30px;
-    margin-right: 10px;
-    border: 1px solid transparent;
-    border-radius: 100px;
-    font-size: 1.4rem;
-    font-weight: bold;
-    background-color: #00b214;
-    color: white;
-    transition: all linear 0.2s;
-}
-
-.cart_button:hover{
-    color: black;
-}
-
-.cart{
-    position: relative;
-}
-.box-cart{
-    width: 300px;
-    height: auto;
-    border: 2px solid #e0e0e0;
-    border-radius: 2px;
-    background-color: #fff;
-    z-index: 999;
-    position: absolute;
-    top: 70px;
-    right: 0px;
-    display: none;
-    animation: fadeIn ease-in 0.2s;
-}
-.box-cart::before{
-    content: "";
-    border-width: 20px 20px;
-    border-style: solid;
-    border-color: transparent transparent white transparent;
-    position: absolute;
-    right: 50px;
-    top: -30px;
-}
-.box-cart>span{
-    font-size: 1.6rem;
-    color: gray;
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-}
-.cart:hover .box-cart{
-    display: block;
-}
-.cart_button-mobile{
-    width: 50px;
-    height: 40px;
-    margin-top: 30px;
-    margin-right: 40px;
-    border: 1px solid transparent;
-    border-radius: 100px;
-    font-size: 2.2rem;
-    font-weight: bold;
-    background-color: #00b214;
-    color: white;
-    transition: all linear 0.2s;
-}
-.cart-mobile{
-    display: none;
-}
-.header_menu{
-    width: 100%;
-    height: 50px;
-    background-color: #00b214;
-    z-index: 9999;
-
-    top: -100px;
-    transition: 1s;
-}
-.header_nav{
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.menu_item--link{
-    display: block;
-    padding: 17px 15px;
-    text-decoration: none;
-    font-size: 1.8rem;
-    color: white;
-    transition: all ease-in 0.1s;
-}
-.menu-item-active{
-    color: black;
-    background-color: white;
-}
-.menu-item:hover .menu_item--link{
-    color: black;
-    background-color: white;
-}
 
 .form_checkout{
     width: 1140px;
@@ -594,29 +383,14 @@
 .content__list-item>a:hover{
     color: orange;
 }
-
-.footer__info{
-    width: 100%;
-    height: 50px;
-    background-color: #005919;
-}
-
-.footer__info-text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.4rem;
-    font-weight: 400;
-    padding-top: 20px;
-}
-.cart_item{
-    display: flex;
+.page_checkout
+{
+    margin-bottom: 50px;
 }
 
 </style>
 
-<main class="main">
+<main class="main ">
             <div class="page_checkout">
                 <form class="form_checkout">
                     <div class="line"></div>
@@ -715,14 +489,3 @@
                 </form>
             </div>
        </main>
-       <style>
-        tbody .cart_item td{
-            display: block;
-            display:flex;
-            align-items: center;
-            
-        }
-        .imgcheckout {
-            margin-right:10px;
-        }
-       </style>
