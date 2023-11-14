@@ -458,7 +458,7 @@
 
 <div class="d-sm-flex flex-sm justify-content-around mb-3">
     <div class="p-3 justify-content-center ">
-    <button class="btn-12"><span>Tiếp Tục Mua</span></button>
+    <button class="btn-12"><span><a href="index.php" style="color:white;text-decoration: none;">Tiếp Tục Mua</a></span></button>
     </div>
     <div class="p-3 ">
         
