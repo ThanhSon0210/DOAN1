@@ -175,7 +175,7 @@
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1" style="color: #black;">Ghi nhớ tài khoản</label>
             </div>
-            <input type="submit" name="dangnhap" value="ĐĂNG NHẬP" class="add" onclick="thongbaodangnhap()">
+            <input type="submit" name="dangnhap" value="ĐĂNG NHẬP" class="add" onclick="thongbaodangnhap(event)">
             <p class="signin">Bạn chưa có tài khoản ? <a href="index.php?page=dangky"> Đăng Kí </a>
             <div class="gg-fb">
                 <div class="row">
@@ -193,12 +193,13 @@
 
     </div>
     <script>
-        function thongbaodangnhap(){
+        function thongbaodangnhap(event){
+          
             Swal.fire({
                     title: "Đăng Nhập Thành Công!",
                     text: "Chào mừng bạn đã trở lại!",
                     icon: "success"
-                 });
-        }
+                 })
+            };
     </script>
 </body>
