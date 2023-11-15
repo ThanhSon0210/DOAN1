@@ -193,12 +193,13 @@
 
     </div>
     <script>
-        function thongbaodangnhap(){
-            Swal.fire({
-                    title: "Đăng Nhập Thành Công!",
-                    text: "Chào mừng bạn đã trở lại!",
-                    icon: "success"
-                 });
-        }
-    </script>
+    //     function thongbaodangnhap(){
+    //         Swal.fire({
+    //                 title: "Đăng Nhập Thành Công!",
+    //                 text: "Chào mừng bạn đã trở lại!",
+    //                 time: 5000,
+    //                 icon: "success"
+    //              });
+    //     }
+    // </script>
 </body>

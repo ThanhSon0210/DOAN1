@@ -94,8 +94,10 @@
                 <div class="col-1 py-2">
                    <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
                     <div class="row text-light">
-                        <div class="col-md-1 fs-3"><i class="fa-solid fa-bars"></i></div>
-                        <div class="col-md-9 fw-bold">Danh mục</div>
+                        <a href="index.php?page=sanpham">
+                            <div class="col-md-1 fs-3"><i class="fa-solid fa-bars"></i></div>
+                            <!-- <div class="col-md-9 fw-bold">Danh mục</div> -->
+                        </a>
                     </div>
                    </button>
                 </div>
@@ -103,10 +105,10 @@
 
                 <!-- Header search  -->
                 <div class="col-md-3 py-2">
-                    <form class="d-flex">
+                    <form action="index.php?page=sanpham" method="post" class="d-flex">
                         <div class="input-group">
-                            <input type="text" name="timkiem" class="form-control" placeholder="Tìm sản phẩm yêu thích ?" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <span class="input-group-text" id="basic-addon2"><a href=""><i class="fa-solid fa-magnifying-glass text-dark fw-bold"></i></a></span>
+                            <input type="text" name="key" placeholder="Tìm sản phẩm yêu thích ?" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="submit" name="timkiem" value="Tìm"    >
                           </div>                      
                     </form>
                 </div>

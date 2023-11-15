@@ -1,7 +1,7 @@
 <?php
-if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
-    extract($_SESSION['s_user']);
-}
+    if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
+        extract($_SESSION['s_user']);
+    }
 ?>
 <style>
     .baobu {
@@ -154,7 +154,7 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
 
 <body>
     <div class="baobu">
-        <form method="post" action="index.php?page=login" id="tieude" name="">
+        <form method="post" action="index.php?page=updateuser" id="tieude" name="">
             <h1 class="title"> Cập Nhập Thông Tin </h1>
 
             <div class="nhaplieu">
@@ -177,13 +177,14 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                 <i class="fa fa-phone custom-cursor-on-hover"></i>
                 <input type="text" class="hienthi" value="<?= $dienthoai ?>" name="dienthoai" placeholder="Nhập SĐT">
             </div>
-
-            <input type="submit" name="dangnhap" value="Hoàn Thành" class="add" onclick="showConfirmation(event)">
+            <input type="hidden" name="id" value="<?= $id ?>">
+            <input type="submit" name="capnhat" value="Hoàn Thành" class="add">
+    
         </form>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
+    <!-- <script>
         function showConfirmation(event) {
             event.preventDefault(); // Ngăn chặn việc submit form mặc định
 
@@ -206,9 +207,9 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
             }).then((result) => {
                 if (result.isConfirmed) {
                     // Thực hiện chuyển hướng đến trang khác
-                    window.location.href = "index.php";
+                    window.location.href = "../view/myacconut_confirm.php";
                 }
             });
         }
-    </script>
+    </script> -->
 </body>

@@ -147,7 +147,7 @@
 </html>
 <body>
     <div class="baobu">
-        <form method="post" action="index.php?page=login" id="tieude" name="">
+        <form method="post" action="index.php?page=adduser" id="tieude" name="">
             <h1 class="title"> ĐĂNG KÍ </h1>
             <p class="message">Đăng kí tài khoản ngay để nhận nhiều ưu đãi .</p>
 
@@ -165,10 +165,10 @@
                 </div>
                 <div class="nhaplieu">
                     <i class="fa fa-key"></i>
-                    <input type="password" class="hienthi" name="repassword" placeholder="Nhập lại mật khẩu">
+                    <input type="password" class="hienthi" name="password" placeholder="Nhập lại mật khẩu">
                 </div>  
 
-            <input type="submit" name="dangnhap" value="ĐĂNG KÍ" class="add" onclick="thongbaodangki()">
+            <input type="submit" name="dangky" value="ĐĂNG KÍ" class="add" onclick="thongbaodangki()">
             <p class="signin">Bạn đã có tài khoản ? <a href="index.php?page=dangnhap"> Đăng Nhập </a>
             <div class="gg-fb">
                 <div class="row">
@@ -185,13 +185,15 @@
         </form>
 
     </div>
-    <script>
+    <!-- <script>
         function thongbaodangki(){
             Swal.fire({
                     title: "Đăng Kí Thành Công!",
                     text: "Vui lòng đăng nhập để sử dụng dịch vụ!",
-                    icon: "success"
+                    icon: "success",
+                    timer: 4000,  
+                    showConfirmButton: false 
                  });
         }
-    </script>
+    </script> -->
 </body>

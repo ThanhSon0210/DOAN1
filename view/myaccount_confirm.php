@@ -1,8 +1,7 @@
 <?php 
-     if(isset($_SESSION['s_useget_user($id)r']) && (count($_SESSION['s_user']) > 0 )){
+     if(isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0 )){
         extract($_SESSION['s_user']);
         $userinfor = get_user($id);
-        $_SESSION['s_user'] = $userinfor;
         extract($userinfor);
      }
 ?>
@@ -62,7 +61,7 @@
     }
 </style>
 <div class="baobu">
-            <form method="post" action="index.php?page=updateuser" id="tieude" name="" >
+            <form method="post" action="index.php?page=myaccount_confirm" id="tieude" name="" >
                 <div id="error-message"></div>
                 <h1 class="hello">CẬP NHẬT THÀNH CÔNG</h1>
                 <div class="nhaplieu">
