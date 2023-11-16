@@ -91,12 +91,14 @@
                 <!-- end logo -->
 
                 <!-- header danh muc -->
-                <div class="col-1 py-2">
-                   <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
-                    <div class="row text-light">
-                        <a href="index.php?page=sanpham">
-                            <div class="col-md-1 fs-3"><i class="fa-solid fa-bars"></i></div>
-                            <!-- <div class="col-md-9 fw-bold">Danh mục</div> -->
+                <div class="col-md-1 py-2" style="display: flex; align-items: center;height: 100x;">
+                   <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px; min-width: 120px;">
+                    <div class="row text-light" style="min-width: 100px;">
+                        <a href="index.php?page=sanpham" style="min-width: 100px;text-decoration: none;">
+                            <div class="col-sm-2 fs-4" style="color: white;font-family: monospace; display: flex; gap: 10px; min-width: 130px;">
+                                <i class="fa-solid fa-bars"></i>
+                                <span style="color: white;font-family: monospace; font-size: 18px;">Danh mục</span>
+                            </div>
                         </a>
                     </div>
                    </button>
@@ -108,7 +110,7 @@
                     <form action="index.php?page=sanpham" method="post" class="d-flex">
                         <div class="input-group">
                             <input type="text" name="key" placeholder="Tìm sản phẩm yêu thích ?" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <input type="submit" name="timkiem" value="Tìm"    >
+                            <input style="background-color: white; border: none;font-weight: bold; " type="submit" name="timkiem" value="🔍">
                           </div>                      
                     </form>
                 </div>
@@ -121,7 +123,7 @@
                             <div class="row">
                                 <div class="col-3 fs-2 text-light "><i class="fa-solid fa-phone"></i></i></div>
                                 <div class="col-9 text-light fw-bold"><a class="nav-link" href="#">Hot Line
-                                    <br><span style="color: blue;">1900 9999</span>
+                                    <br><span style="color: white;">1900 9999</span>
                                 </a></div>
                             </div>
                         </div>
