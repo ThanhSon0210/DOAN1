@@ -152,19 +152,19 @@
             <p class="message">Đăng kí tài khoản ngay để nhận nhiều ưu đãi .</p>
 
             <div class="nhaplieu">
-                    <i class="fa fa-user"></i>
+                    <i class="fa fa-user" style="color: gray; font-size: small;"></i>
                     <input type="text" class="hienthi" name="username" placeholder="Nhập tên">
                 </div>
                 <div class="nhaplieu">
-                    <i class="fa fa-envelope"></i>
+                    <i class="fa fa-envelope" style="color: gray; font-size: small;"></i>
                     <input type="text" class="hienthi" name="email" placeholder="Nhập email">
                 </div>
                 <div class="nhaplieu">
-                    <i class="fa fa-key"></i>
+                    <i class="fa fa-key" style="color: gray; font-size: small;"></i>
                     <input type="password" class="hienthi" name="password" placeholder="Nhập mật khẩu">
                 </div>
                 <div class="nhaplieu">
-                    <i class="fa fa-key"></i>
+                    <i class="fa fa-key" style="color: gray; font-size: small;"></i>
                     <input type="password" class="hienthi" name="password" placeholder="Nhập lại mật khẩu">
                 </div>  
 
