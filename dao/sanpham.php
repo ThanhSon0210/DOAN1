@@ -29,6 +29,11 @@ function get_dssp_nb($limit){
     return pdo_query($sql);
 }
 
+function get_hm($limit){
+    $sql = "SELECT * FROM hangmuc ORDER BY id DESC limit ".$limit;
+    return pdo_query($sql);
+}
+
 function get_dssp_lienquan($iddm, $id, $limit){
     $sql = "SELECT * FROM sanpham WHERE iddm=? AND id<>? ORDER BY id DESC limit ".$limit;
     return pdo_query($sql, $iddm, $id);
