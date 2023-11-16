@@ -178,15 +178,15 @@
             <input type="submit" name="dangnhap" value="ĐĂNG NHẬP" class="add" onclick="thongbaodangnhap(event)">
             <p class="signin">Bạn chưa có tài khoản ? <a href="index.php?page=dangky"> Đăng Kí </a>
             <div class="gg-fb">
-                <div class="row">
-                    <div class="col-3"></div>
+                <div class="row justify-content-center align-content-center">
+                  
                     <div class="col-3">
                           <span class="text-col-gg">Google</span>  
                     </div>
                     <div class="col-3">
                             <span class="text-col-fb">Facebook</span>
                     </div>
-                    <div class="col-3"></div>
+                   
                 </div>
             </div>
         </form>
