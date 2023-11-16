@@ -839,10 +839,10 @@ $html_dssp_nb = showsp($dssp_nb);
           <div class="col-sm-2">
             <div class="row">
               <div class="col-3">
-                <i class="fa-solid fa-circle-exclamation"></i>
+                sdfsdgfdg
               </div>
               <div class="col-9">
-                <span>Máy tính</span>
+                <span></span>
               </div>
             </div>
           </div>
