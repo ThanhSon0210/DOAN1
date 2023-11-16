@@ -12,7 +12,7 @@
         background: gainsboro;
         flex-grow: 1;
         padding: 30px 30px 40px;
-        box-shadow: 0px 0px 17px 2px rgba(89, 239, 253, 0.8);
+        box-shadow: 0px 0px 17px 1px rgba(89, 239, 253, 0.8);
         border-radius: 10px;
     }
 
@@ -164,12 +164,12 @@
             <p class="message">Vui lòng đăng nhập để sử dụng .</p>
 
             <div class="nhaplieu">
-                <i class="fa fa-user"></i>
-                <input type="text" class="hienthi" name="username" placeholder="Nhập tên *">
+                <i class="fa fa-user" style="color: gray; font-size: small;"></i>
+                <input style="font-size: small;" type="text" class="hienthi" name="username" placeholder="Nhập tên *">
             </div>
             <div class="nhaplieu">
-                <i class="fa fa-key"></i>
-                <input type="password" class="hienthi" name="password" placeholder="Nhập mật khẩu *">
+                <i class="fa fa-key" style="color: gray; font-size: small;"></i>
+                <input style="font-size: small;" type="password" class="hienthi" name="password" placeholder="Nhập mật khẩu *">
             </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
