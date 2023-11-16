@@ -91,11 +91,14 @@
                 <!-- end logo -->
 
                 <!-- header danh muc -->
-                <div class="col-1 py-2">
-                   <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
-                    <div class="row text-light">
-                        <a href="index.php?page=sanpham">
-                            <div class="col-md-2 fs-3" style="color: white; text-decoration: none;"><i class="fa-solid fa-bars">Danh mục</i></div>
+                <div class="col-md-1 py-2" style="display: flex; align-items: center;height: 100x;">
+                   <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px; min-width: 120px;">
+                    <div class="row text-light" style="min-width: 100px;">
+                        <a href="index.php?page=sanpham" style="min-width: 100px;text-decoration: none;">
+                            <div class="col-sm-2 fs-4" style="color: white;font-family: monospace; display: flex; gap: 10px; min-width: 130px;">
+                                <i class="fa-solid fa-bars"></i>
+                                <span style="color: white;font-family: monospace; font-size: 18px;">Danh mục</span>
+                            </div>
                         </a>
                     </div>
                    </button>
