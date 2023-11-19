@@ -30,7 +30,7 @@ function get_dssp_nb($limit){
 }
 
 function get_hm($limit){
-    $sql = "SELECT * FROM hangmuc ORDER BY id DESC limit ".$limit;
+    $sql = "SELECT * FROM hangmuc ORDER BY id  limit ".$limit;
     return pdo_query($sql);
 }
 

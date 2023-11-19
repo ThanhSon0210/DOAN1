@@ -293,6 +293,10 @@
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
+  #dm{
+    display: grid;
+    grid-template-columns: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto;
+  }
 </style>
 
 <!DOCTYPE html>
@@ -834,123 +838,24 @@
     <div class="row">
       <div class="col-md-12 my-3 shadow">
         <div id="section5" style="padding: 5px; color: white; background-color: #E30019;">
-          <h1 style="text-align: center;">Hạng Mục</h1>
+          <h1 style="text-align: center;">Hàng Mục</h1>
         </div>
         <div class="row">
-          <?php 
-              
+        <?php 
               foreach ($html_hm as $item) {
                 extract($item);
-                echo '<div class="card mx-1 my-1"  style="width:190px; display: flex; justify-content: center; align-items: center;">
-                        <img class="card-img-top"  src="images/'.$img.'"
-                           style="width: 100px; height: 100px"; 
-                           alt="Card image">
-                        <div class="card-body">
-                          <p class="card-text">'.$name.'</p>
+                echo '<div class="col-md-2 py-3">
+                        <div class="row">
+                            <div class="col-3">
+                              <img src="images/'.$img.'" alt="" width="50px">             
+                            </div>
+                            <div class="col-9 p-2 fw-bold" >
+                              <span>'.$name.'</span>
+                            </div>
                         </div>
                       </div>';
                       }
           ?>
-          <!-- 
-          <div class="col-sm-2">
-            <div class="row">
-              <div class="col-3">
-                sdfsdgfdg
-              </div>
-              <div class="col-9">
-                <span></span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-2">
-            <div class="row">
-              <div class="col-3">
-                <i class="fa-solid fa-circle-exclamation"></i>
-              </div>
-              <div class="col-9">
-                <span>Máy tính</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-2">
-            <div class="row">
-              <div class="col-3">
-                <i class="fa-solid fa-circle-exclamation"></i>
-              </div>
-              <div class="col-9">
-                <span>Máy tính</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-2">
-            <div class="row">
-              <div class="col-3">
-                <i class="fa-solid fa-circle-exclamation"></i>
-              </div>
-              <div class="col-9">
-                <span>Máy tính</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-2">
-            <div class="row">
-              <div class="col-3">
-                <i class="fa-solid fa-circle-exclamation"></i>
-              </div>
-              <div class="col-9">
-                <span>Máy tính</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-2">
-            <div class="row">
-              <div class="col-3">
-                <i class="fa-solid fa-circle-exclamation"></i>
-              </div>
-              <div class="col-9">
-                <span>Máy tính</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-2">
-            <div class="row">
-              <div class="col-3">
-                <i class="fa-solid fa-circle-exclamation"></i>
-              </div>
-              <div class="col-9">
-                <span>Máy tính</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-2">
-            <div class="row">
-              <div class="col-3">
-                <i class="fa-solid fa-circle-exclamation"></i>
-              </div>
-              <div class="col-9">
-                <span>Máy tính</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-2">
-            <div class="row">
-              <div class="col-3">
-                <i class="fa-solid fa-circle-exclamation"></i>
-              </div>
-              <div class="col-9">
-                <span>Máy tính</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-2">
-            <div class="row">
-              <div class="col-3">
-                <i class="fa-solid fa-circle-exclamation"></i>
-              </div>
-              <div class="col-9">
-                <span>Máy tính</span>
-              </div>
-            </div>
-          </div> -->
+          
         </div>
       </div>
