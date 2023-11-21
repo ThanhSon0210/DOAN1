@@ -1,7 +1,7 @@
 <?php 
   if(isset($_SESSION['s_user']) && (count($_SESSION['s_user'])>0)){
     extract($_SESSION['s_user']);
-    $html_account ='<div class="col-3">
+    $html_account ='<div class="col-2 py-1" style="margin-left:25px;">
                       <div class="dropdown">
                         <button class="btn btn-danger danhmuc" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 5px;">
                           <div class="row text-light">
@@ -160,13 +160,14 @@
                     </li>
                 <!-- end nav header text -->
 
+                <?=$html_account?>
                 <!-- đăng kí và đăng nhập  -->
-                    <li class="nav-item py-2">
+                    <!-- <li class="nav-item py-2">
                         <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;margin-right:15px;" href="index.php?page=dangky" style="margin-left:10px;margin-right:10px;"><i class="fa-solid fa-user"></i> Đăng Kí</a>
                     </li>
                     <li class="nav-item py-2">
                         <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;" href="index.php?page=dangnhap"><i class="fa-regular fa-user"></i> Đăng Nhập</a>
-                    </li>
+                    </li> -->
                 <!-- end đăng kí và đăng nhập  -->
                 </ul>
             </div>
