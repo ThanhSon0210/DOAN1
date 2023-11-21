@@ -18,10 +18,6 @@
 
     }
 
-    .foter1 {
-
-    }
-
     .foter2 a {
         color: black;
         text-decoration: none;

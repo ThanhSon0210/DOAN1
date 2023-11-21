@@ -18,191 +18,201 @@
                       </div>
                     </div>';
   }else{
-    $html_account ='<div  class="col-2">
-                        <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
-                        <div class="row text-light">
-                            <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
-                            <div class="col-9 fw-bold py-2"><a style="text-decoration: none; color:white;" href="index.php?page=dangky">Đăng Kí</a></div>
-                        </div>
-                        </button>
-                    </div>
-                    <div  class="col-3">
-                        <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
-                        <div class="row text-light">
-                            <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
-                            <div class="col-9 fw-bold py-2"><a style="text-decoration: none; color:white;" href="index.php?page=dangnhap">Đăng Nhập</a></div>
-                        </div>
-                        </button>
-                    </div>';
+    $html_account ='   
+                     <li class="nav-item py-2">
+                        <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;margin-right:15px;" href="" style="margin-left:10px;margin-right:10px;"><i class="fa-solid fa-user"></i> Đăng Kí</a>
+                     </li>
+            
+                    <li class="nav-item py-2">
+                        <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;" href=""><i class="fa-regular fa-user"></i> Đăng Nhập</a>
+                    </li>';
   }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lập Trình Cùng HTPS - Chuyên Đồ Công Nghệ</title>
+    <title>Lập Trình Cùng HTPS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Thư viện font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--  End Thư viện font awesome -->
+
+    <!-- thư viện bootstraps -->
     <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- end thư viện bootstraps -->
+
+    <!-- tích hợp chat bot vào website -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="HTPS" agent-id="1dafc989-ea18-4002-84af-d09a81e72a00" language-code="vi"></df-messenger>
+    <!-- end tích hợp chat bot vào website -->
+
     <link rel="icon" href="logo-shortcut.png" type="image/x-icon">
 </head>
 <style>
-  .top-header
-  {
-      width: 100%;
-      height: 100%;
-      background-color: #ECE2E1;
-  }
-  .form-control
-  {
-      height: 50px;
-      font-family: Arial, Helvetica, sans-serif;
-  }
-  .col-8
-  {
-      font-size: 18.5px;
-  }
+    .top-header {
+        width: 100%;
+        height: 100%;
+        background-color: #ECE2E1;
+    }
 
+    @media (max-width: 995px) {
+        .input-group .form-control , .search {
+          display: none;
+        }
+    }
+    @media (max-width: 570px) {
+        .input-group .form-control , .search {
+          display: block;
+        }
+    }
+    @media (max-width:1200px) {
+        .text-light{
+            display: none;
+        }
+    }
+    @media (max-width:570px) {
+    .text-light{
+        display: block;
+    }
+}
+    @media (max-width:995px) {
+    .icon{
+        display: none;
+    }
+}
 </style>
+
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
     <!-- top1 baner header -->
     <nav class="top-header">
-        <div class="container">
+        <div class="container mx-auto">
             <a href="#"> <img src="images/banner_header.webp" alt="hình ảnh top 1 banner"></a>
-         </div>
+        </div>
     </nav>
     <!-- end top1 baner header -->
 
+    <!-- top2 baner header -->
+    <nav class="navbar navbar-expand-sm navbar-dark justify-content-between" style="background-color: #E30019;">
+        <div class="container">
 
-    <!-- kết nối header top 2 và top 3 lại tạo thành fixed -->
-    <nav class="header23">
-          <!-- top2 baner header -->
-            <nav class="navbar-expand-sm" style="background-color: #E30019;">
-              <div class="container-fluid">
-            <div class="row py-3">
-            <div class="col-1"></div>
-                <!-- logo -->
-                <div class="col-1">
-                    <a class="logo" href="index.php?page=home"><img src="images/logo-htps-komau.png" class="img-fluid" width="250px" alt=""></a>                
-                </div>
-                <!-- end logo -->
+             <!-- logo -->
+            <a class="navbar-brand" href="index.php"><img src="images/logo-htps-komau.png" class="img" width="150px" alt=""></a>
+             <!--end logo -->
 
-                <!-- header danh muc -->
-                <div class="col-md-1 py-2" style="display: flex; align-items: center;height: 100x;">
-                   <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px; min-width: 120px;">
-                    <div class="row text-light" style="min-width: 100px;">
-                        <a href="index.php?page=sanpham" style="min-width: 100px;text-decoration: none;">
-                            <div class="col-sm-2 fs-4" style="color: white;font-family: monospace; display: flex; gap: 10px; min-width: 130px;">
-                                <i class="fa-solid fa-bars"></i>
-                                <span style="color: white;font-family: monospace; font-size: 18px;">Danh mục</span>
-                            </div>
-                        </a>
-                    </div>
-                   </button>
-                </div>
-                 <!-- end haeder danh muc -->
+             <!-- resposive nhỏ thu về  -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- end responsive nhỏ thu về  -->
 
-                <!-- Header search  -->
-                <div class="col-md-3 py-2">
-                    <form action="index.php?page=sanpham" method="post" class="d-flex">
-                        <div class="input-group">
-                            <input type="text" name="key" placeholder="Tìm sản phẩm yêu thích ?" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <input style="background-color: white; border: none;font-weight: bold; " type="submit" name="timkiem" value="🔍">
-                          </div>                      
-                    </form>
-                </div>
-                <!-- End header search -->
-                
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+
+                 <!-- header danh muc -->
+                    <li class="nav-item py-2" style="margin-right:20px">
+                        <a href="index.php?page=sanpham" class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;" href="javascript:void(0)"> <i class="fa-solid fa-bars"></i> Danh Mục</a>
+                    </li>
+                <!-- end header danh muc -->
+
+
+                 <!-- Header search  -->
+                    <li class="nav-item py-2" style="margin-left:10px;margin-top:2px;">
+                        <form action="index.php?page=sanpham" method="post" class="d-flex" >
+                            <div class="input-group">
+                                <input size="max" type="text" name="key" placeholder="Tìm sản phẩm yêu thích ?" class="form-control p-2" aria-label="Recipient's username" aria-describedby="basic-addon2">           
+                                <input type="submit" class="search input-group-text bg-white border-0 " id="basic-addon2" value="Search"> 
+                        </form>
+                    </li>
+                <!-- end Header search  -->
+
                 <!-- nav header text -->
-                <div class="col-md-6 py-2">
-                    <div class="row">
-                        <div class="col-2">
-                            <div class="row">
-                                <div class="col-3 fs-2 text-light "><i class="fa-solid fa-phone"></i></i></div>
-                                <div class="col-9 text-light fw-bold"><a class="nav-link" href="#">Hot Line
-                                    <br><span style="color: white;">1900 9999</span>
-                                </a></div>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="row">
-                                <div class="col-3 fs-2 text-light"><i class="fa-solid fa-bell"></i></div>
-                                <div class="col-9 text-light fw-bold"><a class="nav-link" href="#">Hệ thống <br> thông báo</a></div>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="row">
-                                <div class="col-3 fs-2 text-light"><i class="fa fa-shopping-cart"></i></div>
-                                <div class="col-9 text-light fw-bold"><a class="nav-link" href="index.php?page=viewcart">Giỏ hàng <br> của bạn </a></div>
-                            </div>
-                        </div>
-                        <!-- show lien he -->
-                        <?=$html_account?>
-                    </div>
-                </div>
-                <!--end nav header text -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">
+                            <li class="icon"><i class="fa-solid fa-phone fa-shake fs-3 p-1"></i></li>
+                            <li>
+                                <div class="text-light fw-bold" style="white-space: nowrap;">Hot Line <br><span style="color: white;">1900 9999</span></div>
+                            </li>
+                         </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">
+                            <li class="icon"><i class="fa-solid fa-bell fs-3 p-1"></i></li>
+                            <li>
+                                <div class="text-light fw-bold" style="white-space: nowrap;">Hệ Thống <br>Thông Báo</div>
+                            </li>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="index.php?page=viewcart" class="nav-link">
+                            <li class="icon"><i class="fa fa-shopping-cart fs-3 p-1"></i></li>
+                            <li>
+                                <div class="text-light fw-bold" style="white-space: nowrap;">Giỏ Hàng <br> Của Bạn</div>
+                            </li>
+                        </a>
+                    </li>
+                <!-- end nav header text -->
+
+                <!-- đăng kí và đăng nhập  -->
+                    <li class="nav-item py-2">
+                        <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;margin-right:15px;" href="index.php?page=dangky" style="margin-left:10px;margin-right:10px;"><i class="fa-solid fa-user"></i> Đăng Kí</a>
+                    </li>
+                    <li class="nav-item py-2">
+                        <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;" href="index.php?page=dangnhap"><i class="fa-regular fa-user"></i> Đăng Nhập</a>
+                    </li>
+                <!-- end đăng kí và đăng nhập  -->
+                </ul>
             </div>
         </div>
     </nav>
-    <!-- end top 2 banner header -->
+    <!-- end top 2 banner  -->
 
-    <!-- top 3 banner header -->
-    <nav class="navbar-expand-sm" style="background-color: #ECECEC;" >
-       <div class="container">
-        <div class="row fw-bold fs-5 py-2 ">
-            
-            <div class="col-md-2">
-
-            <div class="row">
-                    <div class="col-md-1"><i class="fa-solid fa-fire"></i></div>
-                    <div class="col-md-9"><a href="#section1" class="text-decoration-none" style="color: black;">Xu Hướng</a></div>
-                    <div class="col-md-1">|</div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="row">
-                    <div class="col-1"><i class="fa-solid fa-tag"></i></div>
-                    <div class="col-9"> <a href="#section2" class="text-decoration-none" style="color: black;">Nổi Bật</a></div>
-                    <div class="col-1">|</div>
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="row">
-                    <div class="col-2"><i class="fa-solid fa-book"></i></div>
-                    <div class="col-8"> <a href="#section3" class="text-decoration-none" style="color: black;">Tin Tức</a></div>
-                    <div class="col-1">|</div>
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="row">
-                    <div class="col-1"><i class="fa-solid fa-barcode"></i></div>
-                    <div class="col-9"><a href="#section4" class="text-decoration-none" style="color: black;">Thành Viên</a></div>
-                    <div class="col-1">|</div>
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="row">
-                    <div class="col-2"><i class="fa-solid fa-circle-exclamation"></i></div>
-                    <div class="col-8"><a href="#section5" class="text-decoration-none" style="color: black;">Hàng Mục</a></div>
-                    <div class="col-1">|</div>
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="row">
-                    <div class="col-2"><i class="fa-solid fa-handshake"></i></div>
-                    <div class="col-8">Cộng tác</div>
-                </div>
-            </div>
+    <!-- top 3 banner -->
+   <div class="navbar-expand-sm" style="background-color: #ECECEC; width: 100%;">
+        <div class="container">
+                <ul class="nav justify-content-between text-dark">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-bold" href="#section1">
+                            <i class="fa-solid fa-fire"></i> Xu Hướng
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-dark fw-bold" href="#section2">
+                            <i class="fa-solid fa-tag"></i> Nổi Bật
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-dark fw-bold" href="#section3">
+                            <i class="fa-solid fa-book"></i> Tin Tức
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-dark fw-bold" href="#section4">
+                            <i class="fa-solid fa-users"></i> Thành Viên
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-bold" href="#section5">
+                             <i class="fa-solid fa-list "></i> Hàng Mục
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-dark fw-bold" href="#section6">
+                            <i class="fa-solid fa-handshake"></i> Cộng Tác
+                        </a>
+                    </li>
+                </ul>
         </div>
-       </div>
-    </nav>
-     <!-- end top 3 banner header -->
-    </nav>
-    <!-- end kết nối header top 2 và top 3 lại tạo thành fixed -->
+   </div>
+    <!-- end top 3 banner  -->
 
-
- 
 </body>
+
+</html>
