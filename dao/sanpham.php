@@ -73,46 +73,47 @@ function showsp($dssp){
                             <a href="'.$linkk.'"><img src="images/'.$img.'" class="card-img-top img-fluid" style="height: 220px;"  alt="..."></a>
                             <div class="card-body">
                                 <h5 class="card-title">'.$name.'</h5>
-                                <h6 class="card-text" style="color: red;">'.$price.'<del style="color: black;"></st>900.000VND</del></h6>
+                                <h6 class="card-text" style="color: red;">'.$price.'<del style="color: black; float:right;">900.000VND</del></h6>
                                 <p class="card-text">
-                                    🎁Tặng phiếu mua hàng (20$) <br> Xem chi tiết
+                                    🎁Tặng phiếu mua hàng (20$) <br> <a href="" style="text-decoration:none;">Xem chi tiết</a>
                                 </p>
+                    
+                                <div class="2button">
+                                    <button class="btn btn-primary custom-buy-button" type="submit" name="addcart" 
+                                            style="float : left;">
+                                        <span>Mua Ngay</span> <i class="fa fa-plus-circle"></i>
+                                    </button>
+
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo"
+                                        style="float : right;">
+                                        <i class="fa-solid fa-cart-plus"></i> Thêm Hàng
+                                    </button>
+                                </div>
                                 <form action="index.php?page=addcart" method="post">
                                     <input type="hidden" name="name" value="'.$name.'">
                                     <input type="hidden" name="img" value="'.$img.'">
                                     <input type="hidden" name="price" value="'.$price.'">
                                     <input type="hidden" name="soluong" value="1"> 
-                                    <button class="btn btn-primary custom-buy-button" type="submit" name="addcart" 
-                                            style="display: flex; pading : 10px ;align-items: center; justify-content: center; float : left;">
-                                        <span>Mua Ngay</span> <i class="fa fa-plus-circle"></i>
-                                    </button>
-
+                                   
                                     
                                     <div class="offcanvas offcanvas-end" id="demo">
-                                    <div class="offcanvas-header">
-                                        <h1 class="offcanvas-title"> <i class="fa-solid fa-cart-shopping"></i> Giỏ Hàng</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-                                    </div>
-                                    <div class="offcanvas-body">
-                                        <div class="d-flex flex-column">
-                                            <div class="p-2 bg-info">
-                                                <input type="hidden" name="name" value="'.$name.'">
-                                                <input type="hidden" name="img" value="'.$img.'">
-                                                <input type="hidden" name="price" value="'.$price.'">
-                                                <input type="hidden" name="soluong" value="1"> 
-                                            </div>
+                                        <div class="offcanvas-header">
+                                            <h1 class="offcanvas-title"> <i class="fa-solid fa-cart-shopping"></i> Giỏ Hàng</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
                                         </div>
-                                        <br>
-                                        <button class="btn btn-secondary" type="button">Thanh Toán</button>
+                                        <div class="offcanvas-body">
+                                            <div class="d-flex flex-column">
+                                                <div class="p-2 bg-info">
+                                                    <input type="hidden" name="name" value="'.$name.'">
+                                                    <input type="hidden" name="img" value="'.$img.'">
+                                                    <input type="hidden" name="price" value="'.$price.'">
+                                                    <input type="hidden" name="soluong" value="1"> 
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <button class="btn btn-secondary" type="button">Thanh Toán</button>
+                                        </div>
                                     </div>
-                                    </div>
-
-
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo"
-                                    style="display: flex; align-items: center; justify-content: center; float : right;">
-                                    <i class="fa-solid fa-cart-plus"></i> Thêm Hàng
-                                    </button>
-                              
 
                                  </form>
                              </div>

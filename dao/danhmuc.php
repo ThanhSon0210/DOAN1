@@ -52,7 +52,7 @@ function show_dm($dsdm){
       extract($dm);
       $link = 'index.php?page=sanpham&iddm='.$id;
       $html_dm .= '<li class="list-group-item shadow-inset text-center">
-                      <a href="'.$link.'" class="text-decoration-none">'.$name.'</a>
+                      <a href="'.$link.'" class="text-decoration-none ">'.$name.'</a>
                     </li>';
     }
     return $html_dm;

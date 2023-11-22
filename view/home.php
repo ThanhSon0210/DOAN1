@@ -297,6 +297,7 @@
     display: grid;
     grid-template-columns: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto;
   }
+
 </style>
 
 <!DOCTYPE html>
@@ -309,7 +310,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <title>trangg chủ HTPS</title>
 </head>
-
 <body>
   <div class="container">
     <!-- Row Danh mục -->
@@ -374,6 +374,12 @@
       </ul>
     </div>
     <!-- End Row Danh mục -->
+
+    <!-- scroll top  -->
+    <div class="scroll" style="background-color: #212121; width: 3rem; color:white; position: fixed; height: auto; bottom: 20px;left: 20px; text-align: center;border-radius: 30%; padding: 10px; opacity: 0.7;">
+        <a href="#sectionheader" style="color: white;"> <i class="fa-solid fa-arrow-up fs-2"></i></a>
+    </div>
+      <!-- end scroll top  -->
 
     <!-- Sản phâm xu hướng -->
     <div class="row">

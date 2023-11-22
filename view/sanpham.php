@@ -16,12 +16,13 @@
             <h1 style="text-align: center;"><?=$title?></h1>
         </div>
         <div class="row my-3">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <ul class="list-group">
                     <?=$html_dm?>
+                    
                 </ul>
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-10">
                 <div class="row">
                     <!-- Đây là cột chứa 4 sản phẩm -->
                     <?=$html_dssp?>

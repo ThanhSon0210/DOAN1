@@ -86,12 +86,13 @@
         display: none;
     }
 }
+
 </style>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50" >
     <!-- top1 baner header -->
     <nav class="top-header">
-        <div class="container mx-auto">
+        <div class="container mx-auto" id="sectionheader">
             <a href="#"> <img src="images/banner_header.webp" alt="hình ảnh top 1 banner"></a>
         </div>
     </nav>
