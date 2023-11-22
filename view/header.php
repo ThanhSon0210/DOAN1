@@ -20,11 +20,11 @@
   }else{
     $html_account ='   
                      <li class="nav-item py-2">
-                        <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;margin-right:15px;" href="" style="margin-left:10px;margin-right:10px;"><i class="fa-solid fa-user"></i> Đăng Kí</a>
+                        <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;margin-right:15px;" href="index.php?page=dangky" style="margin-left:10px;margin-right:10px;"><i class="fa-solid fa-user"></i> Đăng Kí</a>
                      </li>
             
                     <li class="nav-item py-2">
-                        <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;" href=""><i class="fa-regular fa-user"></i> Đăng Nhập</a>
+                        <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;" href="index.php?page=dangnhap"><i class="fa-regular fa-user"></i> Đăng Nhập</a>
                     </li>';
   }
 ?>

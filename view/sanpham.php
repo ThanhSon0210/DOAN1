@@ -22,11 +22,13 @@
                     
                 </ul>
             </div>
-            <div class="col-sm-10">
-                <div class="row">
-                    <!-- Đây là cột chứa 4 sản phẩm -->
-                    <?=$html_dssp?>
-                </div>
+    
+            <div class="col-sm-10" style="overflow-x: auto; white-space: nowrap;">
+              <div class="my-3" style="display:flex;flex-wrap:wrap">
+              <!-- Đây là cột chứa 4 sản phẩm -->
+              <?=$html_dssp?>
+
+              </div>
             </div>
         </div>
     </div>

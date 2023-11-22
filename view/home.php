@@ -398,14 +398,16 @@
 
     <!-- Sản phẩm nổi bật -->
     <div class="row">
-      <div class="col-md-12 my-3 shadow">
-        <div id="section2" style="padding: 5px; color: white; background-color: #E30019;">
+      <div class="col my-3 shadow">
+        <div id="section2" style="color: white; background-color: #E30019;">
           <h1 style="text-align: center;">SẢN PHẨM NỔI BẬT <i class="fa fa-hand-holding-heart"></i></h1>
         </div>
-        <div class="row my-3 ">
-          <?= $html_dssp_nb ?>
+            <div class="col-sm-12" style="overflow-x: auto; white-space: nowrap;">
+              <div class="my-3" style="display:flex;flex-wrap:wrap">
+              <?= $html_dssp_nb ?>
 
-        </div>
+              </div>
+            </div>
       </div>
     </div>
     <!-- End Sản phẩm nổi bật -->

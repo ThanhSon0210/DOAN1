@@ -63,64 +63,68 @@ function get_sp_by_id($id){
     return pdo_query_one($sql, $id);
 }   
 
-function showsp($dssp){
+function showsp($dssp) {
     $html_dssp = '';
-    foreach ( $dssp as $sp) {
-        extract($sp);
-        $linkk = "index.php?page=chitiet&idsp=".$id;
-        $html_dssp .= '<div class="col-sm-3 product-item">
-                        <div class="card mb-3 mx-1 my-1">
-                            <a href="'.$linkk.'"><img src="images/'.$img.'" class="card-img-top img-fluid" style="height: 220px;"  alt="..."></a>
-                            <div class="card-body">
-                                <h5 class="card-title">'.$name.'</h5>
-                                <h6 class="card-text" style="color: red;">'.$price.'<del style="color: black; float:right;">900.000VND</del></h6>
-                                <p class="card-text">
-                                    🎁Tặng phiếu mua hàng (20$) <br> <a href="" style="text-decoration:none;">Xem chi tiết</a>
-                                </p>
-                    
-                                <div class="2button">
-                                    <button class="btn btn-primary custom-buy-button" type="submit" name="addcart" 
-                                            style="float : left;">
-                                        <span>Mua Ngay</span> <i class="fa fa-plus-circle"></i>
-                                    </button>
 
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo"
-                                        style="float : right;">
-                                        <i class="fa-solid fa-cart-plus"></i> Thêm Hàng
-                                    </button>
+    foreach ($dssp as $sp) {
+        extract($sp);
+        $linkk = "index.php?page=chitiet&idsp=" . $id;
+        $html_dssp .= '
+            <div class="col-sm-3 product-item">
+                <div class="card mb-3 mx-1 my-1">
+                    <a href="' . $linkk . '"><img src="images/' . $img . '" class="card-img-top img-fluid" style="height: 220px;"  alt="..."></a>
+                    <div class="card-body">
+                        <div class="icongt" style="display: flex;">
+                            <span style="margin-right:10px;"><i class="fa-solid fa-eye"></i> 120 </span>
+                            <span style="margin-right:10px;"><i class="fa-solid fa-comment"></i> 20 </span>
+                            <span><i class="fa-solid fa-share"></i> 10 </span>
+                        </div>
+                            <h4 class="card-title">' . $name . '</h4>
+                            <del style="color: black;">900.000VND</del>
+                            <span style="display: flex;"><h5 class="card-text" style="color: red;">'.$price.' VND</h5><b style="margin-left:10px; background-color: red; color:white ; height: 1.5rem; width:3rem;display: flex;justify-content: center; border-radius:10%; font-family: monospace;">Sale</b></span>
+                            <p class="card-text">
+                                🎁Tặng phiếu mua hàng (20$) <br> <a href="" style="text-decoration:none;">Xem chi tiết</a>
+                            </p>
+
+                        <form action="index.php?page=addcart" method="post">
+                            <input type="hidden" name="name" value="' . $name . '">
+                            <input type="hidden" name="img" value="' . $img . '">
+                            <input type="hidden" name="price" value="' . $price . '">
+                            <input type="hidden" name="soluong" value="1"> 
+                            <div class="buton2" style="display: flex;flex-wrap: no-wrap;">
+                                <button class="btn btn-primary custom-buy-button" type="submit" name="addcart" style="float : left;">
+                                    Mua Ngay <i class="fa fa-plus-circle"></i>
+                                </button>
+                                
+                                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo" name="themhang" style="margin-left:10px;display:flex; flex-wrap:no-wrap;">
+                                    <i class="fa-solid fa-cart-plus"></i> Thêm Hàng
+                                </button>
+                            </div>
+                           
+                            <div class="offcanvas offcanvas-end" id="demo">
+                                <div class="offcanvas-header">
+                                    <h1 class="offcanvas-title"> <i class="fa-solid fa-cart-shopping"></i> Giỏ Hàng</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
                                 </div>
-                                <form action="index.php?page=addcart" method="post">
-                                    <input type="hidden" name="name" value="'.$name.'">
-                                    <input type="hidden" name="img" value="'.$img.'">
-                                    <input type="hidden" name="price" value="'.$price.'">
-                                    <input type="hidden" name="soluong" value="1"> 
-                                   
-                                    
-                                    <div class="offcanvas offcanvas-end" id="demo">
-                                        <div class="offcanvas-header">
-                                            <h1 class="offcanvas-title"> <i class="fa-solid fa-cart-shopping"></i> Giỏ Hàng</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-                                        </div>
-                                        <div class="offcanvas-body">
-                                            <div class="d-flex flex-column">
-                                                <div class="p-2 bg-info">
-                                                    <input type="hidden" name="name" value="'.$name.'">
-                                                    <input type="hidden" name="img" value="'.$img.'">
-                                                    <input type="hidden" name="price" value="'.$price.'">
-                                                    <input type="hidden" name="soluong" value="1"> 
-                                                </div>
-                                            </div>
-                                            <br>
-                                            <button class="btn btn-secondary" type="button">Thanh Toán</button>
+                                <div class="offcanvas-body">
+                                    <div class="d-flex flex-column">
+                                        <div class="p-2 bg-info">
+                                            <input type="hidden" name="img-themhang" value="Ảnh của máy tính">Ảnh cuuar máy tính
+                                            <input type="hidden" name="price-themhang" value="2.300.000 VND" >2.300.000 VND
                                         </div>
                                     </div>
-
-                                 </form>
-                             </div>
-                         </div>
-                     </div>';
+                                    <br>
+                                    <a href="index.php?page=viewcart"><button class="btn btn-secondary" type="submit" name="thanhtoan">Thanh Toán</button></a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        ';
     }
-        return $html_dssp;
+
+    return $html_dssp;
 }
 
 // function show_sp($dssp){
