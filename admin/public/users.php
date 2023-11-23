@@ -1,3 +1,28 @@
+<?php
+
+  $quanly_user = ql_user();
+  $nguoidung ="";
+
+ 
+  foreach ($quanly_user as $item) {
+    
+    extract($item);
+    if($role == 1){
+      $tb ="admin";
+    }else{
+      $tb="Người dùng";
+    }
+    $nguoidung .='
+    <tr>
+
+                      <td>'.$id.'</td>
+                      <td>'.$username.'</td>
+                      <td>'.$pass.'</td>
+                      <td>'.$dienthoai.'</td>
+                      <td>'.$tb.'</td>
+                  </tr>';
+  }
+?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -36,24 +61,16 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Tên chủ đề</th>
-                                        <th scope="col">Chế độ</th>
-                                        <th scope="col">Số lượng câu hỏi</th>
-                                        <th scope="col">Thao tác</th>
+                                        <th scope="col">stt</th>
+                                        <th scope="col">tên tài khoản</th>
+                                        <th scope="col">mật khẩu</th>
+                                        <th scope="col">Số điện thoại</th>
+                                        <th scope="col">vai trò</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td>X</td>
-                  </tr>
-                  <tr>
+                    <?=$nguoidung?>
+                  <!-- <tr>
                     <td>Trident</td>
                     <td>Internet
                       Explorer 5.0
@@ -184,7 +201,7 @@
                     <td>Win 95+ / OSX.1+</td>
                     <td>1.3</td>
                     <td>A</td>
-                  </tr>
+                  </tr> -->
                                 </tbody>
                                 <!-- <tfoot>
 

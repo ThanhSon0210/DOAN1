@@ -12,6 +12,7 @@
     require_once('model/global.php');
     require_once('public/head.php');
     require_once('public/nav.php');
+    include_once "model/user.php";
     
     if(isset($_GET['page'])){
         switch($_GET['page']){

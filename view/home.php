@@ -2,7 +2,7 @@
   $html_dssp_sale = showsp($dssp_sale);
   $html_dssp_nb = showsp($dssp_nb);
 ?>
-<style>x` 
+<style>
   .card1 {
     position: relative;
     display: flex;
