@@ -289,7 +289,7 @@
     }
 </style>
 <div class="container">
-  <footer class="mb-9 my-3 shadow">
+  <footer class="mb-9 my-3 ">
       <div class="gach-hr"></div>
       <div class="foter">
           <div class="foter1">
