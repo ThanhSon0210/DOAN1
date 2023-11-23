@@ -1,21 +1,6 @@
 <?php 
   if(isset($_SESSION['s_user']) && (count($_SESSION['s_user'])>0)){
     extract($_SESSION['s_user']);
-<<<<<<< HEAD
-        $html_account = '<div class="col-4">
-                            <div class="dropdown">
-                                <button class="btn btn-danger danhmuc" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 5px;">
-                                    <div class="row">
-                                        <div class="col-12 fs-5 text-light ">
-                                            <a class="nav-link" href="index.php?page=myaccount "> <i class="fa fa-comment"></i> '.$username.'</a>
-                                        </div>
-                                    </div>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
-                                        <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
-                                </ul>
-=======
     $html_account ='<div class="col-2 py-1" style="margin-left:25px;">
                       <div class="dropdown">
                         <button class="btn btn-danger danhmuc" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 5px;">
@@ -23,59 +8,16 @@
                             <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
                             <div class="col-9 fw-bold py-2">
                               <a style="text-decoration: none; color: white;" href="index.php?page=myaccount">'.$username.'</a>
->>>>>>> origin/main
                             </div>
-                        </div>';
-    // $html_account ='<div class="col-3">
-    //                   <div class="dropdown">
-    //                     <button class="btn btn-danger danhmuc" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 5px;">
-    //                       <div class="row text-light">
-    //                         <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
-    //                         <div class="col-9 fw-bold py-2">
-    //                           <a style="text-decoration: none; color: white;" href="index.php?page=myaccount">'.$username.'</a>
-    //                         </div>
-    //                       </div>
-    //                     </button>
-    //                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    //                         <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
-    //                         <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
-    //                     </ul>
-    //                   </div>
-    //                 </div>';
+                          </div>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
+                            <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
+                        </ul>
+                      </div>
+                    </div>';
   }else{
-<<<<<<< HEAD
-    $html_account ='<div class="col-2">
-                        <div class="row">
-                            <div class="col-12 fs-5 text-light ">
-                                <a class="nav-link" href="index.php?page=dangky "><i class="fa-solid fa-user"></i> Đăng kí</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="row">
-                            <div class="col-12 fs-5 text-light ">
-                                <a class="nav-link" href="index.php?page=dangnhap "><i class="fa-solid fa-user"></i> Đăng nhập</a>
-                            </div>
-                        </div>
-                    </div>
-                    ';
-    // $html_account ='<div  class="col-2">
-    //                     <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
-    //                     <div class="row text-light">
-    //                         <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
-    //                         <div class="col-9 fw-bold py-2"><a style="text-decoration: none; color:white;" href="index.php?page=dangky">Đăng Kí</a></div>
-    //                     </div>
-    //                     </button>
-    //                 </div>
-    //                 <div  class="col-3">
-    //                     <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px;">
-    //                     <div class="row text-light">
-    //                         <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
-    //                         <div class="col-9 fw-bold py-2"><a style="text-decoration: none; color:white;" href="index.php?page=dangnhap">Đăng Nhập</a></div>
-    //                     </div>
-    //                     </button>
-    //                 </div>';
-=======
     $html_account ='   
                      <li class="nav-item py-2">
                         <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;margin-right:15px;" href="index.php?page=dangky" style="margin-left:10px;margin-right:10px;"><i class="fa-solid fa-user"></i> Đăng Kí</a>
@@ -84,7 +26,6 @@
                     <li class="nav-item py-2">
                         <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;" href="index.php?page=dangnhap"><i class="fa-regular fa-user"></i> Đăng Nhập</a>
                     </li>';
->>>>>>> origin/main
   }
 ?>
 
@@ -165,63 +106,6 @@
             <a class="navbar-brand" href="index.php"><img src="images/logo-htps-komau.png" class="img" width="150px" alt=""></a>
              <!--end logo -->
 
-<<<<<<< HEAD
-                <!-- header danh muc -->
-                <div class="col-1 py-2" style="display: flex; align-items: center;height: 100x;">
-                   <button class="danhmuc" style="background-color: #BE1529; border: none; border-radius: 5px; min-width: 120px;">
-                    <div class="row text-light" style="min-width: 100px;">
-                        <a href="index.php?page=sanpham" style="min-width: 100px;text-decoration: none;">
-                            <div class="col-sm-2 fs-4" style="color: white;font-family: monospace; display: flex; gap: 10px; min-width: 130px;">
-                                <i class="fa-solid fa-bars"></i>
-                                <span style="color: white;font-family: monospace; font-size: 18px;">Danh mục</span>
-                            </div>
-                        </a>
-                    </div>
-                   </button>
-                </div>
-                 <!-- end haeder danh muc -->
-
-                <!-- Header search  -->
-                <div class="col-2 py-2">
-                    <form action="index.php?page=sanpham" method="post" class="d-flex">
-                        <div class="input-group">
-                            <input type="text" name="key" placeholder="Tìm sản phẩm yêu thích ?" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <input style="background-color: white; border: none;font-weight: bold; " type="submit" name="timkiem" value="🔍">
-                          </div>                      
-                    </form>
-                </div>
-                <!-- End header search -->
-                
-                <!-- nav header text -->
-                <div class="col-md-6 py-2">
-                    <div class="row">
-                        <div class="col-2">
-                            <div class="row">
-                                <div class="col-12 fs-5 text-light ">
-                                     <a class="nav-link" href="index.php?page=tintucHệ "> <i class="fa fa-comment"></i> Tin Tức</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="row">
-                                <div class="col-12 fs-5 text-light ">
-                                     <a class="nav-link" href="index.php?page=about "> <i class="fa fa-comment"></i> Về Chúng Tôi</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="row">
-                                <div class="col-12 fs-5 text-light ">
-                                     <a class="nav-link" href="index.php?page=viewcart "><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- show lien he -->
-                        <?=$html_account?>
-                    </div>
-                </div>
-                <!--end nav header text -->
-=======
              <!-- resposive nhỏ thu về  -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -241,9 +125,9 @@
                  <!-- Header search  -->
                     <li class="nav-item py-2" style="margin-left:10px;margin-top:2px;">
                         <form action="index.php?page=sanpham" method="post" class="d-flex" >
-                            <div class="input-group">
+                        <div class="input-group">
                                 <input size="max" type="text" name="key" placeholder="Tìm sản phẩm yêu thích ?" class="form-control p-2" aria-label="Recipient's username" aria-describedby="basic-addon2">           
-                                <input type="submit" class="search input-group-text bg-white border-0 " id="basic-addon2" value="Search"> 
+                                <input type="submit" name="timkiem" class="search input-group-text bg-white border-0 " id="basic-addon2" value="Search"> 
                         </form>
                     </li>
                 <!-- end Header search  -->
@@ -287,14 +171,13 @@
                     </li> -->
                 <!-- end đăng kí và đăng nhập  -->
                 </ul>
->>>>>>> origin/main
             </div>
         </div>
     </nav>
     <!-- end top 2 banner  -->
 
     <!-- top 3 banner -->
-   <div class="navbar-expand-sm" style="background-color: #ECECEC; width: 100%;">
+    <div class="navbar-expand-sm" style="background-color: #ECECEC; width: 100%;">
         <div class="container">
                 <ul class="nav justify-content-between text-dark">
                     <li class="nav-item">
