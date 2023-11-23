@@ -75,9 +75,9 @@ function showsp($dssp) {
                     <a href="' . $linkk . '"><img src="images/' . $img . '" class="card-img-top img-fluid" style="height: 220px;"  alt="..."></a>
                     <div class="card-body">
                         <div class="icongt" style="display: flex;">
-                            <span style="margin-right:10px;"><i class="fa-solid fa-eye"></i> 120 </span>
-                            <span style="margin-right:10px;"><i class="fa-solid fa-comment"></i> 20 </span>
-                            <span><i class="fa-solid fa-share"></i> 10 </span>
+                            <span style="margin-right:10px;"><i class="fa-solid fa-eye"></i> '.$view.'</span>
+                            <span style="margin-right:10px;"><i class="fa-solid fa-comment"></i> '.$comment.' </span>
+                            <span><i class="fa-solid fa-share"></i> '.$share.' </span>
                         </div>
                             <h4 class="card-title">' . $name . '</h4>
                             <del style="color: black;">900.000VND</del>

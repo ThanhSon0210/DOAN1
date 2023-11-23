@@ -297,6 +297,11 @@
     display: grid;
     grid-template-columns: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto;
   }
+  #dssp
+  {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
 </style>
 
@@ -387,7 +392,7 @@
         <h1 style="text-align: center;">Sản Phẩm Xu Hướng <i class="fa fa-fire"></i></i></h1>
       </div>
       <div class="col-sm-12" style="overflow-x: auto; white-space: nowrap;">
-        <div class="d-flex my-3">
+        <div  class="d-flex my-3">
           <?= $html_dssp_sale ?>
 
         </div>
@@ -403,7 +408,7 @@
           <h1 style="text-align: center;">SẢN PHẨM NỔI BẬT <i class="fa fa-hand-holding-heart"></i></h1>
         </div>
             <div class="col-sm-12" style="overflow-x: auto; white-space: nowrap;">
-              <div class="my-3" style="display:flex;flex-wrap:wrap">
+              <div id ="dssp" class="my-3">
               <?= $html_dssp_nb ?>
 
               </div>
