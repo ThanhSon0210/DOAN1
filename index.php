@@ -116,6 +116,12 @@
                 }
                 
                 break;
+            case 'tintuc':
+                include_once "view/tintuc.php";
+                break;
+            case 'about':
+                include_once "view/about.php";
+                break;
             case 'dangnhap':
                 include_once "view/dangnhap.php";
                 break;

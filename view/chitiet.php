@@ -119,7 +119,7 @@
         <hr>
         <h2>SẢN PHẨM TƯƠNG TỰ</h2>
         <div class="col-md-12">
-            <div class="row">
+            <div class="my-3" style="display:flex;flex-wrap:wrap">
                 <?= $html_sp_lienquan?>
             </div>
         </div>

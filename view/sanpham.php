@@ -16,16 +16,19 @@
             <h1 style="text-align: center;"><?=$title?></h1>
         </div>
         <div class="row my-3">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <ul class="list-group">
                     <?=$html_dm?>
+                    
                 </ul>
             </div>
-            <div class="col-sm-9">
-                <div class="row">
-                    <!-- Đây là cột chứa 4 sản phẩm -->
-                    <?=$html_dssp?>
-                </div>
+    
+            <div class="col-sm-10" style="overflow-x: auto; white-space: nowrap;">
+              <div class="my-3" style="display:flex;flex-wrap:wrap">
+              <!-- Đây là cột chứa 4 sản phẩm -->
+              <?=$html_dssp?>
+
+              </div>
             </div>
         </div>
     </div>

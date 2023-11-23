@@ -297,6 +297,7 @@
     display: grid;
     grid-template-columns: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto;
   }
+
 </style>
 
 <!DOCTYPE html>
@@ -309,7 +310,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <title>trangg chủ HTPS</title>
 </head>
-
 <body>
   <div class="container">
     <!-- Row Danh mục -->
@@ -375,6 +375,12 @@
     </div>
     <!-- End Row Danh mục -->
 
+    <!-- scroll top  -->
+    <div class="scroll" style="background-color: #212121; width: 3rem; color:white; position: fixed; height: auto; bottom: 20px;left: 20px; text-align: center;border-radius: 30%; padding: 10px; opacity: 0.7;">
+        <a href="#sectionheader" style="color: white;"> <i class="fa-solid fa-arrow-up fs-2"></i></a>
+    </div>
+      <!-- end scroll top  -->
+
     <!-- Sản phâm xu hướng -->
     <div class="row">
       <div id="section1" style=" padding: 5px; color: white; background-color: #E30019;">
@@ -392,14 +398,16 @@
 
     <!-- Sản phẩm nổi bật -->
     <div class="row">
-      <div class="col-md-12 my-3 shadow">
-        <div id="section2" style="padding: 5px; color: white; background-color: #E30019;">
+      <div class="col my-3 shadow">
+        <div id="section2" style="color: white; background-color: #E30019;">
           <h1 style="text-align: center;">SẢN PHẨM NỔI BẬT <i class="fa fa-hand-holding-heart"></i></h1>
         </div>
-        <div class="row my-3 ">
-          <?= $html_dssp_nb ?>
+            <div class="col-sm-12" style="overflow-x: auto; white-space: nowrap;">
+              <div class="my-3" style="display:flex;flex-wrap:wrap">
+              <?= $html_dssp_nb ?>
 
-        </div>
+              </div>
+            </div>
       </div>
     </div>
     <!-- End Sản phẩm nổi bật -->

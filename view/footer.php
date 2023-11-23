@@ -18,10 +18,6 @@
 
     }
 
-    .foter1 {
-
-    }
-
     .foter2 a {
         color: black;
         text-decoration: none;
@@ -422,6 +418,12 @@
 
       <!-- end nhận khuyến mãi footer -->
   </footer>
+  </div>
 </div>
 </body>
 </html>
+
+
+
+
+
