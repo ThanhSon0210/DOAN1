@@ -27,6 +27,8 @@
                         <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;" href="index.php?page=dangnhap"><i class="fa-regular fa-user"></i> Đăng Nhập</a>
                     </li>';
   }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +55,6 @@
     <!-- end tích hợp chat bot vào website -->
 
     <link rel="icon" href="logo-shortcut.png" type="image/x-icon">
-</head>
 <style>
     .top-header {
         width: 100%;

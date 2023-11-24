@@ -4,6 +4,7 @@
     if(!isset($_SESSION["giohang"])){
         $_SESSION["giohang"]=[];
     }
+    
     include_once "dao/pdo.php";
     include_once "dao/user.php";
     include_once "dao/danhmuc.php";
@@ -99,6 +100,7 @@
                 }
                 break;
             case 'login':
+                // kiểm tra đăng nhập bằng tài khoản tay
                 if(isset($_POST["dangnhap"]) && ($_POST["dangnhap"])){
                     $username = $_POST["username"];
                     $password = $_POST["password"];
@@ -114,6 +116,23 @@
                     }
                     
                 }
+               // Kiểm tra đăng nhập bằng tài khoản Google
+                    if(isset($_POST["dangnhap"])){
+                        $username = $_SESSION['user_first_name'] . ' ' . $_SESSION['user_last_name'];
+                        $email = $_SESSION['user_email_address'];
+                        // Xử lý: kiểm tra
+                        $kq = checkuser($username, $email);
+                        if(is_array($kq) && count($kq)){
+                            $_SESSION['user_gg'] = $kq;
+                            header('Location: index.php');
+                            exit();
+                        } else{
+                            $tb = "Tài Khoản Không Tồn Tại";
+                            $_SESSION['tb_dangnhap'] = $tb;
+                            header('Location: index.php?page=dangnhap');
+                            exit();
+                        }
+                    }
                 
                 break;
             case 'tintuc':

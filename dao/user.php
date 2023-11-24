@@ -25,6 +25,10 @@ function get_user($id){
     $sql = "SELECT * from user WHERE id=?";
     return pdo_query_one($sql, $id);
 }
+function image(){
+    $sql = "SELECT * from image";
+    return (pdo_query($sql));
+}
 
 
 // function user_update($ma_kh, $mat_khau, $ho_ten, $email, $hinh, $kich_hoat, $vai_tro){
