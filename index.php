@@ -117,22 +117,22 @@
                     
                 }
                // Kiểm tra đăng nhập bằng tài khoản Google
-                    if(isset($_POST["dangnhap"])){
-                        $username = $_SESSION['user_first_name'] . ' ' . $_SESSION['user_last_name'];
-                        $email = $_SESSION['user_email_address'];
-                        // Xử lý: kiểm tra
-                        $kq = checkuser($username, $email);
-                        if(is_array($kq) && count($kq)){
-                            $_SESSION['user_gg'] = $kq;
-                            header('Location: index.php');
-                            exit();
-                        } else{
-                            $tb = "Tài Khoản Không Tồn Tại";
-                            $_SESSION['tb_dangnhap'] = $tb;
-                            header('Location: index.php?page=dangnhap');
-                            exit();
-                        }
-                    }
+                    // if(isset($_POST["dangnhap"])){
+                    //     $username = $_SESSION['user_first_name'] . ' ' . $_SESSION['user_last_name'];
+                    //     $email = $_SESSION['user_email_address'];
+                    //     // Xử lý: kiểm tra
+                    //     $kq = checkuser($username, $email);
+                    //     if(is_array($kq) && count($kq)){
+                    //         $_SESSION['user_gg'] = $kq;
+                    //         header('Location: index.php');
+                    //         exit();
+                    //     } else{
+                    //         $tb = "Tài Khoản Không Tồn Tại";
+                    //         $_SESSION['tb_dangnhap'] = $tb;
+                    //         header('Location: index.php?page=dangnhap');
+                    //         exit();
+                    //     }
+                    // }
                 
                 break;
             case 'tintuc':

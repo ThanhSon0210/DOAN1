@@ -1,5 +1,5 @@
 <?php
-    include_once('config.php');
+    include_once('dao/pdo.php');
 
     $login_button = '';
 
@@ -20,6 +20,8 @@
     
       //Create Object of Google Service OAuth 2 class
       $google_service = new Google_Service_Oauth2($google_client);
+      # cái này nó bị vậy á ko sao hết ultra lag quá kkkk 
+      
     
       //Get user profile data from google
       $data = $google_service->userinfo->get();
@@ -32,7 +34,7 @@
     
       if(!empty($data['family_name']))
       {
-       $_SESSION['user_last_name'] = $data['family_name'];
+       $_SESSION['user_name'] = $data['family_name'];
       }
     
       if(!empty($data['email']))
@@ -245,8 +247,8 @@
                         if($login_button == '')
                         {   
                             // Xử lý khi đăng nhập thành công
-                            if (isset($_SESSION['user_gg']) && isset($_SESSION['user_gg'])>0) {
-                            $username = $_SESSION['user_gg'];
+                            if (isset($_SESSION['user_name']) && isset($_SESSION['user_name'])>0) {
+                            $username = $_SESSION['user_name'];
 
                                 $html_account = '
                                     <div class="col-2 py-1" style="margin-left:25px;">
