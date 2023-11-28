@@ -73,6 +73,7 @@
     .end-child-description h1{
         text-align: center;
     }
+    
 
 </style>
 <div class="container">
@@ -117,103 +118,18 @@
             </div>
         </div>
         <hr>
+        <h3>ĐÁNH GIÁ SẢN PHẨM</h3>
+
+        <div class="cmt" >
+            <iframe src="binhluan.php?idsp=<?=$_GET['idsp']?>" width="100%" height="100%"  frameborder="0"></iframe>
+        </div>
+        
+        
         <h2>SẢN PHẨM TƯƠNG TỰ</h2>
         <div class="col-md-12">
             <div class="my-3" style="display:flex;flex-wrap:wrap">
                 <?= $html_sp_lienquan?>
             </div>
         </div>
-        <h3>ĐÁNH GIÁ SẢN PHẨM</h3>
-        <div class="row"  style="border-bottom: 1px solid rgb(0, 0, 0); padding: 5px;">
-            <div class="col-sm-3">
-                <strong><i class="fa fa-user-circle"></i> Lê Thanh Sơn</strong><br>
-                ⭐⭐⭐⭐⭐<br>
-                <i>11:59 21/09/2023 </i><br>
-            </div>
-            <div class="col-sm-5">
-                <p> Chất lượng sản phẩm: quá tốt <br>
-                    Tính năng nổi bật: gõ kêu rất êm tay. bàn phím mượt <br>
-                    Bàn phím gõ rất êm, shop gói hàng cũng rất kĩ, nên mua nha
-                </p>
-                <a href=""><i class="fa fa-thumbs-up"></i></a> 48
-            </div>
-            <div class="col-sm-1">
-                <img src="images/cmt5.jpg" class="card-img-top" alt="">
-            </div>
-            <div class="col-sm-1">
-                <img src="images/cmt1.jpg" class="card-img-top" alt="">
-            </div>
-            <div class="col-sm-1">
-                <img src="images/cmt3.jpg" class="card-img-top" alt="">
-            </div>
-            <div class="col-sm-1">
-                <img src="images/cmt2.jpg" class="card-img-top" alt="">
-            </div>
-        </div>
-        <div class="row"  style="border-bottom: 1px solid rgb(0, 0, 0); padding: 5px;">
-            <div class="col-sm-3">
-                <strong><i class="fa fa-user-circle"></i> Lê Thanh Sơn</strong><br>
-                ⭐⭐⭐⭐⭐<br>
-                <i>11:59 21/09/2023 </i><br>
-            </div>
-            <div class="col-sm-5">
-                <p> Chất lượng sản phẩm: quá tốt <br>
-                    Tính năng nổi bật: gõ kêu rất êm tay. bàn phím mượt <br>
-                    Bàn phím gõ rất êm, shop gói hàng cũng rất kĩ, nên mua nha</p>
-                    <a href=""><i class="fa fa-thumbs-up"></i></a> 48
-            </div>
-            <div class="col-sm-1">
-                <img src="images/cmt5.jpg" class="card-img-top" alt="">
-            </div>
-            <div class="col-sm-1">
-                <img src="images/cmt1.jpg" class="card-img-top" alt="">
-            </div>
-            <div class="col-sm-1">
-                <img src="images/cmt3.jpg" class="card-img-top" alt="">
-            </div>
-            <div class="col-sm-1">
-                <img src="images/cmt2.jpg" class="card-img-top" alt="">
-            </div>
-        </div>
-        <div class="row"  style="border-bottom: 1px solid rgb(0, 0, 0); padding: 5px;">
-            <div class="col-sm-3">
-                <strong><i class="fa fa-user-circle"></i> Lê Thanh Sơn</strong><br>
-                ⭐⭐⭐⭐⭐<br>
-                <i>11:59 21/09/2023 </i><br>
-            </div>
-            <div class="col-sm-5">
-                <p> Chất lượng sản phẩm: quá tốt <br>
-                    Tính năng nổi bật: gõ kêu rất êm tay. bàn phím mượt <br>
-                    Bàn phím gõ rất êm, shop gói hàng cũng rất kĩ, nên mua nha</p>
-                    <a href=""><i class="fa fa-thumbs-up"></i></a> 48
-            </div>
-            <div class="col-sm-1">
-                <img src="images/cmt5.jpg" class="card-img-top" alt="">
-            </div>
-            <div class="col-sm-1">
-                <img src="images/cmt1.jpg" class="card-img-top" alt="">
-            </div>
-            <div class="col-sm-1">
-                <img src="images/cmt3.jpg" class="card-img-top" alt="">
-            </div>
-            <div class="col-sm-1">
-                <img src="images/cmt2.jpg" class="card-img-top" alt="">
-            </div>
-        </div>
-        <h3  class="my-3">CHO TÔI BIẾT CẢM NHẬN CỦA BẠN</h3>
-        <form method="post" action="">
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Nhập tên của bạn</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Nhận xét của bạn</label>
-                <input type="text" class="form-control" id="exampleInputPassword1">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Chọn ảnh</label>
-                <input type="file" class="form-control" id="exampleInputPassword1" accept="image/*">
-              </div>              
-            <button type="submit" class="btn btn-primary">Gửi <i class="fa fa-paper-plane"></i></button>
-          </form>
+        
     </div>
