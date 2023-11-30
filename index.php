@@ -1,3 +1,4 @@
+
 <?php 
     session_start();
     ob_start();
@@ -102,10 +103,10 @@
             case 'login':
                 // kiểm tra đăng nhập bằng tài khoản tay
                 if(isset($_POST["dangnhap"]) && ($_POST["dangnhap"])){
-                    $username = $_POST["username"];
+                    $name = $_POST["username"];
                     $password = $_POST["password"];
                     // xử lý: kiểm tra
-                    $kq = checkuser( $username, $password);
+                    $kq = checkuser( $name, $password);
                     if(is_array($kq)&&(count($kq))){
                         $_SESSION['s_user'] = $kq;
                         header('location: index.php'); 
@@ -113,27 +114,8 @@
                         $tb = "Tài Khoản Không Tồn Tại";
                         $_SESSION['tb_dangnhap'] = $tb;
                         header('location: index.php?page=dangnhap'); 
-                    }
-                    
+                    }  
                 }
-               // Kiểm tra đăng nhập bằng tài khoản Google
-                    // if(isset($_POST["dangnhap"])){
-                    //     $username = $_SESSION['user_first_name'] . ' ' . $_SESSION['user_last_name'];
-                    //     $email = $_SESSION['user_email_address'];
-                    //     // Xử lý: kiểm tra
-                    //     $kq = checkuser($username, $email);
-                    //     if(is_array($kq) && count($kq)){
-                    //         $_SESSION['user_gg'] = $kq;
-                    //         header('Location: index.php');
-                    //         exit();
-                    //     } else{
-                    //         $tb = "Tài Khoản Không Tồn Tại";
-                    //         $_SESSION['tb_dangnhap'] = $tb;
-                    //         header('Location: index.php?page=dangnhap');
-                    //         exit();
-                    //     }
-                    // }
-                
                 break;
             case 'tintuc':
                 include_once "view/tintuc.php";
@@ -152,6 +134,14 @@
             case 'logout':
                 if(isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0 )){
                     unset($_SESSION['s_user']);
+                    $accesstoken=$_SESSION['access_token'];
+ 
+                    //Reset OAuth access token
+                    $google_client->revokeToken($accesstoken);
+                    
+                    //Destroy entire session data.
+                    session_destroy();
+                    
                 }
                 header('location: index.php');
                 break;

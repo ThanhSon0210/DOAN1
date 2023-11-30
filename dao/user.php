@@ -11,9 +11,9 @@ function update_user($username, $password, $email, $diachi, $dienthoai, $vaitro,
     pdo_execute($sql, $username, $password, $email, $diachi, $dienthoai, $vaitro, $id);
 }
 
-function  checkuser($username, $password){
-    $sql = "SELECT * from user WHERE username=? AND pass = ?";
-    return pdo_query_one($sql,$username, $password);
+function  checkuser($name, $password){
+    $sql = "SELECT * from user WHERE name=? AND pass = ?";
+    return pdo_query_one($sql,$name, $password);
     // if(is_array($kq)&&(count($kq))){
     //     return $kq["id"];
     // }else{

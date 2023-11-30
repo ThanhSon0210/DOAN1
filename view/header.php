@@ -1,34 +1,132 @@
-<?php 
-  if(isset($_SESSION['s_user']) && (count($_SESSION['s_user'])>0)){
-    extract($_SESSION['s_user']);
-    $html_account ='<div class="col-2 py-1" style="margin-left:25px;">
-                      <div class="dropdown">
-                        <button class="btn btn-danger danhmuc" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 5px;">
-                          <div class="row text-light">
-                            <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
-                            <div class="col-9 fw-bold py-2">
-                              <a style="text-decoration: none; color: white;" href="index.php?page=myaccount">'.$username.'</a>
+<?php
+    // kết nối đến cơ sở dữ liệu trên database 
+    use Google\Service\ServiceControl\Auth;
+
+    include('dao/connect-gg.php');
+
+    // kết nối mysql , kiểm tra xem kết nối được không để báo lỗi 
+    $conn = mysqli_connect(LOCALHOST,USERNAME,PASSWORD,DATABASE);
+    if (!$conn) {
+        echo "Lỗi : không thể kết nối đến database." . PHP_EOL;
+        echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+        echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+        exit;
+    }
+
+    // nếu người dùng đăng nhập bằng google hiện ra code thì thực thi lệnh dưới 
+    if(isset($_GET["code"]))
+    {
+        // Nó sẽ cố gắng trao đổi mã lấy mã thông báo xác thực hợp lệ.
+        $token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
+
+        // Điều kiện này sẽ kiểm tra xem có lỗi nào xảy ra trong quá trình nhận mã thông báo xác thực hay không. Nếu không có lỗi nào xảy ra thì nó sẽ thực thi nếu khối mã/    if(!isset($token['error']))
+        {
+        // Đặt mã thông báo truy cập user được sử dụng cho các yêu cầu
+        $google_client->setAccessToken($token['access_token']);
+
+        
+        // Lưu trữ giá trị "access_token" trong biến $_SESSION để sử dụng trong tương lai.
+        $_SESSION['access_token'] = $token['access_token'];
+
+        //Tạo đối tượng của lớp Google Service OAuth 2
+        $google_service = new Google_Service_Oauth2($google_client);
+
+        // Lấy thông tin user từ google
+        $data = $google_service->userinfo->get();
+        
+        // lấy ra từng loại thông tin user thay thế biến userinfo
+        $userinfo = [
+            'email' => $data['email'], 
+            'first_name' => $data['given_name'], 
+            'last_name' => $data['family_name'], 
+            'token' => $data['id'], 
+            'name' => $data['name'], 
+            'picture' => $data['picture'], 
+            'gender' => $data['gender'], 
+            'verifiedEmail' => $data['verifiedEmail'], 
+        ];
+
+        // check user
+    //    var_dump($userinfo);
+        
+        // check user đưa vào database
+        $sql = "SELECT * FROM user WHERE email = '{$userinfo['email']}'";
+        $result = mysqli_query($conn , $sql);
+        if(mysqli_num_rows($result)>0){
+            $userdata = mysqli_fetch_assoc($result);
+            $token = $userdata['token'];
+        }else{
+            $sql = "INSERT INTO user(email, last_name, first_name, gender, name, picture, verifiedEmail, token)
+            VALUES ('{$userinfo['email']}', '{$userinfo['last_name']}', '{$userinfo['first_name']}', '{$userinfo['gender']}', '{$userinfo['name']}', '{$userinfo['picture']}', '{$userinfo['verifiedEmail']}', '{$userinfo['token']}')
+            ";
+            $result = mysqli_query($conn,$sql);
+            if($result){
+            echo "user tạo thành công";
+            $token = $userinfo['token'];
+            }else{
+            echo "Ko thể tạo user";
+            die();
+            }
+        }
+        $_SESSION['user_token'] =  $token;       
+       
+        }   
+      
+    // đăng nhập bằng tài khoản google
+      
+    if($userinfo['name']){
+        $_SESSION['name'] = $userinfo['name'];
+        $html_account ='<div class="col-2 py-1" style="margin-left:25px;">
+                            <div class="dropdown">
+                            <button class="btn btn-danger danhmuc" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 5px;">
+                                <div class="row text-light">
+                                <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
+                                <div class="col-9 fw-bold py-2">
+                                    <a style="text-decoration: none; color: white;" href="index.php?page=myaccount">'.$_SESSION['name'].'</a>
+                                </div>
+                                </div>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
+                                <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
+                            </ul>
                             </div>
-                          </div>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
-                            <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
-                        </ul>
-                      </div>
-                    </div>';
-  }else{
-    $html_account ='   
-                     <li class="nav-item py-2">
-                        <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;margin-right:15px;" href="index.php?page=dangky" style="margin-left:10px;margin-right:10px;"><i class="fa-solid fa-user"></i> Đăng Kí</a>
-                     </li>
-            
-                    <li class="nav-item py-2">
-                        <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;" href="index.php?page=dangnhap"><i class="fa-regular fa-user"></i> Đăng Nhập</a>
-                    </li>';
-  }
-
-
+                        </div>';
+        }
+       }
+        // đăng nhập bằng tài khoản thông thường
+       elseif(isset($_SESSION['s_user']) && (count($_SESSION['s_user'])>0)){
+         extract($_SESSION['s_user']);
+         $html_account ='<div class="col-2 py-1" style="margin-left:25px;">
+                           <div class="dropdown">
+                             <button class="btn btn-danger danhmuc" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 5px;">
+                               <div class="row text-light">
+                                 <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
+                                 <div class="col-9 fw-bold py-2">
+                                   <a style="text-decoration: none; color: white;" href="index.php?page=myaccount">'.$name.'</a>
+                                 </div>
+                               </div>
+                             </button>
+                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                 <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
+                                 <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
+                             </ul>
+                           </div>
+                         </div>';
+        }
+        else{
+         $html_account ='   
+         <li class="nav-item py-2">
+            <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;margin-right:15px;" href="index.php?page=dangky" style="margin-left:10px;margin-right:10px;"><i class="fa-solid fa-user"></i> Đăng Kí</a>
+         </li>
+   
+        <li class="nav-item py-2">
+            <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;" href="index.php?page=dangnhap"><i class="fa-regular fa-user"></i> Đăng Nhập</a>
+        </li>';
+        }
+    
+   
+     
 ?>
 
 <!DOCTYPE html>
@@ -57,8 +155,6 @@
     <link rel="icon" href="logo-shortcut.png" type="image/x-icon">
 <style>
     .top-header {
-        width: 100%;
-        height: 100%;
         background-color: #ECE2E1;
     }
 
