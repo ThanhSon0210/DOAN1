@@ -12,7 +12,7 @@ function update_user($username, $password, $email, $diachi, $dienthoai, $vaitro,
 }
 
 function  checkuser($name, $password){
-    $sql = "SELECT * from user WHERE name=? AND pass = ?";
+    $sql = "SELECT * from user WHERE username=? AND pass = ?";
     return pdo_query_one($sql,$name, $password);
     // if(is_array($kq)&&(count($kq))){
     //     return $kq["id"];

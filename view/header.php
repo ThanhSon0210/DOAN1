@@ -103,7 +103,7 @@
                                <div class="row text-light">
                                  <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
                                  <div class="col-9 fw-bold py-2">
-                                   <a style="text-decoration: none; color: white;" href="index.php?page=myaccount">'.$name.'</a>
+                                   <a style="text-decoration: none; color: white;" href="index.php?page=myaccount">'.$username.'</a>
                                  </div>
                                </div>
                              </button>
