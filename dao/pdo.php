@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Mở kết nối đến CSDL sử dụng PDO
@@ -64,6 +65,11 @@ function pdo_query($sql){
         $stmt->execute($sql_args);
         $rows = $stmt->fetchAll();
         return $rows;
+            $conn = pdo_get_connection();
+            $stmt = $conn->prepare($sql);
+            $stmt->execute($sql_args);
+            $rows = $stmt->fetchAll();
+            return $rows;
     }
     catch(PDOException $e){
         throw $e;
@@ -118,3 +124,5 @@ function pdo_query_value($sql){
         unset($conn);
     }
 }
+
+       

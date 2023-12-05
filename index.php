@@ -1,10 +1,13 @@
+
 <?php 
     session_start();
     ob_start();
     if(!isset($_SESSION["giohang"])){
         $_SESSION["giohang"]=[];
     }
+ 
     include_once "dao/donhang.php";
+
     include_once "dao/pdo.php";
     include_once "dao/user.php";
     include_once "dao/cart.php";
@@ -100,11 +103,12 @@
                 }
                 break;
             case 'login':
+                // kiểm tra đăng nhập bằng tài khoản tay
                 if(isset($_POST["dangnhap"]) && ($_POST["dangnhap"])){
-                    $username = $_POST["username"];
+                    $name = $_POST["username"];
                     $password = $_POST["password"];
                     // xử lý: kiểm tra
-                    $kq = checkuser( $username, $password);
+                    $kq = checkuser( $name, $password);
                     if(is_array($kq)&&(count($kq))){
                         $_SESSION['s_user'] = $kq;
                         header('location: index.php'); 
@@ -112,8 +116,7 @@
                         $tb = "Tài Khoản Không Tồn Tại";
                         $_SESSION['tb_dangnhap'] = $tb;
                         header('location: index.php?page=dangnhap'); 
-                    }
-                    
+                    }  
                 }
                 break;
             case 'tintuc':
@@ -133,6 +136,14 @@
             case 'logout':
                 if(isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0 )){
                     unset($_SESSION['s_user']);
+                    $accesstoken=$_SESSION['access_token'];
+ 
+                    //Reset OAuth access token
+                    $google_client->revokeToken($accesstoken);
+                    
+                    //Destroy entire session data.
+                    session_destroy();
+                    
                 }
                 header('location: index.php');
                 break;

@@ -239,7 +239,28 @@
     {
         margin-bottom: 50px;
     }
-
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    button[name="dongydathang"] {
+        /* Thêm các thuộc tính kiểu nút mà bạn muốn */
+        /* Ví dụ: */
+        font-family: 'Roboto', sans-serif;
+        white-space: nowrap;
+        background-color: #4CAF50;
+        width: 100%;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        /* ... */
+    }
+    button[name="dongydathang"]:hover{
+        background-color: red;
+    }
 </style>
 
 
@@ -331,10 +352,7 @@
                                             </li>
                                         </ul>
                                         <div class="place-order">
-                                           
-                                        <button type="submit"  name="dongydathang" style="position: absolute; z-index: 999;">fsdffsdf</button>
-                                                <!-- <input type="submit" name="dongydathang" value="ĐỒNG Ý ĐẶT HÀNG" data-value="Đặt hàng"> -->
-                                            
+                                            <button type="submit"  name="dongydathang" >Đồng Ý Đặt Hàng</button>
                                         </div>
                                     </div>
                                 </div>

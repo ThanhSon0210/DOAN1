@@ -1,3 +1,7 @@
+<?php
+    include_once('dao/pdo.php');
+    $login_button = '<a style="text-decoration:none" href="'.$google_client->createAuthUrl().'"> <span class="text-col-gg">Google</span> </a>';
+?>
 <style>
     .baobu {
         min-height: auto;
@@ -173,25 +177,20 @@
             </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1" style="color: #black;">Ghi nhớ tài khoản</label>
+                <label class="form-check-label" for="exampleCheck1" style="color: black;">Ghi nhớ tài khoản</label>
             </div>
             <input type="submit" name="dangnhap" value="ĐĂNG NHẬP" class="add" onclick="thongbaodangnhap(event)">
-            <p class="signin">Bạn chưa có tài khoản ? <a href="index.php?page=dangky"> Đăng Kí </a>
+            <p class="signin">Bạn chưa có tài khoản ? <a href="index.php?page=dangky"> Đăng Kí</a>
             <div class="gg-fb">
                 <div class="row justify-content-center align-content-center">
-                  
-                    <div class="col-3">
-                          <span class="text-col-gg">Google</span>  
-                    </div>
-                    <div class="col-3">
-                            <span class="text-col-fb">Facebook</span>
-                    </div>
-                   
+
+                    <!-- xử lí sau khi đăng nhập bằng google  -->
+                    <div class="col-3" align="center"><?=$login_button?></div>
+                    <div class="col-3"><span class="text-col-fb">Facebook</span></div>
+
+                    <!-- end xử lí sau khi đăng nhập bằng google  -->              
                 </div>
             </div>
         </form>
 
     </div>
-    <script>
-
-</body>
