@@ -6,6 +6,7 @@
         $user_admin=$_SESSION['username'];
         $email_admin=$_SESSION['email'];
     }
+
     require_once('model/connect.php');
     require_once('model/product.php');
     require_once('model/catalog.php');
@@ -118,6 +119,9 @@
                 break;
             case 'users':
                 require_once('public/users.php');
+                break;
+            case 'thongke':
+                require_once('public/thongke.php');
                 break;
             default:
                 require_once('public/404.php');

@@ -6,6 +6,11 @@ function user_insert($username, $password, $email){
     pdo_execute ($sql, $username, $password, $email);
 }
 
+function user_insert_id($username, $password, $ten, $diachi,$email, $dienthoai ){
+    $sql = "INSERT INTO user (username, pass, ten, diachi, email, dienthoai, ) VALUES (?, ?, ?, ?, ?, ?)";
+    return pdo_execute_id ($sql, $username, $password, $ten, $diachi, $email, $dienthoai);
+}
+
 function update_user($username, $password, $email, $diachi, $dienthoai, $vaitro, $id){
     $sql = "UPDATE user SET username=?,pass=?,email=?,diachi=?,dienthoai=?,role=? WHERE id=?";
     pdo_execute($sql, $username, $password, $email, $diachi, $dienthoai, $vaitro, $id);

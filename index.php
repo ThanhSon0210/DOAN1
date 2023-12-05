@@ -4,8 +4,11 @@
     if(!isset($_SESSION["giohang"])){
         $_SESSION["giohang"]=[];
     }
+    include_once "dao/donhang.php";
     include_once "dao/pdo.php";
     include_once "dao/user.php";
+    include_once "dao/cart.php";
+    // include_once "dao/billconfirm.php";
     include_once "dao/danhmuc.php";
     include_once "dao/sanpham.php";
 
@@ -59,13 +62,13 @@
                     $soluong = $_POST["soluong"];
             
                     $sp = array(
+                        "idpro" => $idpro,
                         "name" => $name,
                         "img" => $img,
                         "price" => $price,
                         "soluong" => $soluong
                     );
-            
-                    $giohang = &$_SESSION["giohang"]; // Sử dụng biến tham chiếu để thao tác trực tiếp với mảng $_SESSION["giohang"]
+                    $giohang = &$_SESSION['giohang']; // Sử dụng biến tham chiếu để thao tác trực tiếp với mảng $_SESSION["giohang"]
             
                     // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
                     $productExists = false;
@@ -76,11 +79,9 @@
                             break;
                         }
                     }
-            
                     if (!$productExists) {
                         array_push($giohang, $sp); // Nếu sản phẩm chưa tồn tại, thêm vào mảng
                     }
-            
                     header('location: index.php?page=viewcart');
                 }
             break;                
@@ -95,7 +96,7 @@
                     unset($_SESSION['giohang']);
                     header('location: index.php?page=viewcart');
                 }else{
-                    include_once "view/viewcart.php";
+                    include_once "view/cart/viewcart.php";
                 }
                 break;
             case 'login':
@@ -114,7 +115,6 @@
                     }
                     
                 }
-                
                 break;
             case 'tintuc':
                 include_once "view/tintuc.php";
@@ -169,15 +169,40 @@
                 include_once "view/dangky.php";
                 break;
             case 'donhang':
-                if(isset($_POST['donhang'])){
-                    $name = $_POST['name'];
-                    $diachi = $_POST['diachi'];
-                    $email = $_POST['email'];
-                    $dienthoai = $_POST['dienthoai'];
-                    $pttt = $_POST['pttt'];
-                    // tạo đơn hàng
-                }
                 include_once "view/donhang.php";
+                break;
+            case 'donhangconfirm':
+                if(isset($_POST['dongydathang']) ){
+                    $hoten = $_POST['hoten'];
+                    $diachi = $_POST['diachi'];
+                    $dienthoai = $_POST['dienthoai'];
+                    $email = $_POST['email'];
+                    $pttt = $_POST['pttt'];
+                    
+                    $ngaydathang = date('h:i:sa d/m/Y');
+                    $tongtiendonhang = tongtiendonhang();
+                    $iddonhang = insert_bill($_SESSION['s_user']['id'], $hoten, $diachi, $dienthoai, $email, $pttt, $ngaydathang, $tongtiendonhang);
+                    // $iddonhang = 1;
+                    // insert into cart với session giohang và iddonhang
+                    foreach ($_SESSION['giohang'] as $item) {
+                        
+                        $total = 0;
+                        $total = $item['price'] * $item['soluong']; 
+                        insert_cart($_SESSION['s_user']['id'], $_SESSION['s_user']['id'],  $item['price'] ,$item['img'], $item['name'],$item['soluong'],$total,$iddonhang);
+                    }
+                    
+                    $_SESSION['giohang'] = [];
+                    $bill = loadone_bill($iddonhang);
+                    include_once "view/donhangconfirm.php";
+                }else{
+                    $bill = "";
+                    include_once "view/donhangconfirm.php";
+                }
+                
+                break;
+            case 'lsdh':
+                $list_bill = loadall_bill($_SESSION['s_user']['id']);
+                include_once "view/lsdh.php";
                 break;
             default:
                 include_once "view/home.php";

@@ -395,63 +395,33 @@
 
     
     <table id="my-cart">
-    <thead>
-        <tr>
-            <th>Ảnh Sản Phẩm</th>
-            <th>Tên Sản Phẩm</th>
-            <th>Giá</th>
-            <th>Số Lượng</th>
-            <th>Thành Tiền</th>
-            <th>Chức Năng</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!-- chổ này show danh sách sản phẩm -->
-        <?php
-        if (isset($_SESSION['giohang']) && is_array($_SESSION['giohang'])) {
-            $i = 0;
-            $tong = 0;
-            $tt = 0;
-            foreach ($_SESSION['giohang'] as $item) {
-                extract($item);
-                $tt = (int)$price * (int)$soluong;
-                $tong += $tt;
-                $link = "index.php?page=delsp&ind=" . $i;
-                echo  '<tr>
-                                    <td><img src="images/' . $img . '" alt="" width="100px";></td>
-                                    <td>' . $name . '</td>
-                                    <td>' . $price . '</td>
-                                    <td>' . $soluong . '</td>
-                                    <td>' . $tt . '</td>
-                                    <td>
-                                        <a href="' . $link . '">
-                                            <i class="fa fa-trash custom-cursor-on-hover"></i>
-                                        </a>
-                                    </td>
-                                </tr>';
-                $i++;
-            }
-        }
-        ?>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="4" style="text-align: right">
-                Tổng Tiền :
-            </th>
-            <!-- <th id="tt" style="text-align: left">
-                   
-                </th> -->
-            <th style="text-align: center">
-                <!-- Show tổng tiền -->
-                <?= $tong ?>
-            </th>
-            <th>
-                <button onclick="xoaAll()" style="text-align: left">Xóa Hết</button>
-            </th>
-        </tr>
-    </tfoot>
-</table>
+      <thead>
+      
+      </thead>
+      <tbody>
+          <!-- chổ này show danh sách sản phẩm -->
+          <?php
+            showcart(1);
+          ?>
+      </tbody>
+      <tfoot>
+          <tr>
+              <th colspan="4" style="text-align: right">
+                  Tổng Tiền :
+              </th>
+              <!-- <th id="tt" style="text-align: left">
+                    
+                  </th> -->
+              <th style="text-align: center">
+                  <!-- Show tổng tiền -->
+                  <?= $tong ?>
+              </th>
+              <th>
+                  <button onclick="xoaAll()" style="text-align: left">Xóa Hết</button>
+              </th>
+          </tr>
+      </tfoot>
+    </table>
 </div>
 
 
@@ -483,7 +453,7 @@
     <button class="button">
     <span class="button_lg">
         <span class="button_sl"></span>
-        <span class="button_text"><a href="index.php?page=donhang" onclick="dh()" style="color:#ECECEC;text-decoration: none;">Thanh Toán</a></span>
+        <span class="button_text"><a href="index.php?page=donhang" onclick="dh()" style="color:#ECECEC;text-decoration: none;">Tiếp Tục Đặt Hàng</a></span>
     </span>
 </button>
     </div>

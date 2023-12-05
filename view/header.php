@@ -13,6 +13,7 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
+                            <li> <a class="dropdown-item" href="index.php?page=lsdh">Lịch sử đơn hàng</a></li>
                             <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
                         </ul>
                       </div>
