@@ -13,7 +13,7 @@
     }
     function showbl(){
         $conn = pdo_get_connection();
-        $sql = "SELECT * FROM binhluan ORDER BY name asc ";
+        $sql = "SELECT * FROM binhluan ORDER BY id desc ";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);

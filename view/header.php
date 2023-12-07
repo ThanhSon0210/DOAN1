@@ -78,29 +78,21 @@
         $_SESSION['name'] = $userinfo['name'];
         $html_account ='<div class="col-2 py-1" style="margin-left:25px;">
                             <div class="dropdown">
-                            <button class="btn btn-danger danhmuc" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 5px;">
-                                <div class="row text-light">
-                                <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
-                                <div class="col-9 fw-bold py-2">
-                                    <a style="text-decoration: none; color: white;" href="index.php?page=myaccount">'.$_SESSION['name'].'</a>
-                                </div>
-                                </div>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
-                                <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
-                            </ul>
+                                <button class="btn btn-danger danhmuc" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 5px;">
+                                    <div class="row text-light">
+                                        <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
+                                        <div class="col-9 fw-bold py-2">
+                                            <a style="text-decoration: none; color: white;" href="index.php?page=myaccount">'.$_SESSION['name'].'</a>
+                                        </div>
+                                    </div>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
+                                    <li> <a class="dropdown-item" href="index.php?page=lsdh">Lịch sử đơn hàng</a></li>
+                                    <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
+                                </ul>
                             </div>
-
-                          </div>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
-                            <li> <a class="dropdown-item" href="index.php?page=lsdh">Lịch sử đơn hàng</a></li>
-                            <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
-                        </ul>
-                      </div>
-                    </div>';
+                          </div>';
 //   }else{
 //     $html_account ='   
 //                      <li class="nav-item py-2">
@@ -129,6 +121,7 @@
                              </button>
                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                  <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
+                                 <li> <a class="dropdown-item" href="index.php?page=lsdh">Lịch sử đơn hàng</a></li>
                                  <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
                              </ul>
                            </div>
