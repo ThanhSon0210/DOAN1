@@ -3,26 +3,39 @@
     include "dao/pdo.php";
     include "dao/binh-luan.php";
     if(isset($_SESSION['s_user']) && ($_SESSION['s_user'] > 0 )){
-        // foreach ($_SESSION['s_user'] as $key) {
-            //     print_r($_SESSION['s_user']['id']);
-            // }
-                $id_user = $_SESSION['s_user']['id'];
-                $name_user = $_SESSION['s_user']['username'];
-        // if(isset($_SESSION['s_user']) && ($_SESSION['s_user']!="" )){
-        //     $user= $_SESSION['s_user'];
-            
-        // }else{
-        //     $user="";
-        // }
 
+        
+        $iduser = $_SESSION['s_user']['id'];
+        $name_user = $_SESSION['s_user']['username'];
+                 
+        // kiểm tra id khi nhấn xóa
+        if(isset($_GET['id']) && $_GET['id']){
+          $dsbl ='';
+          $id = $_GET['id'];
+          xoabl($id);
+         
+        }
+        // thông tin sau khi gửi bình luận
         if(isset($_POST['guibinhluan']) && ($_POST['guibinhluan']!="" )){
             $noidung=$_POST['noidung'];
             $idsp=$_GET['idsp'];
-            thembl($name_user,$id_user,$idsp,$noidung);
+            thembl($name_user,$iduser,$idsp,$noidung);
             // print_r($name, $noidung, $idsp, $iduser);
         }
 
-        $dsbl = showbl();
+        //update nội dung bình luận
+        // if(isset($_POST['fixbinhluan']) && ($_POST['fixbinhluan']!="" )){
+        //   $id = $_POST['fixbinhluan'];
+        //   $noidung=$_POST['noidung'];
+        //   fixbl($id,$noidung);
+        // }
+
+        // hiển thị bình luận nào sản phẩm đó
+        if (isset($_GET['idsp']) && $_GET['idsp']) {
+          $idsp = $_GET['idsp'];
+          // var_dump($idsp);
+          $dsbl = user_sanpham($iduser,$idsp);
+      }
 ?>
 <style>
       .card {
@@ -51,8 +64,6 @@
 .stars {
   display: flex;
   justify-content: center;
-  grid-gap: 0.125rem;
-  gap: 0.125rem;
   color: rgba(34, 197, 94, 1);
 }
 
@@ -77,6 +88,7 @@
   margin-top: 1rem;
   color: rgba(107, 114, 128, 1);
 }
+
 </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,6 +108,7 @@
     </form>
     <hr>
     <?php
+       if (is_array($dsbl)) {
         foreach ($dsbl as $bl) {
             extract($bl);
         //     echo '<div class="row"  style="border-bottom: 1px solid rgb(0, 0, 0); padding: 5px;">
@@ -111,44 +124,55 @@
         // </div>'; 
         echo '
         <div class="card">
-                <div class="header">
-                <div class="image"><img src="uploads/vovinam.png" alt=""></div>
-                <div>
-                        <!-- ngôi sao  -->
-                    <div class="stars">
-                    <svg fill="#FFD700" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg fill="#FFD700" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg fill="#FFD700" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg fill="#FFD700" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg fill="#FFD700" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    </div>
-                    <!-- end ngôi sao  -->
-                    <p class="name">'.$name_user.'</p>
-                </div>
-                </div>
-
-                <p class="message">'.$noidung.'</p>
+      <div class="header">
+        <div class="image"><img src="uploads/vovinam.png" alt=""></div>
+          <div>
+                  <!-- ngôi sao  -->
+              <div class="stars">
+                <svg fill="#FFD700" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <svg fill="#FFD700" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <svg fill="#FFD700" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <svg fill="#FFD700" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <svg fill="#FFD700" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+              </div>
+              <!-- end ngôi sao  -->
+              <p class="name">'.$name_user.'</p>
         </div>
+            <div class="dropdown" style="position: absolute;right:20px;top:10px;">
+              <button type="button" class="btn" data-bs-toggle="dropdown">
+               <b>. . . </b> 
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="">Sửa</a></li>
+                <li><a class="dropdown-item" href="binhluan.php?xoa&id='.$id.'">Xóa</a></li>
+              </ul>
+            </div>
+      </div>
+
+
+        <p class="message">'.$noidung.'</p>
+  </div>
         ';
         }
+    }
     ?>
 </body>
 </html>
 <?php 
-
+       
 }else {
     echo "<a href='index.php?page=dangnhap' target='_parent' > vui lòng đăng nhập</a>";
 }
-
+    
 ?>
 

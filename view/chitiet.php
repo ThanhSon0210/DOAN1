@@ -120,7 +120,7 @@
         <hr>
         <h3>ĐÁNH GIÁ SẢN PHẨM</h3>
 
-        <div class="cmt" style="height: 70vh;width:auto;">
+        <div class="cmt" style="height: 60vh;width:auto;">
             <iframe src="binhluan.php?idsp=<?=$_GET['idsp']?>" width="100%" height="100%"  frameborder="20"></iframe>
         </div>
         
