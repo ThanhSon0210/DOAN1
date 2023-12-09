@@ -10,6 +10,8 @@
     include_once "dao/donhang.php";
 
     include_once "dao/pdo.php";
+    // include_once "dao/binh-luan.php";
+    
     include_once "dao/user.php";
     include_once "dao/cart.php";
     // include_once "dao/billconfirm.php";
@@ -229,7 +231,12 @@
                 $list_bill = loadall_bill($_SESSION['s_user']['id']);
                 include_once "view/lsdh.php";
                 break;
+            case 'binhluan':
+                
+                include_once "view/binhluan.php";
+                break;
             default:
+            
                 include_once "view/home.php";
                 break;
         }
