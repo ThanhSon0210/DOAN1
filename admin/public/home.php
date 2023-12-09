@@ -1,4 +1,6 @@
-
+<?php 
+  
+?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -29,8 +31,7 @@
               <div class="small-box bg-info">
                 <div class="inner">
                   <h3>10</h3>
-
-                  <p>New Orders</p>
+                  <p>Sản Phẩm</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
@@ -45,7 +46,7 @@
                 <div class="inner">
                   <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-                  <p>Bounce Rate</p>
+                  <p>Danh Mục</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-stats-bars"></i>
@@ -60,7 +61,7 @@
                 <div class="inner">
                   <h3>44</h3>
 
-                  <p>User Registrations</p>
+                  <p>Người dùng</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-person-add"></i>
@@ -75,7 +76,7 @@
                 <div class="inner">
                   <h3>65</h3>
 
-                  <p>Unique Visitors</p>
+                  <p>Đơn hàng</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-pie-graph"></i>
@@ -85,7 +86,7 @@
             </div>
             <!-- ./col -->
           </div>
-          <!-- /.row -->
+
           
         </div><!-- /.container-fluid -->
       </section>
@@ -93,14 +94,16 @@
 
       <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
       <script>
-        const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-        const yValues = [55, 49, 44, 24, 15];
+        const xValues = ["Bàn Phím Không Dây", "Lót Chuột", "LapTop", "Bàn Phím Có Dây", "Chuột", "Phụ Kiện Bàn Phím", "Hàng Cũ", ];
+        const yValues = [55, 49, 44, 24, 15, 20, 30];
         const barColors = [
           "#b91d47",
           "#00aba9",
           "#2b5797",
           "#e8c3b9",
-          "#1e7145"
+          "#1e7145",
+          "#b21d17",
+          "#b41d22"
         ];
 
         new Chart("myChart", {
@@ -115,7 +118,7 @@
           options: {
             title: {
               display: true,
-              text: "World Wide Wine Production 2018"
+              text: "HTPS Cung Cấp Các Sản Phẩm Công Nghệ Chất Lượng"
             }
           }
         });

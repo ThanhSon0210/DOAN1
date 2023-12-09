@@ -121,7 +121,11 @@
             case 'users':
                 require_once('public/users.php');
                 break;
+            case 'bieudo':
+                require_once('public/users.php');
+                break;
             case 'thongke':
+                $list_thongke = loadall_thongke();
                 require_once('public/thongke.php');
                 break;
             default:

@@ -88,6 +88,7 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
+                                <li> <a class="dropdown-item" href="index.php?page=lsdh">Lịch sử đơn hàng</a></li>
                                 <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
                             </ul>
                             </div>
@@ -96,21 +97,10 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
-                            <li> <a class="dropdown-item" href="index.php?page=lsdh">Lịch sử đơn hàng</a></li>
                             <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
                         </ul>
                       </div>
                     </div>';
-//   }else{
-//     $html_account ='   
-//                      <li class="nav-item py-2">
-//                         <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;margin-right:15px;" href="index.php?page=dangky" style="margin-left:10px;margin-right:10px;"><i class="fa-solid fa-user"></i> Đăng Kí</a>
-//                      </li>
-            
-//                     <li class="nav-item py-2">
-//                         <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;" href="index.php?page=dangnhap"><i class="fa-regular fa-user"></i> Đăng Nhập</a>
-//                     </li>';
-//   }
 
         }
        }
@@ -129,6 +119,7 @@
                              </button>
                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                  <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
+                                 <li> <a class="dropdown-item" href="index.php?page=lsdh">Lịch sử đơn hàng</a></li>
                                  <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
                              </ul>
                            </div>
@@ -174,6 +165,19 @@
 
     <link rel="icon" href="logo-shortcut.png" type="image/x-icon">
 <style>
+    .navbar-fixed {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+    #top-header {
+        transition: display 0.5s ease; /* Hiệu ứng hiển thị/ẩn trong 0.5 giây */
+    }
+    /* Thêm padding cho phần content bên dưới phần cố định */
+    body {
+        padding-top: 115px; /* Điều chỉnh giá trị này dựa trên chiều cao của phần "top2 baner header" */
+    }
     .top-header {
         background-color: #ECE2E1;
     }
@@ -208,7 +212,7 @@
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50" >
     <!-- top1 baner header -->
-    <nav class="top-header">
+    <nav class="top-header" id="top-header">
         <div class="container mx-auto" id="sectionheader">
             <a href="#"> <img src="images/banner_header.webp" alt="hình ảnh top 1 banner"></a>
         </div>
@@ -216,7 +220,7 @@
     <!-- end top1 baner header -->
 
     <!-- top2 baner header -->
-    <nav class="navbar navbar-expand-sm navbar-dark justify-content-between" style="background-color: #E30019;">
+    <nav class=" navbar navbar-expand-sm navbar-dark justify-content-between fixed-top" style="background-color: #E30019;">
         <div class="container">
 
              <!-- logo -->
@@ -276,17 +280,7 @@
                             </li>
                         </a>
                     </li>
-                <!-- end nav header text -->
-
                 <?=$html_account?>
-                <!-- đăng kí và đăng nhập  -->
-                    <!-- <li class="nav-item py-2">
-                        <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;margin-right:15px;" href="index.php?page=dangky" style="margin-left:10px;margin-right:10px;"><i class="fa-solid fa-user"></i> Đăng Kí</a>
-                    </li>
-                    <li class="nav-item py-2">
-                        <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;" href="index.php?page=dangnhap"><i class="fa-regular fa-user"></i> Đăng Nhập</a>
-                    </li> -->
-                <!-- end đăng kí và đăng nhập  -->
                 </ul>
             </div>
         </div>
@@ -335,3 +329,21 @@
 </body>
 
 </html>
+<script>
+    window.onscroll = function() {myFunction()};
+
+    function myFunction() {
+        var topHeader = document.getElementById('top-header');
+        var navbar = document.querySelector('.navbar');
+
+        if (window.scrollY > 0) {
+            navbar.classList.add('navbar-fixed');
+            topHeader.style.display = 'none';
+        } else {
+            navbar.classList.remove('navbar-fixed');
+            topHeader.style.display = 'block';
+        }
+    }
+</script>
+
+

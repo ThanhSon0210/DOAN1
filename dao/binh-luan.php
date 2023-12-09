@@ -20,7 +20,6 @@
 	    $nguoidung = $stmt->fetchAll();
   	    $conn = null;
         return $nguoidung;
-
     }
 
 ?>

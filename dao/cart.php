@@ -174,10 +174,13 @@
         }
         return $tt;
     }
-    // function loadall_cart($idbill){
-    //     $sql = "SELECT * FROM cart WHERE idbill=".$idbill;
-    //     $bill = pdo_query($sql);
-    //     return $bill;
-    // }
+     
+    function loadall_thongke(){
+        $sql = "SELECT danhmuc.name, count(sanpham.id) as countsp, min(sanpham.price) as minprice, max(sanpham.price) as maxprice, avg(sanpham.price)";
+        $sql = "FROM sanpham LEFT JOIN danhmuc ON sanpham.iddm";
+        $sql = "order by danhmuc.id desc";
+        $listtk = pdo_query($sql);
+        return $listtk;
+    }
 
 ?>
