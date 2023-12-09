@@ -5,6 +5,7 @@
 
   foreach ($get_order as $item) {
     extract($item);
+    $tt="";
         if($bill_status==1) $tt='<span class="badge rounded-pill alert-warning">chưa giải quyết</span>' ;
         if($bill_status==2) $tt='<span class="badge rounded-pill alert-success">Đã xác nhận</span>';
         if($bill_status==3) $tt='<span class="badge rounded-pill alert-success">Đang giao hàng</span>';

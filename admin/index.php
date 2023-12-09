@@ -132,7 +132,7 @@
                       $page=$_GET['page'];
                     }
                     $soluongother=8;
-                    $orderlist=get_order($kyw, $page, $soluongother);
+                    $get_order=get_order($kyw, $page, $soluongother);
                     $tongother= get_other_all();
                     $hienthiother= hien_thi_other($tongother, $soluongother);
                     include "public/quanly.php";
@@ -140,6 +140,7 @@
                   case 'quanly_chitiet':
                     if(isset($_GET['id']) && ($_GET["id"] > 0)) {
                       $id = $_GET['id'];
+                      
                       
                       $ordercart = get_cart_by_id($id);
                       $orderdetail = get_order_by_id($id);
@@ -164,7 +165,7 @@
                         $page=$_GET['page'];
                       }
                       $soluongother=8;
-                      $orderlist=get_order($kyw, $page, $soluongother);
+                      $get_order=get_order($kyw, $page, $soluongother);
                       $tongother= get_other_all();
                       $hienthiother= hien_thi_other($tongother, $soluongother);
                       include "public/quanly.php";
@@ -188,7 +189,7 @@
                         $page=$_GET['page'];
                       }
                       $soluongother=8;
-                      $orderlist=get_order($kyw, $page, $soluongother);
+                      $get_order=get_order($kyw, $page, $soluongother);
                       $tongother= get_other_all();
                       $hienthiother= hien_thi_other($tongother, $soluongother);
                       include "public/quanly.php";
@@ -212,7 +213,7 @@
                         $page=$_GET['page'];
                       }
                       $soluongother=8;
-                      $orderlist=get_order($kyw, $page, $soluongother);
+                      $get_order=get_order($kyw, $page, $soluongother);
                       $tongother= get_other_all();
                       $hienthiother= hien_thi_other($tongother, $soluongother);
                       include "public/quanly.php";
@@ -236,7 +237,7 @@
                         $page=$_GET['page'];
                       }
                       $soluongother=8;
-                      $orderlist=get_order($kyw, $page, $soluongother);
+                      $get_order=get_order($kyw, $page, $soluongother);
                       $tongother= get_other_all();
                       $hienthiother= hien_thi_other($tongother, $soluongother);
                       include "public/quanly.php";
@@ -260,7 +261,7 @@
                         $page=$_GET['page'];
                       }
                       $soluongother=8;
-                      $orderlist=get_order($kyw, $page, $soluongother);
+                      $get_order=get_order($kyw, $page, $soluongother);
                       $tongother= get_other_all();
                       $hienthiother= hien_thi_other($tongother, $soluongother);
                       include "public/quanly.php";

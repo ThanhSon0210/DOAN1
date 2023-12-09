@@ -9,11 +9,11 @@
      }
      function get_other_all(){
         $sql = " SELECT * FROM bill ORDER BY id ASC ";
-        return pdo_query($sql);
+        return get_one($sql);
     }
      function get_order_by_id($id){
         $sql = "SELECT * FROM bill WHERE id=".$id;
-        return get_all($sql,$id);
+        return get_one($sql,$id);
     }
     function get_bill(){
         $sql = "SELECT * FROM bill ";
@@ -32,19 +32,19 @@
     function get_cart_by_id($id){
         // Sử dụng prepared statement để tránh SQL injection
         $sql = "SELECT c.*, p.name FROM cart c JOIN sanpham p ON c.idpro = p.id WHERE c.idbill =$id";
-        $result = pdo_query($sql);
+        $result = get_all($sql);
         return $result;
     }
     function get_order_home(){
         $sql = "SELECT * FROM bill ORDER BY id";
-        return pdo_query($sql);
+        return get_all($sql);
     }
 
 
 
     function get_status($id){
         $sql = "SELECT bill_status FROM bill WHERE id=".$id;
-        $kq = pdo_query_one($sql);
+        $kq = get_one($sql);
         return $kq["bill_status"];
     }
     function update_status($id, $bill_status) {

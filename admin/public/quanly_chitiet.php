@@ -1,109 +1,106 @@
-<?php
-    extract($orderdetail);
-    // extract($get_bill);
-    $madh="";
-    var_dump($orderdetail);
-    // $bill_name = $orderdetail['bill_name'];
-    // echo $bill_name;
-    // // var_dump($bill_name);
-    // foreach ($orderdetail as $item) {
-    //     $bill_name = $item['bill_name'];
-    //     echo $bill_name;
-    //     // Thực hiện các thao tác khác với giá trị bill_name
-    // }
-    if($pttt = 0){
-        $tbpt='Thanh toán khi nhận hàng';
-    }
-    if($pttt = 1){
-        $tbpt='Thanh toán bằng thẻ tín dụng';
-    }
-    $select="";
-    // Mảng chứa các trạng thái và đường link tương ứng
-    $statusOptions = [
-        1 => 'index.php?page=order-pending&id='.$id.'',
-        2 => 'index.php?page=order-confirm&id='.$id.'',
-        3 => 'index.php?page=order-delivering&id='.$id.'',
-        4 => 'index.php?page=order-complete&id='.$id.'',
-        5 => 'index.php?page=order-fail&id='.$id.'',
-        6 => '#',
-    ];
-    // Tạo tùy chọn cho mỗi trạng thái
-    $bill_status="";
-    foreach ($statusOptions as $value => $link) {
-        $selected = ($bill_status == $value) ? 'selected' : '';
-        $select .= '<option value="' . $link . '" ' . $selected . '>' . getStatusText($value) . '</option>';
-    }
-    // Hàm ánh xạ giá trị 'status' sang trạng thái tương ứng
-    
-    function getStatusText($bill_status){
-        switch ($bill_status) {
-            case 1:
-                return 'chưa giải quyết';
-            case 2:
-                return 'Đã xác nhận';
-            case 3:
-                return 'Đang giao hàng';
-            case 4:
-                return 'Hoàn thành';
-            case 5:
-                return 'Giao hàng thất bại';
-            case 6:
-                return '...';
-            default:
-                return 'Unknown status';
+    <?php
+        extract($orderdetail);
+        // extract($get_bill);
+        $madh="";
+        if($pttt = 0){
+            $tbpt='Thanh toán khi nhận hàng';
+        }
+        if($pttt = 1){
+            $tbpt='Thanh toán bằng thẻ tín dụng';
+        }
+        $select="";
+        // Mảng chứa các trạng thái và đường link tương ứng
+        $statusOptions = [
+            1 => 'index.php?page=order-pending&id='.$id.'',
+            2 => 'index.php?page=order-confirm&id='.$id.'',
+            3 => 'index.php?page=order-delivering&id='.$id.'',
+            4 => 'index.php?page=order-complete&id='.$id.'',
+            5 => 'index.php?page=order-fail&id='.$id.'',
+            6 => '#',
+        ];
+        // Tạo tùy chọn cho mỗi trạng thái
+        $bill_status="";
+        foreach ($statusOptions as $value => $link) {
+            
+            $selected = ($bill_status == $value) ? 'selected' : '';
+            $select .= '<option value="' . $link . '" ' . $selected . '>' . getStatusText($value) . '</option>';
+        }
+        // Hàm ánh xạ giá trị 'status' sang trạng thái tương ứng
+        
+        function getStatusText($bill_status){
+            switch ($bill_status) {
+                case 1:
+                    return 'chưa giải quyết';
+                case 2:
+                    return 'Đã xác nhận';
+                case 3:
+                    return 'Đang giao hàng';
+                case 4:
+                    return 'Hoàn thành';
+                case 5:
+                    return 'Giao hàng thất bại';
+                case 6:
+                    return '...';
+                default:
+                    return 'Unknown status';
+                
+
+            }
+        }
+        $tt='';
+        $tt2='';
+                if($bill_status==1){
+                    $tt='<span class="badge rounded-pill alert-warning">chưa giải quyết</span>';
+                    $tt2='chưa giải quyết';
+                } 
+                if($bill_status==2){
+                    $tt='<span class="badge rounded-pill alert-success">Đã xác nhận</span>';
+                    $tt2='Đã xác nhận';
+                } 
+                if($bill_status==3){
+                    $tt='<span class="badge rounded-pill alert-success">Đang giao hàng</span>';
+                    $tt2='Đang giao hàng';
+                } 
+                if($bill_status==4){
+                    $tt='<span class="badge rounded-pill alert-success">Hoàn thành</span>';
+                    $tt2='Hoàn thành';
+                } 
+                if($bill_status==5){
+                    $tt='<span class="badge rounded-pill alert-warning">Giao hàng thất bại</span>';
+                    $tt2='Giao hàng thất bại';
+                } 
+                if($bill_status==6){
+                    $tt='<span class="badge rounded-pill alert-danger">Cancelled</span>';
+                    $tt2='Cancelled';
+                } 
             
 
+        
+        
+        foreach ($ordercart as $item) {
+            extract($ordercart);
+            $thanhtien=0;
+            $html_cartorder='';
+            extract($item);
+            $html_cartorder.='<tr>
+                                <td>
+                                    <div class="left">
+                                        <img src="../uploads/'.$img.'" width="40" height="40" class="img-xs" alt="Item">
+                                    </div>
+                                    <div class="info">'.$name.'</div>
+                                </td>
+                                <td>'.number_format($price,0,",",".").'VNĐ</td>
+                                <td>'.$soluong.'</td>
+                                <td class="text-end">'.number_format($thanhtien,0,",",".").'VNĐ</td>
+                            </tr>';
         }
-    }
-    if($value==1){
-        $tt='<span class="badge rounded-pill alert-warning">chưa giải quyết</span>';
-        $tt2='chưa giải quyết';
-    } 
-    if($value==2){
-        $tt='<span class="badge rounded-pill alert-success">Đã xác nhận</span>';
-        $tt2='Đã xác nhận';
-    } 
-    if($value==3){
-        $tt='<span class="badge rounded-pill alert-success">Đang giao hàng</span>';
-        $tt2='Đang giao hàng';
-    } 
-    if($value==4){
-        $tt='<span class="badge rounded-pill alert-success">Hoàn thành</span>';
-        $tt2='Hoàn thành';
-    } 
-    if($value==5){
-        $tt='<span class="badge rounded-pill alert-warning">Giao hàng thất bại</span>';
-        $tt2='Giao hàng thất bại';
-    } 
-    if($value==6){
-        $tt='<span class="badge rounded-pill alert-danger">Cancelled</span>';
-        $tt2='Cancelled';
-    } 
-    
-    extract($ordercart);
-    $html_cartorder='';
-    $thanhtien=0;
-    foreach ($ordercart as $item) {
-        extract($item);
-        $html_cartorder.='<tr>
-                            <td>
-                                <div class="left">
-                                    <img src="../uploads/'.$img.'" width="40" height="40" class="img-xs" alt="Item">
-                                </div>
-                                <div class="info">'.$name.'</div>
-                            </td>
-                            <td>'.number_format($price,0,",",".").'VNĐ</td>
-                            <td>'.$soluong.'</td>
-                            <td class="text-end">'.number_format($thanhtien,0,",",".").'VNĐ</td>
-                        </tr>';
-    }
-?>
+    ?>
 
 <section class="content-wrapper">
     <div class="content-header">
         <div>
             <h2 class="content-title card-title">Chi tiết đơn hàng</h2>
-            <p>Chi tiết về đơn hàng: #<?=$madh;?></p>
+            <p>Chi tiết về đơn hàng: HTPS_<?=$id?></p>
         </div>
     </div>
     <form action="index.php?pg=orders" method="post">
@@ -112,9 +109,9 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6 mb-lg-0 mb-15">
                         <span>
-                            <i class="material-icons md-calendar_today"></i><b><?=$ngaydathang?> - giờ</b>
+                            <i class="material-icons md-calendar_today"></i><b><?=$ngaydathang?></b>
                         </span> <br>
-                        <small class="text-muted">Order ID: #<?=$madh;?></small>
+                        <small class="text-muted">Order ID: HTPS_<?=$id;?></small>
                     </div>
                     <form action="" method="post">
                         <div class="col-lg-6 col-md-6 ms-auto text-md-end">
@@ -139,7 +136,7 @@
                             <div class="text">
                                 <h6 class="mb-1">Khách hàng</h6>
                                 <p class="mb-1">
-                                    <?=$bill_name;?> <br> <a href="mailto:<?=$bill_email;?>" class="__cf_email__" data-cfemail="c7a6aba2bf87a2bfa6aab7aba2e9a4a8aa"><?=$bill_email;?></a> <br> <?=$bill_tell;?>
+                                    <?=$bill_name;?> <br> <a href="mailto:<?=$bill_email;?>" class="__cf_email__" data-cfemail="c7a6aba2bf87a2bfa6aab7aba2e9a4a8aa"><?=$bill_email;?></a> <br> <?=$bil_tell;?>
                                 </p>
                                 <!-- <a href="#">View profile</a> -->
                             </div>
@@ -171,7 +168,7 @@
                             <div class="text">
                                 <h6 class="mb-1">Giao hàng tới</h6>
                                 <p class="mb-1">
-                                    <?=$nguoidat_diachi;?>
+                                    <?=$bill_diachi;?>
                                 </p>
                                 <!-- <a href="#">View profile</a> -->
                             </div>
@@ -264,7 +261,7 @@
                                                 <dl class="dlist">
                                                     <dt class="text-muted">Trạng thái</dt>
                                                     <dd>
-                                                        <?=$tt?>
+                                                        <?=$tt2?>
                                                     </dd>
                                                 </dl>
                                             </article>
