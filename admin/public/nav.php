@@ -231,6 +231,16 @@
             </p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="index.php?page=order" class="nav-link">
+            <i class="nav-icon fa-solid fa-user"></i>
+            <p>
+              Quản lý hóa đơn
+              <!-- <i class="fas fa-angle-left right"></i> -->
+              <span class="badge badge-info right">6</span>
+            </p>
+          </a>
+        </li>
 
       </ul>
     </nav>
