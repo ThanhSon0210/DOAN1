@@ -1,16 +1,41 @@
+<?php
+
+  $get_order = get_order();
+  $hoadon ="";
+
+  foreach ($get_order as $item) {
+    extract($item);
+    $tt="";
+        if($bill_status==1) $tt='<span class="badge rounded-pill alert-warning">chưa giải quyết</span>' ;
+        if($bill_status==2) $tt='<span class="badge rounded-pill alert-success">Đã xác nhận</span>';
+        if($bill_status==3) $tt='<span class="badge rounded-pill alert-success">Đang giao hàng</span>';
+        if($bill_status==4) $tt='<span class="badge rounded-pill alert-success">Hoàn thành</span>';
+        if($bill_status==5) $tt='<span class="badge rounded-pill alert-warning">Giao hàng thất bại</span>';
+        if($bill_status==6) $tt='<span class="badge rounded-pill alert-danger">Cancelled</span>';
+    $hoadon .='<tr>
+        <td>'.$bill_name.'</td>
+        <td>'.$total.'</td>
+        <td>'.$tt.'</td>
+        <td>'.$ngaydathang.'</td>
+        <td class="text-end" style="">
+            <a href="index.php?page=quanly_chitiet&id='.$id.'" class="btn" style="color:white;background-color: #BE1529">Chi tiết</a>
+        </td>
+    </tr>';
+  }
+?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Đơn hàng của bạn</h1>
+                    <h1>quản lý đơn hàng</h1>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Đơn hàng </li>
+                        <li class="breadcrumb-item active">Thành viên</li>
                     </ol>
                 </div>
             </div>
@@ -19,53 +44,51 @@
 
     <!-- Main content -->
     <section class="content">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+                        <!-- <div class="card-header">
+                            <h3 class="card-title ">Danh sách chủ đề</h3>
+                        </div> -->
+                        <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Mã đơn hàng</th>
+                                        
+                                        <th scope="col">Tên khách hàng</th>
+                                        <th scope="col">Tổng tiền</th>
+                                        <th scope="col">Trang thái</th>
                                         <th scope="col">Ngày đặt hàng</th>
-                                        <!-- <th scope="col">Số lượng mặt hàng</th> -->
-                                        <th scope="col">Tổng giá trị đơn hàng</th>
-                                        <th scope="col">Tình trạng đơn hàng</th>
+                                        <th scope="col">Hoạt động</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php 
-                                function get_user_bills($id){
-                                    $sql = "SELECT * FROM bill where iduser = $id";
-                                    return pdo_query($sql);
-                                }
-                                // print_r($_SESSION['s_user']['id']);
-                                if (isset($_SESSION['s_user']['id'])) {
-                                    $userId = $_SESSION['s_user']['id'];
-                                    $list_bill = get_user_bills($id); // Hàm get_user_bills() lấy danh sách hóa đơn của người dùng từ cơ sở dữ liệu
-                                    
-                                    // print_r($list_bill);
-                                    if ($list_bill !== null) {
-                                        foreach ($list_bill as $item) {
-                                            extract($item);
-                                            $ttdh = get_ttdh($item['bill_status']);
-                                            echo ' <tr>
-                                                <td>HTPS_' . $id . '</td>
-                                                <td>' . $ngaydathang . '</td>
-                                                <td>' . $total . '</td>
-                                                <td style="color: rgb(19, 229, 19);">' . $ttdh . '</td>
-                                            </tr>';
-                                        }
-                                    } else {
-                                        echo 'Không có hóa đơn';
-                                    }
-                                } else {
-                                    echo 'Không có người dùng';
-                                }
-                                                   
-                                    ?>
+                                    <tr>
+                                        <!-- <td>Tuấn</td>
+                                        <td>999999</td>
+                                        <td>đang xử lý</td>
+                                        <td>6/12/2023</td>
+                                        <td class="text-end" style="">
+                                            <a href="index.php?pg=orders-detail&id='.$id.'" class="btn" style="color:white;background-color: #BE1529">Chi tiết</a>
+                                         <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#modal-default">
+                                            chi tiết
+                                        </button>
+                                        </td> -->
+                                        <?=$hoadon?>
+                                    </tr>
                                 </tbody>
+                                <!-- <tfoot>
+                                    
+                                <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Tên chủ đề</th>
+                                        <th scope="col">Chế độ</th>
+                                        <th scope="col">Số lượng câu hỏi</th>
+                                        <th scope="col">Thao tác</th>
+                                    </tr>
+                                </tfoot> -->
                             </table>
                         </div>
                         <!-- /.card-body -->

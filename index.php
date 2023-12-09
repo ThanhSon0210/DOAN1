@@ -5,6 +5,7 @@
     if(!isset($_SESSION["giohang"])){
         $_SESSION["giohang"]=[];
     }
+   
  
     include_once "dao/donhang.php";
 
@@ -147,6 +148,19 @@
                 }
                 header('location: index.php');
                 break;
+                case 'logoutgg':
+                    if(isset( $_SESSION['s_users'])){
+                        $accesstoken=$_SESSION['s_users'];
+ 
+                        //Reset OAuth access token
+                        $google_client->revokeToken($accesstoken);
+                         
+                        //Destroy entire session data.
+                        session_destroy();
+                        
+                    }
+                    header('location: index.php');
+                    break;
             case 'adduser':
                 // xác định giá trị input 
                 if(isset($_POST["dangky"]) && ($_POST["dangky"])){

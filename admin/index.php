@@ -10,10 +10,14 @@
     require_once('model/connect.php');
     require_once('model/product.php');
     require_once('model/catalog.php');
-    require_once('model/global.php');
+    include_once('model/global.php');
+    require_once('../dao/cart.php');
     require_once('public/head.php');
     require_once('public/nav.php');
     include_once "model/user.php";
+    include_once "model/order.php";
+    include_once "../dao/pdo.php";
+
     
     if(isset($_GET['page'])){
         switch($_GET['page']){
@@ -118,11 +122,160 @@
                 $productlisst = getnewproduct();
                 require_once('public/products.php');
                 break;
+                case 'order':
+                    $kyw="";
+                    if (isset($_POST["search"])) {
+                      $kyw=$_POST["kyw"];
+                    }
+                    if(!isset($_GET['page'])){
+                      $page=1;
+                    }else{
+                      $page=$_GET['page'];
+                    }
+                    $soluongother=8;
+                    $get_order=get_order($kyw, $page, $soluongother);
+                    $tongother= get_other_all();
+                    $hienthiother= hien_thi_other($tongother, $soluongother);
+                    include "public/quanly.php";
+                    break;
+                  case 'quanly_chitiet':
+                    if(isset($_GET['id']) && ($_GET["id"] > 0)) {
+                      $id = $_GET['id'];
+                      
+                      
+                      $ordercart = get_cart_by_id($id);
+                      $orderdetail = get_order_by_id($id);
+                      include "public/quanly_chitiet.php";
+                    }else {
+                      include "public/home.php";
+                    }
+                    break;  
+                  case 'order-pending':
+                    if(isset($_GET['id']) && $_GET['id'] > 0) {
+                      $id = $_GET['id'];
+                      // Lấy trạng thái từ cơ sở dữ liệu hoặc bất kỳ nguồn dữ liệu nào khác
+                      $bill_status = get_status($id);
+                      update_status($id, 1);
+                      $kyw="";
+                      if (isset($_POST["search"])) {
+                        $kyw=$_POST["kyw"];
+                      }
+                      if(!isset($_GET['page'])){
+                        $page=1;
+                      }else{
+                        $page=$_GET['page'];
+                      }
+                      $soluongother=8;
+                      $get_order=get_order($kyw, $page, $soluongother);
+                      $tongother= get_other_all();
+                      $hienthiother= hien_thi_other($tongother, $soluongother);
+                      include "public/quanly.php";
+                    }else {
+                      include "public/home.php";
+                    }
+                    break;
+                  case 'order-confirm':
+                    if(isset($_GET['id']) && $_GET['id'] > 0) {
+                      $id = $_GET['id'];
+                      // Lấy trạng thái từ cơ sở dữ liệu hoặc bất kỳ nguồn dữ liệu nào khác
+                      $bill_status = get_status($id);
+                      update_status($id, 2);
+                      $kyw="";
+                      if (isset($_POST["search"])) {
+                        $kyw=$_POST["kyw"];
+                      }
+                      if(!isset($_GET['page'])){
+                        $page=1;
+                      }else{
+                        $page=$_GET['page'];
+                      }
+                      $soluongother=8;
+                      $get_order=get_order($kyw, $page, $soluongother);
+                      $tongother= get_other_all();
+                      $hienthiother= hien_thi_other($tongother, $soluongother);
+                      include "public/quanly.php";
+                    }else {
+                      include "public/home.php";
+                    }
+                    break;
+                  case 'order-delivering':
+                    if(isset($_GET['id']) && $_GET['id'] > 0) {
+                      $id = $_GET['id'];
+                      // Lấy trạng thái từ cơ sở dữ liệu hoặc bất kỳ nguồn dữ liệu nào khác
+                      $bill_status = get_status($id);
+                      update_status($id, 3);
+                      $kyw="";
+                      if (isset($_POST["search"])) {
+                        $kyw=$_POST["kyw"];
+                      }
+                      if(!isset($_GET['page'])){
+                        $page=1;
+                      }else{
+                        $page=$_GET['page'];
+                      }
+                      $soluongother=8;
+                      $get_order=get_order($kyw, $page, $soluongother);
+                      $tongother= get_other_all();
+                      $hienthiother= hien_thi_other($tongother, $soluongother);
+                      include "public/quanly.php";
+                    }else {
+                      include "public/home.php";
+                    }
+                    break;  
+                  case 'order-complete':
+                    if(isset($_GET['id']) && $_GET['id'] > 0) {
+                      $id = $_GET['id'];
+                      // Lấy trạng thái từ cơ sở dữ liệu hoặc bất kỳ nguồn dữ liệu nào khác
+                      $bill_status = get_status($id);
+                      update_status($id, 4);
+                      $kyw="";
+                      if (isset($_POST["search"])) {
+                        $kyw=$_POST["kyw"];
+                      }
+                      if(!isset($_GET['page'])){
+                        $page=1;
+                      }else{
+                        $page=$_GET['page'];
+                      }
+                      $soluongother=8;
+                      $get_order=get_order($kyw, $page, $soluongother);
+                      $tongother= get_other_all();
+                      $hienthiother= hien_thi_other($tongother, $soluongother);
+                      include "public/quanly.php";
+                    }else {
+                      include "public/home.php";
+                    }
+                    break;
+                  case 'order-fail':
+                    if(isset($_GET['id']) && $_GET['id'] > 0) {
+                      $id = $_GET['id'];
+                      // Lấy trạng thái từ cơ sở dữ liệu hoặc bất kỳ nguồn dữ liệu nào khác
+                      $bill_status = get_status($id);
+                      update_status($id, 5);
+                      $kyw="";
+                      if (isset($_POST["search"])) {
+                        $kyw=$_POST["kyw"];
+                      }
+                      if(!isset($_GET['page'])){
+                        $page=1;
+                      }else{
+                        $page=$_GET['page'];
+                      }
+                      $soluongother=8;
+                      $get_order=get_order($kyw, $page, $soluongother);
+                      $tongother= get_other_all();
+                      $hienthiother= hien_thi_other($tongother, $soluongother);
+                      include "public/quanly.php";
+                    }else {
+                      include "public/home.php";
+                    }
+                    break;
             case 'users':
                 require_once('public/users.php');
                 break;
             case 'bieudo':
-                require_once('public/users.php');
+                $list_thongke = loadall_thongke();
+                require_once('public/bieudo.php');
                 break;
             case 'thongke':
                 $list_thongke = loadall_thongke();

@@ -55,6 +55,7 @@
         if(mysqli_num_rows($result)>0){
             $userdata = mysqli_fetch_assoc($result);
             $token = $userdata['token'];
+            $name = $userinfo['name'];
         }else{
             $sql = "INSERT INTO user(email, last_name, first_name, gender, name, picture, verifiedEmail, token)
             VALUES ('{$userinfo['email']}', '{$userinfo['last_name']}', '{$userinfo['first_name']}', '{$userinfo['gender']}', '{$userinfo['name']}', '{$userinfo['picture']}', '{$userinfo['verifiedEmail']}', '{$userinfo['token']}')
@@ -68,14 +69,41 @@
             die();
             }
         }
-        $_SESSION['user_token'] =  $token;       
-       
-        }   
+        $_SESSION['user_token'] =  $token;   
+        $_SESSION['s_users'] = $name;
+        // setcookie('user_name', $name, time() + (86400 * 30), '/'); // Lưu cookie trong 30 ngày
+        // var_dump($_COOKIE['user_name']);
+        header('location: index.php');
+        exit();    
+        }
 
     // đăng nhập bằng tài khoản google
       
-    if($userinfo['name']){
-        $_SESSION['name'] = $userinfo['name'];
+    // if(isset( $_SESSION['user_name'])){
+       
+    //     $name = $_SESSION['user_name'];
+    //     $html_account ='<div class="col-2 py-1" style="margin-left:25px;">
+    //                         <div class="dropdown">
+    //                             <button class="btn btn-danger danhmuc" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 5px;">
+    //                                 <div class="row text-light">
+    //                                     <div class="col-3 fs-3"><i class="fa-solid fa-user"></i></div>
+    //                                     <div class="col-9 fw-bold py-2">
+    //                                         <a style="text-decoration: none; color: white;" href="index.php?page=myaccount">'.$name.'</a>
+    //                                     </div>
+    //                                 </div>
+    //                             </button>
+    //                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    //                                 <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
+    //                                 <li> <a class="dropdown-item" href="index.php?page=lsdh">Lịch sử đơn hàng</a></li>
+    //                                 <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
+    //                             </ul>
+    //                         </div>
+    //                       </div>';
+    //     }
+       }
+       if(isset( $_SESSION['s_users'])){
+       
+        $name = $_SESSION['s_users'];
         $html_account ='<div class="col-2 py-1" style="margin-left:25px;">
                             <div class="dropdown">
                             <button class="btn btn-danger danhmuc" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 5px;">
@@ -88,7 +116,6 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
-                                <li> <a class="dropdown-item" href="index.php?page=lsdh">Lịch sử đơn hàng</a></li>
                                 <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
                             </ul>
                             </div>
@@ -97,13 +124,24 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <li> <a class="dropdown-item" href="index.php?page=myaccount">Cập nhật tài khoản</a></li>
+                            <li> <a class="dropdown-item" href="index.php?page=lsdh">Lịch sử đơn hàng</a></li>
                             <li><a class="dropdown-item" href="index.php?page=logout">Thoát</a></li>
                         </ul>
                       </div>
                     </div>';
+//   }else{
+//     $html_account ='   
+//                      <li class="nav-item py-2">
+//                         <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;margin-right:15px;" href="index.php?page=dangky" style="margin-left:10px;margin-right:10px;"><i class="fa-solid fa-user"></i> Đăng Kí</a>
+//                      </li>
+            
+//                     <li class="nav-item py-2">
+//                         <a class="nav-link py-2" style="white-space:nowrap;background-color: #BE1529;border-radius: 5px;color: white;font-weight: bold;margin-top:3px;" href="index.php?page=dangnhap"><i class="fa-regular fa-user"></i> Đăng Nhập</a>
+//                     </li>';
+//   }
 
         }
-       }
+
         // đăng nhập bằng tài khoản thông thường
        elseif(isset($_SESSION['s_user']) && (count($_SESSION['s_user'])>0)){
          extract($_SESSION['s_user']);

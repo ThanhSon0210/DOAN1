@@ -152,7 +152,7 @@
         <img src="../images/sonnu logo.png" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">SONNU</a>
+        <a href="#" class="d-block">HTPS</a>
       </div>
     </div>
 
@@ -226,6 +226,16 @@
             <i class="nav-icon fa-solid fa-user"></i>
             <p>
               Quản lí thành viên
+              <!-- <i class="fas fa-angle-left right"></i> -->
+              <span class="badge badge-info right">6</span>
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="index.php?page=order" class="nav-link">
+            <i class="nav-icon fa-solid fa-user"></i>
+            <p>
+              Quản lý hóa đơn
               <!-- <i class="fas fa-angle-left right"></i> -->
               <span class="badge badge-info right">6</span>
             </p>

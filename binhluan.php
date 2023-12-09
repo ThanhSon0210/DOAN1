@@ -89,9 +89,10 @@
     <title>binh luan</title>
 </head>
 <body>
-    <form action="" method="post">
-        <textarea name="noidung" id="" style="width: 89%;height:100px;font-size: 15px;"></textarea>
-        <input class="btn btn-primary" type="submit" value="Gửi bình luận" name="guibinhluan">
+<form action="" method="post">
+        <input type="text" style="width: 100%; padding:10px; border-radius: 5px;boder:1px solid none;" placeholder="Nhập nội dung" name="noidung">
+        <!-- <textarea name="noidung" id="" style="width: 89%;height:100px;font-size: 15px;"></textarea> -->
+        <input class="btn btn-primary" type="submit" hidden value="Gửi bình luận" name="guibinhluan">
     </form>
     <hr>
     <?php

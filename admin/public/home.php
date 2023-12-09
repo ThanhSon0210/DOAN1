@@ -1,6 +1,4 @@
-<?php 
-  
-?>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -30,13 +28,14 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>10</h3>
-                  <p>Sản Phẩm</p>
+                  <h3>Sản Phẩm</h3>
+                  <p>Có Tất Cả 22 Sản Phẩm bao gồm bàn phím, chuột, giá đỡ,...</p>
+                  
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="index.php?page=products" class="small-box-footer">Xem bảng thống kê sản phẩm <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -44,29 +43,13 @@
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                  <p>Danh Mục</p>
+                  <h3>Danh Mục</h3>
+                  <p>Thống kê các danh mục có sản phẩm (các danh mục còn lại đang cập nhật)</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-stats-bars"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box bg-warning">
-                <div class="inner">
-                  <h3>44</h3>
-
-                  <p>Người dùng</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-person-add"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="index.php?page=thongke" class="small-box-footer">Xem bảng thống kê danh mục <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -74,14 +57,28 @@
               <!-- small box -->
               <div class="small-box bg-danger">
                 <div class="inner">
-                  <h3>65</h3>
+                  <h3>Biểu Đồ Phân Tích</h3>
 
-                  <p>Đơn hàng</p>
+                  <p>Hiển thị các danh mục theo dạng biểu đồ để dễ quan sát</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-pie-graph"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="index.php?page=bieudo" class="small-box-footer">Xem biểu đồ <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-warning">
+                <div class="inner">
+                  <h3>Tài Khoản</h3>
+                  <p>quản lý tất cả những người sử dụng trang web bao gồm cả quản trị và khách hàng</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-person-add"></i>
+                </div>
+                <a href="index.php?page=users" class="small-box-footer">Xem quản lý tài khoản <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -90,38 +87,5 @@
           
         </div><!-- /.container-fluid -->
       </section>
-      <!-- /.content -->
-
-      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-      <script>
-        const xValues = ["Bàn Phím Không Dây", "Lót Chuột", "LapTop", "Bàn Phím Có Dây", "Chuột", "Phụ Kiện Bàn Phím", "Hàng Cũ", ];
-        const yValues = [55, 49, 44, 24, 15, 20, 30];
-        const barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#e8c3b9",
-          "#1e7145",
-          "#b21d17",
-          "#b41d22"
-        ];
-
-        new Chart("myChart", {
-          type: "doughnut",
-          data: {
-            labels: xValues,
-            datasets: [{
-              backgroundColor: barColors,
-              data: yValues
-            }]
-          },
-          options: {
-            title: {
-              display: true,
-              text: "HTPS Cung Cấp Các Sản Phẩm Công Nghệ Chất Lượng"
-            }
-          }
-        });
-      </script>
-    </div>
+      <!-- /.content -->  
     <!-- /.content-wrapper -->
