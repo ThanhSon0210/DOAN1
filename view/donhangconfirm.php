@@ -1,3 +1,42 @@
+<?php
+    include_once 'dao/pdo.php';
+    // include_once 'dao/thanhtoanvnpay.php';
+    if (isset($_GET['vnp_Amount'])) {
+        $mysqli = pdo_get_connection();
+
+        $vnp_Amount = $_GET['vnp_Amount'];
+        $vnp_BankCode = $_GET['vnp_BankCode'];
+        $vnp_BankTranNo = $_GET['vnp_BankTranNo'];
+        $vnp_CardType = $_GET['vnp_CardType'];
+        $vnp_OrderInfo = $_GET['vnp_OrderInfo'];
+        $vnp_PayDate = $_GET['vnp_PayDate'];
+        $vnp_ResponseCode = $_GET['vnp_ResponseCode'];
+        $vnp_TmnCode = $_GET['vnp_TmnCode'];
+        $vnp_TransactionNo = $_GET['vnp_TransactionNo'];
+        $vnp_TxnRef = $_GET['vnp_TxnRef'];
+        $vnp_TransactionStatus = $_GET['vnp_TransactionStatus'];
+        $vnp_SecureHash = $_GET['vnp_SecureHash'];
+        $code_cart = $_SESSION['code_cart'];
+
+        $sql = "INSERT INTO vnpay(vnp_Amount,vnp_BankCode,vnp_BankTranNo,vnp_CardType,vnp_OrderInfo,vnp_PayDate
+        ,vnp_ResponseCode,vnp_TmnCode,vnp_TransactionNo,vnp_TxnRef,vnp_TransactionStatus,vnp_SecureHash,code_cart)
+         VALUES ('$vnp_Amount', '$vnp_BankCode', '$vnp_BankTranNo', '$vnp_CardType', '$vnp_OrderInfo', '$vnp_PayDate', '$vnp_ResponseCode'
+         , '$vnp_TmnCode','$vnp_TransactionNo','$vnp_TxnRef', '$vnp_TransactionStatus','$vnp_SecureHash', '$code_cart')";
+
+        $cart_query = $mysqli->query($sql);
+        if ($cart_query) {
+            // $_SESSION['code_cart'] = '';
+            // header('Location: index.php');
+            echo "<script>alert('Thanh toán thành công');</script>";
+            echo "<script>window.location='index.php';</script>";
+        }else{
+            echo "<script>alert('Thanh toán thất bại');</script>";
+            echo "<script>window.location='index.php';</script>";
+        }
+    }else{
+        echo 'Không có gì hết';
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

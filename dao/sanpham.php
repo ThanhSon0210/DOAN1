@@ -55,7 +55,18 @@ function get_dssp($key, $iddm, $limit){
     $sql .= " ORDER BY id DESC limit ".$limit;
     return pdo_query($sql);
 }
-
+function viewsp($id){
+    $sql = "SELECT view FROM sanpham where id = $id";
+    return pdo_query($sql);
+}
+function view(){
+    $sql = "SELECT view FROM sanpham ";
+    return pdo_query($sql);
+}
+function view_update($view , $id){
+    $sql = "UPDATE sanpham SET view = $view where id = $id";
+    return pdo_query($sql);
+}
 
 
 function get_sp_by_id($id){
@@ -91,6 +102,7 @@ function showsp($dssp) {
                             <input type="hidden" name="name" value="' . $name . '">
                             <input type="hidden" name="img" value="' . $img . '">
                             <input type="hidden" name="price" value="' . $price . '">
+                            <input type="hidden" name="view" value="'.$view.'">
                             <input type="hidden" name="soluong" value="1"> 
                             <div class="buton2" style="display: flex;flex-wrap: no-wrap;">
                                 <button class="btn btn-primary custom-buy-button" type="submit" name="addcart" style="float : left;">

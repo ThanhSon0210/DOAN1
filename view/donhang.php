@@ -318,8 +318,8 @@
 
                         <div class="bill_chekckout">
                             <div class="bill-order_checkout">
-                                <h3 class="order_title">Đơn hàng của bạn</h3>
-                                <table id="my-cart">
+                                <h3 class="order_title" style="font-weight: bold;">Đơn hàng của bạn</h3>
+                                <table border="1" id="my-cart">
                                     <tbody>
                                         <?php
                                             showcart(0);
@@ -327,12 +327,16 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
+                                            
                                             <th colspan="4" style="text-align: right">
                                                 Tổng Tiền :
                                             </th>
-                                            <th style="text-align: center"; colspan="5">
+                                           
+                                            <th style="text-align: center"; colspan="5" >
                                                 <?= $tong ?>
-                                            </th>     
+                                            </th>   
+                                            <input type="hidden"  name="tong" value="<?=$tong?>">  
+                                            
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -350,9 +354,13 @@
                                                     <p>Trả tiền mặt khi giao hàng</p>
                                                 </div>
                                             </li>
+                                            <img src="images/vnpay.jpg" style="width: 50px" alt="">
+                                            <button style="color:blue;font-weight: bold; border:none;" type="submit" name="redirect" id="redirect">Thanh toán Qua VNpay</button>
+                                           
                                         </ul>
                                         <div class="place-order">
                                             <button type="submit"  name="dongydathang" >Đồng Ý Đặt Hàng</button>
+                                    
                                         </div>
                                     </div>
                                 </div>
@@ -365,7 +373,8 @@
                         </div>
                     </div>
 
-                    <h4 id="toggleLink">Địa chỉ nhận ở nơi khác ⬇️ </h4>
+                  <div class="container">
+                  <h4 id="toggleLink">Địa chỉ nhận ở nơi khác ⬇️ </h4>
                     <div class="containerr" id="container">
                         <div class="order-info">
                             <label for="name">Họ và tên:</label>
@@ -377,6 +386,7 @@
                             <button type="submit">Đặt hàng</button>
                         </div>
                     </div>
+                  </div>
                 </form>
             </div><br><br><br>
        </main>
