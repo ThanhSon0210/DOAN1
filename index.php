@@ -66,7 +66,7 @@
                     $img = $_POST["img"];
                     $price = $_POST["price"];
                     $soluong = $_POST["soluong"];
-            
+                    
                     $sp = array(
                         "idpro" => $idpro,
                         "name" => $name,
