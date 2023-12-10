@@ -206,7 +206,7 @@
                     $email = $_POST['email'];
                     $pttt = $_POST['pttt'];
                     
-                    $ngaydathang = date('h:i:sa d/m/Y');
+                    $ngaydathang = date('d/m/Y');
                     $tongtiendonhang = tongtiendonhang();
                     $iddonhang = insert_bill($_SESSION['s_user']['id'], $hoten, $diachi, $dienthoai, $email, $pttt, $ngaydathang, $tongtiendonhang);
                     // $iddonhang = 1;

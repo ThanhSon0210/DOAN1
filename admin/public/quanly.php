@@ -1,24 +1,23 @@
 <?php
-
-  $get_order = get_order();
-  $hoadon ="";
-
+    $get_order =get_order();
+    $hoadon ="";
+    
   foreach ($get_order as $item) {
     extract($item);
-    $tt="";
-        if($bill_status==1) $tt='<span class="badge rounded-pill alert-warning">chưa giải quyết</span>' ;
-        if($bill_status==2) $tt='<span class="badge rounded-pill alert-success">Đã xác nhận</span>';
-        if($bill_status==3) $tt='<span class="badge rounded-pill alert-success">Đang giao hàng</span>';
-        if($bill_status==4) $tt='<span class="badge rounded-pill alert-success">Hoàn thành</span>';
-        if($bill_status==5) $tt='<span class="badge rounded-pill alert-warning">Giao hàng thất bại</span>';
-        if($bill_status==6) $tt='<span class="badge rounded-pill alert-danger">Cancelled</span>';
+    
+        if($bill_status==0) $tt='<span class="badge rounded-pill alert-warning">đơn hàng mới</span>' ;
+        if($bill_status==1) $tt='<span class="badge rounded-pill alert-success">Đã xác nhận</span>';
+        if($bill_status==2) $tt='<span class="badge rounded-pill alert-success">Đang giao hàng</span>';
+        if($bill_status==3) $tt='<span class="badge rounded-pill alert-success">Hoàn thành</span>';
+        if($bill_status==4) $tt='<span class="badge rounded-pill alert-danger">Giao hàng thất bại</span>';
+        if($bill_status==5) $tt='<span class="badge rounded-pill alert-danger">Cancelled</span>';
     $hoadon .='<tr>
         <td>'.$bill_name.'</td>
-        <td>'.$total.'</td>
+        <td>'.number_format($total,0,",",".").'VNĐ</td>
         <td>'.$tt.'</td>
         <td>'.$ngaydathang.'</td>
         <td class="text-end" style="">
-            <a href="index.php?page=quanly_chitiet&id='.$id.'" class="btn" style="color:white;background-color: #BE1529">Chi tiết</a>
+            <a href="index.php?page=quanly_chitiet&id='.$id.'" class="btn" style="color:white;background-color: #0bd23d">Chi tiết</a>
         </td>
     </tr>';
   }

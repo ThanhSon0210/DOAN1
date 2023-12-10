@@ -3,7 +3,7 @@
 
     function thembl($name,$iduser,$idsp,$noidung){
         $conn = pdo_get_connection();
-        $sql = "INSERT INTO binhluan(name ,iduser, idsp, noidung) VALUES('$name','$iduser','$idsp','$noidung') ";
+        $sql = "INSERT INTO binhluan(name ,iduser, idsp, noidung ) VALUES('$name','$iduser','$idsp','$noidung') ";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -34,7 +34,7 @@
     }
     function xoabl($id){
         $conn = pdo_get_connection();
-        $sql = "DELETE FROM binhluan WHERE id = '$id' ";
+        $sql = "DELETE FROM binhluan WHERE id =  ".$id;
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -62,6 +62,7 @@
         $conn = null;
         return $nguoidung;
     }
+    
    
 
 ?>

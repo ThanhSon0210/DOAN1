@@ -2,6 +2,8 @@
     session_start();
     include "dao/pdo.php";
     include "dao/binh-luan.php";
+    
+
     if(isset($_SESSION['s_user']) && ($_SESSION['s_user'] > 0 )){
 
         

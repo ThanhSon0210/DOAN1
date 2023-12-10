@@ -14,15 +14,15 @@
         $select="";
         // Mảng chứa các trạng thái và đường link tương ứng
         $statusOptions = [
-            1 => 'index.php?page=order-pending&id='.$id.'',
-            2 => 'index.php?page=order-confirm&id='.$id.'',
-            3 => 'index.php?page=order-delivering&id='.$id.'',
-            4 => 'index.php?page=order-complete&id='.$id.'',
-            5 => 'index.php?page=order-fail&id='.$id.'',
-            6 => '#',
+            0 => 'index.php?page=order-pending&id='.$id.'',
+            1 => 'index.php?page=order-confirm&id='.$id.'',
+            2 => 'index.php?page=order-delivering&id='.$id.'',
+            3 => 'index.php?page=order-complete&id='.$id.'',
+            4 => 'index.php?page=order-fail&id='.$id.'',
+            5 => '#',
         ];
         // Tạo tùy chọn cho mỗi trạng thái
-        $bill_status="";
+        
         foreach ($statusOptions as $value => $link) {
             
             $selected = ($bill_status == $value) ? 'selected' : '';
@@ -32,15 +32,15 @@
         
         function getStatusText($bill_status){
             switch ($bill_status) {
+                case 0:
+                    return 'đơn hàng mới';
                 case 1:
-                    return 'Chưa giải quyết';
-                case 2:
                     return 'Đã xác nhận';
-                case 3:
+                case 2:
                     return 'Đang giao hàng';
-                case 4:
+                case 3:
                     return 'Hoàn thành';
-                case 5:
+                case 4:
                     return 'Giao hàng thất bại';
             }
         }
@@ -127,7 +127,7 @@
                                 <?=$select;?>
                             </select>
                             <!-- <button type="submit" name="updatestatus" class="btn btn-primary">Save</button> -->
-                            <a class="btn btn-secondary print ms-2" href="#">Điều Chỉnh Trạng Thái</a>
+                            <!-- <a class="btn btn-secondary print ms-2" href="#">Điều Chỉnh Trạng Thái</a> -->
                         </div>
                     </form>
                 </div>

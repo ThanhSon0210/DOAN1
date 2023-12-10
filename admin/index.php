@@ -16,6 +16,8 @@
     require_once('public/nav.php');
     include_once "model/user.php";
     include_once "model/order.php";
+    include_once "model/comment-detail.php";
+
     include_once "../dao/pdo.php";
 
     
@@ -122,6 +124,18 @@
                 $productlisst = getnewproduct();
                 require_once('public/products.php');
                 break;
+                // case 'deletehoadon':
+                //   if(isset($_GET['id']) && ($_GET['id'] > 0)){
+                //       $id = $_GET['id'];
+                //       // xóa ảnh trên host trước 
+                      
+                //       // xóa trong database
+                //       delete_donhang($id);
+                //   }
+                //   // Xóa xong load lại sản phẩm
+                //   $productlisst = getnewproduct();
+                //   require_once('public/quanly.php');
+                //   break;
                 case 'order':
                     $kyw="";
                     if (isset($_POST["search"])) {
@@ -132,6 +146,7 @@
                     }else{
                       $page=$_GET['page'];
                     }
+                    
                     $soluongother=8;
                     $get_order=get_order($kyw, $page, $soluongother);
                     $tongother= get_other_all();
@@ -155,7 +170,7 @@
                       $id = $_GET['id'];
                       // Lấy trạng thái từ cơ sở dữ liệu hoặc bất kỳ nguồn dữ liệu nào khác
                       $bill_status = get_status($id);
-                      update_status($id, 1);
+                      update_status($id, 0);
                       $kyw="";
                       if (isset($_POST["search"])) {
                         $kyw=$_POST["kyw"];
@@ -179,7 +194,7 @@
                       $id = $_GET['id'];
                       // Lấy trạng thái từ cơ sở dữ liệu hoặc bất kỳ nguồn dữ liệu nào khác
                       $bill_status = get_status($id);
-                      update_status($id, 2);
+                      update_status($id, 1);
                       $kyw="";
                       if (isset($_POST["search"])) {
                         $kyw=$_POST["kyw"];
@@ -203,7 +218,7 @@
                       $id = $_GET['id'];
                       // Lấy trạng thái từ cơ sở dữ liệu hoặc bất kỳ nguồn dữ liệu nào khác
                       $bill_status = get_status($id);
-                      update_status($id, 3);
+                      update_status($id, 2);
                       $kyw="";
                       if (isset($_POST["search"])) {
                         $kyw=$_POST["kyw"];
@@ -227,7 +242,7 @@
                       $id = $_GET['id'];
                       // Lấy trạng thái từ cơ sở dữ liệu hoặc bất kỳ nguồn dữ liệu nào khác
                       $bill_status = get_status($id);
-                      update_status($id, 4);
+                      update_status($id, 3);
                       $kyw="";
                       if (isset($_POST["search"])) {
                         $kyw=$_POST["kyw"];
@@ -251,7 +266,7 @@
                       $id = $_GET['id'];
                       // Lấy trạng thái từ cơ sở dữ liệu hoặc bất kỳ nguồn dữ liệu nào khác
                       $bill_status = get_status($id);
-                      update_status($id, 5);
+                      update_status($id, 4);
                       $kyw="";
                       if (isset($_POST["search"])) {
                         $kyw=$_POST["kyw"];
@@ -273,6 +288,19 @@
             case 'users':
                 require_once('public/users.php');
                 break;
+            case 'quanly_binhluan':
+                include 'public/quanly_binhluan.php';
+              break;
+            case 'delete_bl':
+              if(isset($_GET['id'])){
+                $id = $_GET['id'];
+                del_bl($id);
+                
+            }
+              include 'public/quanly_binhluan.php';
+            
+              
+            break;    
             case 'bieudo':
                 $list_thongke = loadall_thongke();
                 require_once('public/bieudo.php');

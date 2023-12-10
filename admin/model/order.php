@@ -4,7 +4,7 @@
     return pdo_execute_id($sql, $mahd, $iduser, $bill_name, $bill_email, $bill_tell, $bill_diachi, $total, $voucher, $tongthanhtoan, $pttt, $date,$bill_status);
 }
     function get_order(){
-        $sql= "SELECT * FROM bill ";
+        $sql= "SELECT * FROM bill WHERE 1 ";
         return get_all($sql);
      }
      function get_other_all(){
@@ -64,5 +64,13 @@
         }
         return $html_stother;
     }
+
+
+    // function delete_donhang($id){
+    //     $sql = "DELETE FROM bill WHERE id=".$id;
+    //     delete($sql);
+    //     $tb = "hủy đơn thành công";
+    //     return $tb;
+    //  }
     
 ?>

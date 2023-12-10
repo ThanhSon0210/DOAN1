@@ -206,7 +206,7 @@
             <i class="nav-icon fa-solid fa-folder-open"></i>
             <p>
               Quản lí danh mục
-              <span class="badge badge-info right">6</span>
+              <span class="badge badge-info right"></span>
               <!-- <span class="right badge badge-danger">New</span> -->
             </p>
           </a>
@@ -217,7 +217,7 @@
             <p>
               Quản lí sản phẩm
               <!-- <span class="right badge badge-danger">New</span> -->
-              <span class="badge badge-info right">6</span>
+              <span class="badge badge-info right"></span>
             </p>
           </a>
         </li>
@@ -227,7 +227,7 @@
             <p>
               Quản lí thành viên
               <!-- <i class="fas fa-angle-left right"></i> -->
-              <span class="badge badge-info right">6</span>
+              <span class="badge badge-info right"></span>
             </p>
           </a>
         </li>
@@ -237,7 +237,17 @@
             <p>
               Quản lý hóa đơn
               <!-- <i class="fas fa-angle-left right"></i> -->
-              <span class="badge badge-info right">6</span>
+              <span class="badge badge-info right"></span>
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="index.php?page=quanly_binhluan" class="nav-link">
+            <i class="nav-icon fa-solid fa-user"></i>
+            <p>
+              Quản lý bình luận
+              <!-- <i class="fas fa-angle-left right"></i> -->
+              <span class="badge badge-info right"></span>
             </p>
           </a>
         </li>

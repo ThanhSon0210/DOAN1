@@ -158,7 +158,7 @@
         switch ($tt) {
             case '1':
                 $tt = 'Đơn hàng mới';
-                break;
+                break;  
             case '2':
                 $tt = 'Đã xác nhận';
                 break;
