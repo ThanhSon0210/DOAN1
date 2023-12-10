@@ -1,6 +1,9 @@
     <?php
         extract($orderdetail);
         // extract($get_bill);
+        
+        $ship = rand(30000, 40000);
+        $tongcong = $total+$ship;
         $madh="";
         if($pttt = 0){
             $tbpt='Thanh toán khi nhận hàng';
@@ -30,7 +33,7 @@
         function getStatusText($bill_status){
             switch ($bill_status) {
                 case 1:
-                    return 'chưa giải quyết';
+                    return 'Chưa giải quyết';
                 case 2:
                     return 'Đã xác nhận';
                 case 3:
@@ -39,12 +42,6 @@
                     return 'Hoàn thành';
                 case 5:
                     return 'Giao hàng thất bại';
-                case 6:
-                    return '...';
-                default:
-                    return 'Unknown status';
-                
-
             }
         }
         $tt='';
@@ -78,20 +75,30 @@
         
         
         foreach ($ordercart as $item) {
-            extract($ordercart);
-            $thanhtien=0;
+            extract($item);
+            if($img!=""){
+                $img_file = '../'.PATH_IMGG.$img;
+                if(file_exists($img_file)){
+                    $hinh = '<img src="'.$img_file.'" width="60px">';
+                }else{
+                    $hinh = 'Hình không tồn tại trên host';
+                }
+            }else{
+                $hinh = 'Chưa có hình';
+            }
+            $thanhtien=$price*$soluong;
             $html_cartorder='';
             extract($item);
             $html_cartorder.='<tr>
                                 <td>
                                     <div class="left">
-                                        <img src="../uploads/'.$img.'" width="40" height="40" class="img-xs" alt="Item">
+                                        '.$hinh.'
                                     </div>
                                     <div class="info">'.$name.'</div>
                                 </td>
                                 <td>'.number_format($price,0,",",".").'VNĐ</td>
                                 <td>'.$soluong.'</td>
-                                <td class="text-end">'.number_format($thanhtien,0,",",".").'VNĐ</td>
+                                <td style="color: red;" class="text-end">'.number_format($thanhtien,0,",",".").'VNĐ</td>
                             </tr>';
         }
     ?>
@@ -99,8 +106,8 @@
 <section class="content-wrapper">
     <div class="content-header">
         <div>
-            <h2 class="content-title card-title">Chi tiết đơn hàng</h2>
-            <p>Chi tiết về đơn hàng: HTPS_<?=$id?></p>
+            <h2 class="content-title card-title"></h2>
+            <strong style="color: blue;">Chi tiết về đơn hàng: HTPS_<?=$id?></strong>
         </div>
     </div>
     <form action="index.php?pg=orders" method="post">
@@ -120,7 +127,7 @@
                                 <?=$select;?>
                             </select>
                             <!-- <button type="submit" name="updatestatus" class="btn btn-primary">Save</button> -->
-                            <a class="btn btn-secondary print ms-2" href="#"><i class="icon material-icons md-print"></i></a>
+                            <a class="btn btn-secondary print ms-2" href="#">Điều Chỉnh Trạng Thái</a>
                         </div>
                     </form>
                 </div>
@@ -134,9 +141,9 @@
                                 <i class="text-primary material-icons md-person"></i>
                             </span>
                             <div class="text">
-                                <h6 class="mb-1">Khách hàng</h6>
+                                <strong style="color: rgb(254, 4, 4)" class="mb-1">Thông Tin Khách Hàng:</strong>
                                 <p class="mb-1">
-                                    <?=$bill_name;?> <br> <a href="mailto:<?=$bill_email;?>" class="__cf_email__" data-cfemail="c7a6aba2bf87a2bfa6aab7aba2e9a4a8aa"><?=$bill_email;?></a> <br> <?=$bil_tell;?>
+                                    Tên: <?=$bill_name;?> <br> Email: <a href="mailto:<?=$bill_email;?>" class="__cf_email__" data-cfemail="c7a6aba2bf87a2bfa6aab7aba2e9a4a8aa"><?=$bill_email;?></a> <br> Số Điện Thoại: <?=$bil_tell;?>
                                 </p>
                                 <!-- <a href="#">View profile</a> -->
                             </div>
@@ -149,13 +156,12 @@
                                 <i class="text-primary material-icons md-local_shipping"></i>
                             </span>
                             <div class="text">
-                                <h6 class="mb-1">Thông tin đặt hàng</h6>
+                                <strong  style="color: rgb(254, 4, 4)"  class="mb-1">Thông Tin Đặt Hàng:</strong>
                                 <p class="mb-1">
-                                    Vận chuyển: Giao hàng nhanh <br> 
+                                    Vận chuyển: <strong style="color: rgb(0, 119, 255)">Giao hàng nhanh</strong> <br> 
                                     Phương thức thanh toán: <?=$tbpt?> <br> 
-                                    Tình trạng: <?=$tt2?>
                                 </p>
-                                <!-- <a href="#">Download info</a> -->
+                                <a href="#">Tải Thông Tin Này Xuống ?</a>
                             </div>
                         </article>
                     </div>
@@ -166,7 +172,7 @@
                                 <i class="text-primary material-icons md-place"></i>
                             </span>
                             <div class="text">
-                                <h6 class="mb-1">Giao hàng tới</h6>
+                                <h5 style="color: green;" class="mb-1">Địa Chỉ Giao Hàng:</h5>
                                 <p class="mb-1">
                                     <?=$bill_diachi;?>
                                 </p>
@@ -186,63 +192,11 @@
                                         <th width="40%">Sản phẩm</th>
                                         <th width="20%">Đơn giá</th>
                                         <th width="20%">Số lượng</th>
-                                        <th width="20%" class="text-end">Tổng cộng</th>
+                                        <th width="20%" class="text-end">Tổng Tiền</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?=$html_cartorder;?>
-                                    <!-- <tr>
-                                        <td>
-                                            <a class="itemside" href="#">
-                                                <div class="left">
-                                                    <img src="./view/assets/imgs/items/1.jpg" width="40" height="40" class="img-xs" alt="Item">
-                                                </div>
-                                                <div class="info"> T-shirt blue, XXL size </div>
-                                            </a>
-                                        </td>
-                                        <td> $44.25 </td>
-                                        <td> 2 </td>
-                                        <td class="text-end"> $99.50 </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a class="itemside" href="#">
-                                                <div class="left">
-                                                    <img src="./view/assets/imgs/items/2.jpg" width="40" height="40" class="img-xs" alt="Item">
-                                                </div>
-                                                <div class="info"> Winter jacket for men </div>
-                                            </a>
-                                        </td>
-                                        <td> $7.50 </td>
-                                        <td> 2 </td>
-                                        <td class="text-end"> $15.00 </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a class="itemside" href="#">
-                                                <div class="left">
-                                                    <img src="./view/assets/imgs/items/3.jpg" width="40" height="40" class="img-xs" alt="Item">
-                                                </div>
-                                                <div class="info"> Jeans wear for men </div>
-                                            </a>
-                                        </td>
-                                        <td> $43.50 </td>
-                                        <td> 2 </td>
-                                        <td class="text-end"> $102.04 </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a class="itemside" href="#">
-                                                <div class="left">
-                                                    <img src="./view/assets/imgs/items/4.jpg" width="40" height="40" class="img-xs" alt="Item">
-                                                </div>
-                                                <div class="info"> Product name color and size </div>
-                                            </a>
-                                        </td>
-                                        <td> $99.00 </td>
-                                        <td> 3 </td>
-                                        <td class="text-end"> $297.00 </td>
-                                    </tr> -->
                                     <tr>
                                         <td colspan="4">
                                             <article class="float-end">
@@ -255,13 +209,13 @@
                                                     <dd><?=number_format($ship,0,",",".")?> VNĐ</dd>
                                                 </dl>
                                                 <dl class="dlist">
-                                                    <dt>Tổng cộng:</dt>
-                                                    <dd> <b class="h5"><?=number_format($tongthanhtoan,0,",",".")?></b> VNĐ</dd>
+                                                    <dt>Tổng Tiền Bạn Cần Thanh Toán: <a href="#" style="color: red;"><?=number_format( $tongcong,0,",",".")?> VNĐ</a></dt>
+                                                    
                                                 </dl>
                                                 <dl class="dlist">
-                                                    <dt class="text-muted">Trạng thái</dt>
+                                                    
                                                     <dd>
-                                                        <?=$tt2?>
+                                                        <?php echo "$tt2";?>
                                                     </dd>
                                                 </dl>
                                             </article>

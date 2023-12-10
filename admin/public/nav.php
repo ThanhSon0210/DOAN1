@@ -152,7 +152,7 @@
         <img src="../images/sonnu logo.png" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">SONNU</a>
+        <a href="#" class="d-block">HTPS</a>
       </div>
     </div>
 
