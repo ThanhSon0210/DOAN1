@@ -11,7 +11,7 @@
 
     include_once "dao/pdo.php";
     // include_once "dao/binh-luan.php";
-    
+    include_once 'dao/thanhtoanvnpay.php';
     include_once "dao/user.php";
     include_once "dao/cart.php";
     // include_once "dao/billconfirm.php";
@@ -66,13 +66,14 @@
                     $img = $_POST["img"];
                     $price = $_POST["price"];
                     $soluong = $_POST["soluong"];
-                    
+    
                     $sp = array(
                         "idpro" => $idpro,
                         "name" => $name,
                         "img" => $img,
                         "price" => $price,
                         "soluong" => $soluong
+                        
                     );
                     $giohang = &$_SESSION['giohang']; // Sử dụng biến tham chiếu để thao tác trực tiếp với mảng $_SESSION["giohang"]
             
@@ -211,12 +212,16 @@
                     $iddonhang = insert_bill($_SESSION['s_user']['id'], $hoten, $diachi, $dienthoai, $email, $pttt, $ngaydathang, $tongtiendonhang);
                     // $iddonhang = 1;
                     // insert into cart với session giohang và iddonhang
+                    
+                    $total = 0; // Khai báo biến $total trước vòng lặp
+
                     foreach ($_SESSION['giohang'] as $item) {
-                        
-                        $total = 0;
-                        $total = $item['price'] * $item['soluong']; 
-                        insert_cart($_SESSION['s_user']['id'], $_SESSION['s_user']['id'],  $item['price'] ,$item['img'], $item['name'],$item['soluong'],$total,$iddonhang);
+                        $subtotal = $item['price'] * $item['soluong']; // Tính tổng phụ cho từng sản phẩm
+                        $total += $subtotal; // Cộng tổng phụ vào tổng chung
+                        insert_cart($_SESSION['s_user']['id'], $_SESSION['s_user']['id'], $item['price'], $item['img'], $item['name'], $item['soluong'], $subtotal, $iddonhang);
                     }
+                    
+                    // Sử dụng biến $total cho thanh toán VNPay
                     
                     $_SESSION['giohang'] = [];
                     $bill = loadone_bill($iddonhang);

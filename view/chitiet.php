@@ -266,13 +266,13 @@
                         <div class="wrapper row">
                             <div class="preview col-md-6">
                                 <div class="preview-pic tab-content">
-                                    <!-- <div class="tab-pane" id="pic-1">
-                                        <img src="uploads/cd1.jpg" class="card-img-top" alt="...">
+                                    <div class="tab-pane" id="pic-1">
+                                        <img src="images/<?=$img?>" class="card-img-top" alt="...">
                                     </div>
-                                    <div class="tab-pane" id="pic-2">
-                                        <img src="../assets/img/product/samsung-galaxy-tab.jpg">
-                                    </div> -->
-                                    <div class="tab-pane active" id="pic-3">
+                                    <div class="tab-pane active" id="pic-2">
+                                         <img src="images/<?=$img?>" class="card-img-top" alt="...">
+                                    </div>
+                                    <div class="tab-pane " id="pic-3">
                                         <img src="images/<?=$img?>" class="card-img-top" alt="...">
                                     </div>
                                 </div>
@@ -314,9 +314,27 @@
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star"></span>
                                     </div>
-                                    <span class="review-no"> <b><?=$view?></b> lượt xem</span>
-                                    <span class="review-no"><b><?=$comment?></b> bình luận</span>
-                                    <span class="review-no"><b><?=$share?></b> chia sẽ</span>
+                                    <input type="hidden" name="view" value="<?=$view?>">
+                                    <?php
+      if(isset($_POST["id"])) {
+        $id = $_POST["id"];
+        var_dump($id);
+        // viewsp($id);
+        // $view ++;
+       }else{
+        $view = viewsp($id);
+        foreach($view as $item){
+            extract($item);
+            $view = $item["view"];
+            $view++;
+            view_update($view , $id);
+        }
+        // var_dump($view);
+       }
+                                    ?>
+                                    <span style="margin-right:10px;"><i class="fa-solid fa-eye"></i> <?=$view?></span>
+                                    <span style="margin-right:10px;"><i class="fa-solid fa-comment"></i> <?=$comment?> </span>
+                                    <span><i class="fa-solid fa-share"></i> <?=$share?></span>
                                 </div>
                                 <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga fugiat atque explicabo non nobis velit! Velit nulla impedit, laboriosam fugit, quas debitis fugiat, ad alias accusamus distinctio repellat non nemo.</p>
                                 <small class="text-muted">Giá cũ: <s><span>990.000 vnđ</span></s></small>
