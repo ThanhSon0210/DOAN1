@@ -8,7 +8,7 @@
         define('LOCALHOST','localhost');
         define('USERNAME','root');
         define('PASSWORD','');
-        define('DATABASE','sonnu');
+        define('DATABASE','sonn');
 
         //include dến thư viện google client  
         require_once 'google/archive_230617_061823/vendor/autoload.php';

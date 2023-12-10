@@ -10,8 +10,7 @@
     require_once('model/connect.php');
     require_once('model/product.php');
     require_once('model/catalog.php');
-    include_once('model/global.php');
-    require_once('../dao/cart.php');
+    require_once('model/global.php');
     require_once('public/head.php');
     require_once('public/nav.php');
     include_once "model/user.php";
@@ -273,12 +272,7 @@
             case 'users':
                 require_once('public/users.php');
                 break;
-            case 'bieudo':
-                $list_thongke = loadall_thongke();
-                require_once('public/bieudo.php');
-                break;
             case 'thongke':
-                $list_thongke = loadall_thongke();
                 require_once('public/thongke.php');
                 break;
             default:

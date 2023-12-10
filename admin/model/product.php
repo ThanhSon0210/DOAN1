@@ -56,7 +56,5 @@
       $sql = "DELETE FROM sanpham WHERE id=".$id;
       delete($sql);
    }
-
-  
    
 ?>

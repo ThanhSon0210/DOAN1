@@ -116,7 +116,7 @@
                         $_SESSION['s_user'] = $kq;
                         header('location: index.php'); 
                     }else{
-                        $tb = "Tài khoản không tồn tại";
+                        $tb = "Tài Khoản Không Tồn Tại";
                         $_SESSION['tb_dangnhap'] = $tb;
                         header('location: index.php?page=dangnhap'); 
                     }  

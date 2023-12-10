@@ -20,6 +20,7 @@
 	    $nguoidung = $stmt->fetchAll();
   	    $conn = null;
         return $nguoidung;
+
     }
     function showbl_sp($idsp){
         $conn = pdo_get_connection();

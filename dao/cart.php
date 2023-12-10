@@ -156,20 +156,17 @@
     }
     function get_ttdh($tt){
         switch ($tt) {
-            case '1':
+            case '0':
                 $tt = 'Đơn hàng mới';
                 break;
-            case '2':
-                $tt = 'Đã xác nhận';
+            case '1':
+                $tt = 'Đang xử lý';
                 break;
-            case '3':
+            case '2':
                 $tt = 'Đang giao hàng';
                 break;
-            case '4':
+            case '3':
                 $tt = 'Đã giao hàng';
-                break;
-            case 5:
-                $tt = 'Giao hàng thất bại (chúng tôi đang gặp sự cố)';
                 break;
             default:
                 $tt = 'Đơn hàng mới';
@@ -177,11 +174,10 @@
         }
         return $tt;
     }
-     
-    function loadall_thongke(){
-        $sql = "SELECT danhmuc.id as madm, danhmuc.name as tendm, count(sanpham.id) as countsp, min(sanpham.price) as minprice, max(sanpham.price) as maxprice, avg(sanpham.price) as avgprice FROM sanpham LEFT JOIN danhmuc ON danhmuc.id=sanpham.iddm group by danhmuc.id order by danhmuc.id asc";
-        $listtk = pdo_query($sql);
-        return $listtk;
-    }
+    // function loadall_cart($idbill){
+    //     $sql = "SELECT * FROM cart WHERE idbill=".$idbill;
+    //     $bill = pdo_query($sql);
+    //     return $bill;
+    // }
 
 ?>
