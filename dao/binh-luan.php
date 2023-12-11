@@ -1,9 +1,9 @@
 <?php
 
 
-    function thembl($name,$iduser,$idsp,$noidung){
+    function thembl($name,$iduser,$idsp,$noidung,$postdate){
         $conn = pdo_get_connection();
-        $sql = "INSERT INTO binhluan(name ,iduser, idsp, noidung ) VALUES('$name','$iduser','$idsp','$noidung') ";
+        $sql = "INSERT INTO binhluan(name ,iduser, idsp, noidung,postdate ) VALUES('$name','$iduser','$idsp','$noidung','$postdate') ";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);

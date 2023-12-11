@@ -2,6 +2,8 @@
         extract($orderdetail);
         // extract($get_bill);
         $madh="";
+        $ship = 30000;
+        $tongthanhtoan = $total+$ship;
         if($pttt = 0){
             $tbpt='Thanh toán khi nhận hàng';
         }
@@ -78,8 +80,8 @@
         
         
         foreach ($ordercart as $item) {
-            extract($ordercart);
-            $thanhtien=0;
+            extract($item);
+            $thanhtien=$price*$soluong;
             $html_cartorder='';
             extract($item);
             $html_cartorder.='<tr>
@@ -123,7 +125,7 @@
 
                             <!-- <a class="btn btn-secondary print ms-2" href="#">Điều Chỉnh Trạng Thái</a> -->
 
-                            <a class="btn btn-secondary print ms-2" href="#"><i class="icon material-icons md-print"></i></a>
+                            <!-- <a class="btn btn-secondary print ms-2" href="#"><i class="icon material-icons md-print"></i></a> -->
                         </div>
                     </form>
                 </div>
@@ -134,10 +136,12 @@
                     <div class="col-md-4">
                         <article class="icontext align-items-start">
                             <span class="icon icon-sm rounded-circle bg-primary-light">
-                                <i class="text-primary material-icons md-person"></i>
+
                             </span>
+                            
                             <div class="text">
-                                <h6 class="mb-1">Khách hàng</h6>
+                            <i class="fa fa-user-circle"></i>
+                                <strong class="mb-1">Thông tin khách hàng:</strong>
                                 <p class="mb-1">
                                     <?=$bill_name;?> <br> <a href="mailto:<?=$bill_email;?>" class="__cf_email__" data-cfemail="c7a6aba2bf87a2bfa6aab7aba2e9a4a8aa"><?=$bill_email;?></a> <br> <?=$bil_tell;?>
                                 </p>
@@ -152,7 +156,7 @@
                                 <i class="text-primary material-icons md-local_shipping"></i>
                             </span>
                             <div class="text">
-                                <h6 class="mb-1">Thông tin đặt hàng</h6>
+                                <strong class="mb-1">Thông tin đặt hàng:</strong>
                                 <p class="mb-1">
                                     Vận chuyển: Giao hàng nhanh <br> 
                                     Phương thức thanh toán: <?=$tbpt?> <br> 
@@ -169,7 +173,7 @@
                                 <i class="text-primary material-icons md-place"></i>
                             </span>
                             <div class="text">
-                                <h6 class="mb-1">Giao hàng tới</h6>
+                                <strong class="mb-1">Giao hàng tới:</strong>
                                 <p class="mb-1">
                                     <?=$bill_diachi;?>
                                 </p>
@@ -258,8 +262,8 @@
                                                     <dd><?=number_format($ship,0,",",".")?> VNĐ</dd>
                                                 </dl>
                                                 <dl class="dlist">
-                                                    <dt>Tổng cộng:</dt>
-                                                    <dd> <b class="h5"><?=number_format($tongthanhtoan,0,",",".")?></b> VNĐ</dd>
+                                                    <dt>Tổng thanh toán:</dt>
+                                                    <dd style="color:red" ><b class="h5" ><?=number_format($tongthanhtoan,0,",",".")?></b> VNĐ</dd>
                                                 </dl>
                                                 <dl class="dlist">
                                                     <dt class="text-muted">Trạng thái</dt>

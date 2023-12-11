@@ -156,24 +156,20 @@
     }
     function get_ttdh($tt){
         switch ($tt) {
-            case '0':
-                $tt = 'Đơn hàng mới';
-                break;  
-            case '1':
-                $tt = 'Đã xác nhận';
-                break;
-            case '2':
-                $tt = 'Đang xử lý';
-                break;
-            case '3':
-                $tt = 'Đang giao hàng';
-                break;
-            case '4':
-                $tt = 'Đã giao hàng';
-                break;
+            case 0:
+                return 'đơn hàng mới';
+            case 1:
+                return 'Đã xác nhận';
+            case 2:
+                return 'Đang giao hàng';
+            case 3:
+                return 'Hoàn thành';
+            case 4:
+                return 'Giao hàng thất bại';
+            case 5:
+                return '...';
             default:
-                $tt = 'Đơn hàng mới';
-                break;
+                return 'Unknown status';
         }
         return $tt;
     }
@@ -182,5 +178,10 @@
     //     $bill = pdo_query($sql);
     //     return $bill;
     // }
+    function loadall_thongke(){
+        $sql = "SELECT danhmuc.id as madm, danhmuc.name as tendm, count(sanpham.id) as countsp, min(sanpham.price) as minprice, max(sanpham.price) as maxprice, avg(sanpham.price) as avgprice FROM sanpham LEFT JOIN danhmuc ON danhmuc.id=sanpham.iddm group by danhmuc.id order by danhmuc.id asc";
+        $listtk = pdo_query($sql);
+        return $listtk;
+    }
 
 ?>

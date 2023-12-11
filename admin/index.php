@@ -17,6 +17,7 @@
     include_once "model/order.php";
     include_once "model/comment-detail.php";
     include_once "../dao/pdo.php";
+    include_once "../dao/cart.php";
 
     
     if(isset($_GET['page'])){
@@ -286,6 +287,7 @@
             case 'users':
                 require_once('public/users.php');
                 break;
+              
             case 'quanly_binhluan':
                 include 'public/quanly_binhluan.php';
               break;
@@ -300,12 +302,14 @@
               
             break;    
             case 'bieudo':
-                $list_thongke = loadall_thongke();
-                require_once('public/bieudo.php');
-                break;
-            case 'thongke':
-                require_once('public/thongke.php');
-                break;
+              $list_thongke = loadall_thongke();
+              require_once('public/bieudo.php');
+              break;
+          case 'thongke':
+              $list_thongke = loadall_thongke();
+              require_once('public/thongke.php');
+              break;
+            
             default:
                 require_once('public/404.php');
         }

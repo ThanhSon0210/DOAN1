@@ -50,6 +50,9 @@
                                         foreach ($list_bill as $item) {
                                             extract($item);
                                             $ttdh = get_ttdh($item['bill_status']);
+                                            if($ttdh == 0) {
+                                                
+                                            }
                                             echo ' <tr>
                                                 <td>HTPS_' . $id . '</td>
                                                 <td>' . $ngaydathang . '</td>

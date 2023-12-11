@@ -21,8 +21,9 @@
         if(isset($_POST['guibinhluan']) && ($_POST['guibinhluan']!="" )){
             $noidung=$_POST['noidung'];
             $idsp=$_GET['idsp'];
-            thembl($name_user,$iduser,$idsp,$noidung);
-            // print_r($name, $noidung, $idsp, $iduser);
+            $postdate = date('Y-m-d');
+            thembl($name_user,$iduser,$idsp,$noidung,$postdate);
+            // print_r($name, $noidung, $idsp, $iduser,$postdate);
         }
 
         //update nội dung bình luận
@@ -127,7 +128,7 @@
         echo '
         <div class="card">
       <div class="header">
-        <div class="image"><img src="uploads/vovinam.png" alt=""></div>
+        <div class="image"><img src="images/th.jpg" alt=""></div>
           <div>
                   <!-- ngôi sao  -->
               <div class="stars">
@@ -163,6 +164,7 @@
 
 
         <p class="message">'.$noidung.'</p>
+        <p class="message" style="text-align: right;">Ngày bình luận: '.$postdate.'</p>
   </div>
         ';
         }

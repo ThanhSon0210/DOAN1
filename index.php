@@ -6,11 +6,11 @@
         $_SESSION["giohang"]=[];
     }
    
- 
+    include_once "view/header.php";
     include_once "dao/donhang.php";
 
     include_once "dao/pdo.php";
-    // include_once "dao/binh-luan.php";
+    include_once "dao/binh-luan.php";
     include_once 'dao/thanhtoanvnpay.php';
     include_once "dao/user.php";
     include_once "dao/cart.php";
@@ -18,7 +18,7 @@
     include_once "dao/danhmuc.php";
     include_once "dao/sanpham.php";
 
-    include_once "view/header.php";
+    
     $html_hm = get_hm(18);
     $dssp_nb = get_dssp_nb(8);
     $dssp_sale = get_dssp_sale(12);
