@@ -33,8 +33,6 @@
             echo "<script>alert('Thanh toán thất bại');</script>";
             echo "<script>window.location='index.php';</script>";
         }
-    }else{
-        echo 'Không có gì hết';
     }
 ?>
 <!DOCTYPE html>

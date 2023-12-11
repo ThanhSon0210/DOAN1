@@ -200,6 +200,7 @@
                 include_once "view/donhang.php";
                 break;
             case 'donhangconfirm':
+              if (isset($_SESSION['s_user'])) {
                 if(isset($_POST['dongydathang']) ){
                     $hoten = $_POST['hoten'];
                     $diachi = $_POST['diachi'];
@@ -230,6 +231,11 @@
                     $bill = "";
                     include_once "view/donhangconfirm.php";
                 }
+              }else{
+                echo "<script>alert('Bạn cần đăng nhập để thanh toán');</script>";
+                echo "<script>window.location='index.php?page=dangnhap';</script>";
+                // header('location: index.php?page=dangnhap');
+              }
                 
                 break;
             case 'lsdh':

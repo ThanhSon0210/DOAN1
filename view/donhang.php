@@ -319,6 +319,7 @@
                         <div class="bill_chekckout">
                             <div class="bill-order_checkout">
                                 <h3 class="order_title" style="font-weight: bold;">Đơn hàng của bạn</h3>
+                               
                                 <table border="1" id="my-cart">
                                     <tbody>
                                         <?php
