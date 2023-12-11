@@ -394,7 +394,7 @@
 
                 <h2>SẢN PHẨM TƯƠNG TỰ</h2>
                 <div class="col-md-12">
-                    <div class="my-3" style="display:flex;flex-wrap:wrap">
+                    <div class="d-flex my-3" style="display:flex;flex-wrap:wrap;overflow-x: auto; white-space: nowrap;">
                         <?= $html_sp_lienquan?>
                     </div>
                 </div>
