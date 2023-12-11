@@ -139,8 +139,8 @@
         return pdo_execute_return_lastInsertId($sql);
     }   
     
-    function insert_cart($idpro, $iduser, $price, $name, $img, $soluong, $tongtien, $idbill){
-        $sql = "INSERT INTO cart (idpro, iduser,  price, name, img, soluong, tongtien, idbill) values ('$idpro', '$iduser', '$price', '$name', '$img', '$soluong', '$tongtien', '$idbill')";
+    function insert_cart($idpro, $iduser, $price, $img, $name , $soluong, $tongtien, $idbill){
+        $sql = "INSERT INTO cart (idpro, iduser,  price, img, name , soluong, tongtien, idbill) values ('$idpro', '$iduser', '$price', '$img', '$name', '$soluong', '$tongtien', '$idbill')";
         return  pdo_execute($sql);
     }  
     

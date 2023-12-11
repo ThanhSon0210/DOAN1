@@ -1,10 +1,10 @@
 <?php
     $get_order =get_order();
-    $hoadon ="";
+    
     
   foreach ($get_order as $item) {
     extract($item);
-    
+    $hoadon ="";
         if($bill_status==0) $tt='<span class="badge rounded-pill alert-warning">đơn hàng mới</span>' ;
         if($bill_status==1) $tt='<span class="badge rounded-pill alert-success">Đã xác nhận</span>';
         if($bill_status==2) $tt='<span class="badge rounded-pill alert-success">Đang giao hàng</span>';
